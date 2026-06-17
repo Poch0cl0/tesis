@@ -1,0 +1,57 @@
+﻿\section{Procedimiento}
+
+El procedimiento se organiza siguiendo una adaptación del marco CRISP-DM, debido
+a que el proyecto combina comprensión del negocio, análisis de datos, modelado y
+despliegue de una solución de apoyo a la decisión.
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2cm]
+  \item \textbf{Comprensión del negocio.}
+  Se identifica como objetivo principal reducir el riesgo de pérdida económica
+  por campaña en productores de palta de La Libertad. Para ello, se priorizan
+  tres necesidades: Estimar precios FOB futuros, calcular rentabilidad y generar
+  escenarios de decisión.
+
+  \item \textbf{Comprensión de los datos.}
+  Se analizan las fuentes UNData y Kaggle, así como posibles fuentes nacionales
+  de exportación. Se revisan variables como precio promedio, volumen, fecha,
+  región, tipo, destino, temporada y factores comerciales asociados al precio
+  FOB.
+
+  \item \textbf{Preparación de los datos.}
+  Se limpian registros inconsistentes, se normalizan variables numéricas, se
+  transforman fechas y se generan variables de rezago. También se construyen
+  variables para escenarios económicos, tales como costo por kilogramo, flete,
+  productividad, margen y ganancia esperada.
+
+  \item \textbf{Modelado.}
+  Se evalúan los algoritmos propuestos en el documento base:
+
+  \begin{table}[H]
+  \centering
+  \caption{Soluciones y algoritmos propuestos}
+  \begin{tabular}{p{4cm}p{4cm}p{5cm}}
+  \toprule
+  \textbf{Solución} & \textbf{Tipo de algoritmo} & \textbf{Algoritmos candidatos} \\
+  \midrule
+  S-1: Cálculo de rentabilidad & Regresión no lineal con variables temporales & Random Forest, XGBoost, SVR con rezagos \\
+  S-2: Simulador de escenarios & Optimización / prescriptivo & Regresión logística multinomial, XGBoost, árbol CART \\
+  S-3: Modelo predictivo de precios FOB & Series de tiempo / deep learning & SARIMA, LSTM, SVR con rezagos \\
+  S-4: Análisis histórico interactivo & Analítica descriptiva & Segmentación temporal, filtros por mercado y visualización dinámica \\
+  S-5: Reportes de ciclos & Analítica descriptiva & Detección de picos, caídas y comparación anual \\
+  \bottomrule
+  \end{tabular}
+  \end{table}
+
+  \item \textbf{Evaluación.}
+  Se comparan los modelos predictivos mediante MAE, RMSE y MAPE. Además, se
+  evalúa la utilidad de los módulos prescriptivos a partir de la claridad de los
+  escenarios generados y su capacidad para orientar decisiones de campaña.
+
+  \item \textbf{Despliegue conceptual.}
+  La solución final se plantea como un sistema de apoyo a la decisión que integra
+  cinco módulos: Cálculo de rentabilidad (S-1), simulador de escenarios (S-2),
+  modelo predictivo de precios FOB (S-3), análisis histórico interactivo (S-4) y
+  generador automático de reportes de ciclos (S-5). Estos módulos permitirán al
+  productor interpretar precios futuros, márgenes esperados y riesgos antes de
+  decidir la siembra.
+\end{enumerate}

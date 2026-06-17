@@ -1,0 +1,145 @@
+﻿% ═══════════════════════════════════════════════════════════════════════════════
+%  Informe: "Modelo predictivo de precios de exportación de palta
+%  para apoyar la toma de decisiones de siembra en productores
+%  agrícolas de La Libertad, Perú"
+%  Autores: Peña Serrano Jefferson Miguel
+%           Robles Perez Martin Aryan
+%  Universidad Nacional de Trujillo – Facultad de Ingeniería
+%  Escuela de Ingeniería de Sistemas – 2025
+% ═══════════════════════════════════════════════════════════════════════════════
+
+\documentclass[12pt, a4paper]{report}
+
+% ─── Codificación y fuente ────────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext, newtxmath}   % Times New Roman + math compatible
+\usepackage{microtype}              % mejora óptica del texto
+
+% ─── Idioma ────────────────────────────────────────────────────────────────────
+\usepackage[spanish, es-noindentfirst, es-tabla]{babel}
+\usepackage{csquotes}
+
+% ─── Márgenes (APA / norma UNT) ────────────────────────────────────────────────
+\usepackage[
+  top    = 2.54cm,
+  bottom = 2.54cm,
+  left   = 3.00cm,
+  right  = 2.54cm
+]{geometry}
+
+% ─── Matemáticas ───────────────────────────────────────────────────────────────
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric, fit, backgrounds}
+\usepackage{tikz-cd}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% ─── Interlineado y párrafos ───────────────────────────────────────────────────
+\usepackage{setspace}
+\onehalfspacing                     % 1.5 líneas
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0pt}
+\raggedbottom
+
+% ─── Figuras y tablas ──────────────────────────────────────────────────────────
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{tabularx}
+
+% ─── Captions ──────────────────────────────────────────────────────────────────
+\usepackage{caption}
+\captionsetup{
+  font        = {normalsize},
+  labelfont   = bf,
+  labelsep    = newline,
+  justification = raggedright,
+  singlelinecheck = false
+}
+
+% ─── Columnas ──────────────────────────────────────────────────────────────────
+\usepackage{multicol}
+
+% ─── Encabezado ────────────────────────────────────────────────────────────────
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% ─── Títulos de sección ────────────────────────────────────────────────────────
+\usepackage{titlesec}
+\titleformat{\chapter}[block]
+  {\normalfont\bfseries\fontsize{12}{14}\selectfont\centering}
+  {CAPÍTULO \thechapter:}{0.5em}{\MakeUppercase}
+\titlespacing*{\chapter}{0pt}{0pt}{18pt}
+
+\titleformat{\section}
+  {\normalfont\bfseries\fontsize{12}{14}\selectfont}
+  {\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+\titleformat{\subsection}
+  {\normalfont\bfseries\fontsize{12}{14}\selectfont}
+  {\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+
+\titleformat{\subsubsection}
+  {\normalfont\bfseries\fontsize{12}{14}\selectfont}
+  {\thesubsubsection}{1em}{}
+\titlespacing*{\subsubsection}{0pt}{8pt}{4pt}
+
+% ─── Listas ────────────────────────────────────────────────────────────────────
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=2cm}
+\setlist[enumerate]{noitemsep, topsep=2pt, leftmargin=2cm}
+
+% ─── Hipervínculos ─────────────────────────────────────────────────────────────
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\Urlmuskip=0mu plus 2mu
+\hypersetup{
+  pdftitle  = {Modelo predictivo de precios de exportación de palta Hass para apoyar la toma de decisiones de siembra en productores agrícolas de La Libertad Perú},
+  pdfauthor = {Peña Serrano Jefferson Miguel; Robles Perez Martin Aryan},
+  pdflang   = {es-PE}
+}
+
+% ─── Numeración de tablas y figuras por capítulo ───────────────────────────────
+\usepackage{chngcntr}
+\counterwithin{table}{chapter}
+\counterwithin{figure}{chapter}
+
+% ─── Índice ────────────────────────────────────────────────────────────────────
+\usepackage{tocloft}
+\renewcommand{\cftchapfont}{\bfseries}
+\renewcommand{\cftsecfont}{}
+\renewcommand{\cftsubsecfont}{}
+
+% ─── Comando de figura APA 7 ──────────────────────────────────────────────────
+\newcommand{\apafigure}[6]{%
+  \begin{figure}[H]
+    \refstepcounter{figure}\label{#1}%
+    \noindent\textbf{Figura #2}\\[2pt]%
+    \noindent\textit{#3}\\[8pt]%
+    \centering
+    \IfFileExists{#5}{%
+      \includegraphics[width=#4]{#5}%
+    }{%
+      \fbox{\parbox[c][2.2in][c]{#4}{\centering Imagen no disponible:\\#5}}%
+    }%
+    \\[8pt]%
+    \begin{minipage}{#4}%
+      \small\textit{Nota.} #6
+    \end{minipage}
+  \end{figure}%
+}
+
+% ═══════════════════════════════════════════════════════════════════════════════

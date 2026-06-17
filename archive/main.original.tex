@@ -1,0 +1,757 @@
+% ═══════════════════════════════════════════════════════════════════════════════
+%  Tesis: "Modelo predictivo basado en aprendizaje automático
+%  para la estimación de precios agrícolas y apoyo a la toma
+%  de decisiones de siembra en productores del Perú"
+%  Autores: Peña Serrano, Jefferson Miguel
+%           Robles Perez, Martin Aryan
+%  Universidad Nacional de Trujillo – Facultad de Ingeniería
+%  Escuela de Ingeniería de Sistemas – 2026
+% ═══════════════════════════════════════════════════════════════════════════════
+
+\documentclass[12pt, a4paper]{report}
+
+% ─── Codificación y fuente ────────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext, newtxmath}   % Times New Roman + math compatible
+\usepackage{microtype}              % mejora óptica del texto
+
+% ─── Idioma ────────────────────────────────────────────────────────────────────
+\usepackage[spanish, es-noindentfirst, es-tabla]{babel}
+\usepackage{csquotes}
+
+% ─── Márgenes (APA / norma UNT) ────────────────────────────────────────────────
+\usepackage[
+  top    = 2.54cm,
+  bottom = 2.54cm,
+  left   = 3.00cm,
+  right  = 2.54cm
+]{geometry}
+
+% ─── Matemáticas ───────────────────────────────────────────────────────────────
+\usepackage{amsmath, amssymb}
+\usepackage{tikz-cd}
+
+% ─── Interlineado y párrafos ───────────────────────────────────────────────────
+\usepackage{setspace}
+\onehalfspacing                     % 1.5 líneas
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0pt}
+\raggedbottom
+
+% ─── Figuras y tablas ──────────────────────────────────────────────────────────
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{tabularx}
+
+% ─── Captions ──────────────────────────────────────────────────────────────────
+\usepackage{caption}
+\captionsetup{
+  font        = {normalsize},
+  labelfont   = bf,
+  labelsep    = newline,
+  justification = raggedright,
+  singlelinecheck = false
+}
+
+% ─── Columnas ──────────────────────────────────────────────────────────────────
+\usepackage{multicol}
+
+% ─── Encabezado ────────────────────────────────────────────────────────────────
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% ─── Títulos de sección ────────────────────────────────────────────────────────
+\usepackage{titlesec}
+\titleformat{\chapter}[block]
+  {\normalfont\bfseries\fontsize{12}{14}\selectfont\centering}
+  {CAPÍTULO \thechapter:}{0.5em}{\MakeUppercase}
+\titlespacing*{\chapter}{0pt}{0pt}{18pt}
+
+\titleformat{\section}
+  {\normalfont\bfseries\fontsize{12}{14}\selectfont}
+  {\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+\titleformat{\subsection}
+  {\normalfont\bfseries\fontsize{12}{14}\selectfont}
+  {\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+
+\titleformat{\subsubsection}
+  {\normalfont\bfseries\fontsize{12}{14}\selectfont}
+  {\thesubsubsection}{1em}{}
+\titlespacing*{\subsubsection}{0pt}{8pt}{4pt}
+
+% ─── Listas ────────────────────────────────────────────────────────────────────
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=2cm}
+\setlist[enumerate]{noitemsep, topsep=2pt, leftmargin=2cm}
+
+% ─── Hipervínculos ─────────────────────────────────────────────────────────────
+\usepackage[
+  hidelinks,
+  pdftitle  = {Modelo predictivo basado en aprendizaje automático para la
+               estimación de precios agrícolas y apoyo a la toma de decisiones
+               de siembra en productores del Perú},
+  pdfauthor = {Peña Serrano Jefferson Miguel; Robles Perez Martin Aryan},
+  pdflang   = {es-PE}
+]{hyperref}
+
+% ─── Numeración de tablas y figuras por capítulo ───────────────────────────────
+\usepackage{chngcntr}
+\counterwithin{table}{chapter}
+\counterwithin{figure}{chapter}
+
+% ─── Índice ────────────────────────────────────────────────────────────────────
+\usepackage{tocloft}
+\renewcommand{\cftchapfont}{\bfseries}
+\renewcommand{\cftsecfont}{}
+\renewcommand{\cftsubsecfont}{}
+
+% ─── Comando de figura APA 7 ──────────────────────────────────────────────────
+\newcommand{\apafigure}[6]{%
+  \begin{figure}[H]
+    \refstepcounter{figure}\label{#1}%
+    \noindent\textbf{Figura #2}\\[2pt]%
+    \noindent\textit{#3}\\[8pt]%
+    \centering
+    \IfFileExists{#5}{%
+      \includegraphics[width=#4]{#5}%
+    }{%
+      \fbox{\parbox[c][2.2in][c]{#4}{\centering Imagen no disponible:\\#5}}%
+    }%
+    \\[8pt]%
+    \begin{minipage}{#4}%
+      \small\textit{Nota.} #6
+    \end{minipage}
+  \end{figure}%
+}
+
+% ═══════════════════════════════════════════════════════════════════════════════
+\begin{document}
+% ═══════════════════════════════════════════════════════════════════════════════
+
+% ─── Portada — APA 7 §2.3 (trabajo de estudiante) ─────────────────────────────
+\thispagestyle{fancy}
+\begin{center}
+  \vspace*{2in}
+
+  \textbf{Modelo predictivo basado en aprendizaje automático para la estimación
+  de precios agrícolas y apoyo a la toma de decisiones de siembra en productores
+  del Perú}
+
+  \vspace{24pt}
+
+  Peña Serrano Jefferson Miguel\\
+  Robles Perez Martin Aryan
+
+  \vspace{12pt}
+
+  Escuela de Ingeniería de Sistemas\\
+  Facultad de Ingeniería\\
+  Universidad Nacional de Trujillo
+
+  \vspace{12pt}
+
+  Tesis para optar el título profesional de Ingeniero de Sistemas
+
+  \vspace{12pt}
+
+  Línea de investigación: Ciencia de Datos e Inteligencia Artificial
+
+  \vspace{12pt}
+
+  Asesor: Dr. Santos Fernández, Juan Pedro
+
+  \vspace{12pt}
+
+  Trujillo, Perú
+
+  2026
+\end{center}
+
+\newpage
+
+% ─── Índices (páginas preliminares) ────────────────────────────────────────────
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+% ─── Índice general ────────────────────────────────────────────────────────────
+{
+\singlespacing
+\tableofcontents
+}
+\clearpage
+
+% ─── Índice de tablas ──────────────────────────────────────────────────────────
+{
+\singlespacing
+\listoftables
+}
+\clearpage
+
+
+% ═══════════════════════════════════════════════════════════════════════════════
+%%  CAPÍTULO I: INTRODUCCIÓN
+% ═══════════════════════════════════════════════════════════════════════════════
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\chapter{INTRODUCCIÓN}
+
+El Instituto Interamericano de Cooperación para la Agricultura (IICA) ha documentado cómo las fluctuaciones en los precios de los productos agrícolas, sumadas al incremento sostenido de los costos de producción por hectárea, impactan directamente en la rentabilidad del agricultor y la seguridad alimentaria. En este contexto, variaciones aparentemente menores en los precios de mercado pueden desencadenar fuertes oscilaciones en los márgenes de ganancia de los pequeños productores, dejándolos en una situación de alta vulnerabilidad económica (IICA, 2020; FAO, 2022).
+
+
+\begin{table}[h!]
+\centering
+\caption{Producción agrícola seleccionada a precios de 2007 (2022--2023)}
+\begin{tabular}{lrr}
+\toprule
+\textbf{Producto} & \textbf{2022 (millones S/.)} & \textbf{2023 (millones S/.)} \\
+\midrule
+Papa               & 2726.616 & 2452.818 \\
+Arroz cáscara      & 2808.750 & 2750.007 \\
+Maíz amarillo duro & 824.848  & 873.966  \\
+\bottomrule
+\end{tabular}
+\caption*{Nota. Evolución del valor de la producción agropecuaria de papa, arroz y maíz amarillo duro en el Perú (2022--2023).}
+\end{table}
+
+
+De manera complementaria, evaluaciones recientes sobre el impacto del cambio climático en la agricultura peruana advierten que la producción de cultivos transitorios disminuirá bajo escenarios proyectados de estrés térmico e hídrico. Ante este panorama de rendimientos decrecientes, cualquier caída adicional en los precios de venta resulta crítica para la viabilidad económica de la agricultura familiar (Ministerio del Ambiente [MINAM], 2021; Lazo \& Quispe, 2023).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{PRODUCCION CULTIVOS TRANSITORIOS.png}
+    \caption*{\textbf{Figura 1}}
+    \caption*{\textit{Proyección de la producción de cultivos transitorios en el Perú ante escenarios de estrés térmico e hídrico.}}
+    \label{fig:cultivos-transitorios}
+\end{figure}
+
+La evidencia reciente sobre el rendimiento agrícola en el país demuestra que cultivos fundamentales como la papa y el maíz son particularmente sensibles a las anomalías de temperatura y precipitación. Estos efectos son marcadamente heterogéneos según el piso altitudinal, siendo la región Quechua una de las más expuestas a estos choques climáticos (Cárdenas et al., 2022). En consecuencia, los productores enfrentan una doble incertidumbre: la productiva (asociada al clima) y la comercial (asociada a los precios). Esto subraya la urgencia de implementar herramientas predictivas que permitan anticipar el comportamiento del mercado previo a la toma de decisiones de siembra.
+
+\begin{table}[h]
+\centering
+\caption{Anomalías del Altiplano por mes (ago-22 a feb-23)}
+\vspace{6pt}
+\begin{tabular}{lcccccccc}
+\toprule
+\textbf{Altiplano} & \textbf{ago-22} & \textbf{sep-22} & \textbf{oct-22} & \textbf{nov-22} & \textbf{dic-22} & \textbf{ene-23} & \textbf{feb-23} & \textbf{Promedio} \\
+\midrule
+Altiplano norte    & -46 & -60 & -76 & -96 & -33 & -52 & -6.6  & -53 \\
+Altiplano central  & -83 & -93 & -86 & -93 & -30 & -39 & -21.2 & -64 \\
+Altiplano sur      & -91 & -49 & -71 & -80 & -28 & -31 & -8.4  & -51 \\
+\midrule
+\textit{Promedio \%} & -74 & -67 & -78 & -90 & -30 & -41 & -12   & -56 \\
+\bottomrule
+\end{tabular}
+\caption*{Nota. Déficit hídrico porcentual registrado en las subregiones del Altiplano peruano durante la campaña agrícola 2022--2023 (MINAM, 2021).}
+\end{table}
+
+Los lineamientos metodológicos oficiales describen un esquema de recolección basado en encuestadores especializados y muestreo dirigido en mercados mayoristas y minoristas, con controles de consistencia mediante la comparación de tendencias recientes. Esto garantiza series de tiempo con calidad adecuada para su análisis econométrico (MIDAGRI, s.f.-b). Además, MIDAGRI publica boletines mensuales que presentan la evolución de precios por región productora, mercados mayoristas y cotizaciones internacionales (MIDAGRI, 2026).
+
+Sin embargo, disponer de información estadística no equivale necesariamente a contar con herramientas útiles para la toma de decisiones. Un artículo académico de la Universidad ESAN analiza la elasticidad de la oferta y la demanda de productos agrícolas en el Perú y muestra que, cuando cosechas abundantes se combinan con una demanda inelástica ---como ocurre en el caso de la papa---, se produce una caída drástica de precios que puede llevar el precio en chacra a niveles que no cubren siquiera los costos de cosecha (ESAN, s.f.).
+
+Este mismo trabajo utiliza el modelo de la \enquote{tela de araña} para explicar que muchos agricultores reaccionan a los precios del año anterior, generando en la campaña siguiente sobreoferta, colapso de precios y posterior abandono del cultivo. De esta manera, se reproducen ciclos recurrentes de inestabilidad.
+
+Esta dinámica también ha sido documentada en estudios peruanos. En una tesis desarrollada en la Universidad La Salle se señala que la papa constituye el segundo alimento más importante en el Perú y se siembra principalmente en zonas altoandinas, donde se la considera un \enquote{termómetro de la pobreza} debido a la escasez de alternativas de cultivo. En ese contexto, la sobreproducción aparece como uno de los principales problemas del sector (Durand, 2022).
+
+\begin{table}[h]
+\centering
+\caption{Puno-Ciudad: Promedio de precios de mercado al mayor y consumidor, enero--junio 2023}
+\vspace{6pt}
+\begin{tabular}{llccc}
+\toprule
+\textbf{Categoría} & \textbf{Producto} & \textbf{U.M.} & \textbf{Mayor S/Kg} & \textbf{Consumidor S/Kg} \\
+\midrule
+\multirow{4}{*}{Industriales}
+ & Arroz extra                      & Kg   & 3.41  & 4.46  \\
+ & Azúcar blanca nacional (granel)  & Kg   & 3.21  & 4.11  \\
+ & Azúcar rubia nacional (granel)   & Kg   & 3.55  & 4.43  \\
+ & Leche evaporada (azul) 400 g     & Lata & 3.53  & 4.40  \\
+\midrule
+\multirow{6}{*}{Pecuario}
+ & Carne de pollo (eviscerado)      & Kg   & 9.38  & 12.40 \\
+ & Carne fresca de oveja            & Kg   & 16.20 & 20.56 \\
+ & Carne fresca de porcino          & Kg   & 14.09 & 16.52 \\
+ & Carne fresca de vacuno           & Kg   & 14.09 & 16.58 \\
+ & Leche fresca                     & Lt   & 1.77  & 2.70  \\
+ & Huevos rosados                   & Kg   & 6.17  & 8.55  \\
+\midrule
+\multirow{2}{*}{Legumbre}
+ & Haba verde serrana               & Kg   & 4.19  & 3.74  \\
+ & Camote morado                    & Kg   & 2.23  & 3.27  \\
+\midrule
+\multirow{2}{*}{Tubérculos}
+ & Papa negra andina                & Kg   & 4.72  & 5.94  \\
+ & Papa única                       & Kg   & 2.09  & 3.09  \\
+\midrule
+\multirow{7}{*}{Frutales}
+ & Papaya (selva)                   & Kg   & 3.84  & 4.91  \\
+ & Piña criolla (selva)             & Kg   & 3.60  & 4.61  \\
+ & Plátano seda (selva)             & Kg   & 2.88  & 3.52  \\
+ & Uva red globe                    & Kg   & 4.30  & 5.65  \\
+ & Mandarina satsuma                & Kg   & 4.15  & 5.38  \\
+ & Manzana delicia                  & Kg   & 5.41  & 6.54  \\
+ & Palta fuerte                     & Kg   & 7.71  & 8.65  \\
+\midrule
+Hortalizas
+ & Tomate marzano                   & Kg   & 2.45  & 3.47  \\
+\bottomrule
+\end{tabular}
+\vspace{4pt}
+\begin{minipage}{\linewidth}
+\small\textit{Fte.:} Mercados de la ciudad de Puno.
+\end{minipage}
+\end{table}
+
+
+Asimismo, estudios de series de tiempo para la producción de papa en el Perú, que emplean modelos ETS y ARIMA, muestran ciclos de crecimiento productivo asociados a periodos de sobreproducción, con posibles impactos sobre los precios cuando estos incrementos no van acompañados de una adecuada coordinación de mercado (Altiplano de Puno, 2025; Dialnet, s.f.). En conjunto, estos hallazgos evidencian que las variables agrícolas peruanas presentan comportamientos cíclicos y estacionales que deben ser considerados al momento de planificar la siembra.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\linewidth]{grafico de evolucion mensual de precios.png}
+\caption*{\textbf{Figura 2}}
+\caption*{\textit{Precio promedio pagado al productor de papa, cacao y maíz chala en el Perú (enero 2021 -- diciembre 2022).}}
+\label{fig:precios}
+\end{figure}
+
+Desde el punto de vista metodológico, la literatura también respalda el uso de modelos de series de tiempo para abordar este problema. El Instituto Nacional de Estadística e Informática (INEI) ha elaborado documentos metodológicos específicos sobre modelos ARIMA para el control de calidad de procesos estadísticos, adoptando la metodología Box--Jenkins como estándar para el análisis de series de tiempo oficiales en el Perú (INEI, s.f.).
+
+En la literatura econométrica local se han estimado modelos ARIMA para pronosticar el índice mensual de precios al consumidor de Lima Metropolitana, obteniéndose errores absolutos medios reducidos en series con fuerte estacionalidad mensual (Universidad Señor de Sipán, s.f.). Del mismo modo, una revista peruana de economía reporta predicciones de precios de exportación mediante modelos ARIMA, incorporando procedimientos de limpieza de datos, análisis de estacionariedad, verificación con la prueba de Ljung--Box y evaluación mediante métricas de error de pronóstico (Revista AyPate, 2024).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{uss_grafico_prediccion.png}
+    \caption*{\textbf{Figura 3}}
+    \caption*{\textit{Pronóstico del índice de precios al consumidor de Lima Metropolitana mediante modelo SARIMA.}}
+    \begin{minipage}{0.5\linewidth}
+      \small\textit{Nota.} Tomado de ``Modelo SARIMA para el pronóstico del índice de precios al consumidor de Lima Metropolitana'', por Universidad Señor de Sipán (s.f.), \textit{Revista Tzh}.
+    \end{minipage}
+    \label{fig:sarima-uss}
+\end{figure}
+
+En conjunto, estos antecedentes sustentan la pertinencia de emplear técnicas como ARIMA, SARIMA y enfoques complementarios para modelar precios agrícolas en el contexto peruano.
+
+Con base en esta evidencia, el problema de investigación puede formularse como la dificultad de los productores para tomar decisiones de siembra con apoyo en pronósticos accesibles, oportunos y metodológicamente sólidos. Aunque existen series históricas oficiales de precios y abundante evidencia de volatilidad, ciclos de sobreproducción y vulnerabilidad climática, esa información no suele transformarse en capacidades predictivas utilizables por el pequeño productor (MIDAGRI, s.f.-a; MIDAGRI, s.f.-b; BID, 2016; IICA, 2020). En la práctica, las decisiones continúan basándose en precios recientes, experiencia empírica e información de mercado fragmentaria, lo que incrementa el riesgo de repetir patrones de sobreoferta y pérdidas económicas (Durand, 2022; ESAN, s.f.).
+
+Las consecuencias de esta situación son relevantes tanto en el plano económico como en el social. La evidencia que presenta a la papa como \textquote{termómetro de la pobreza} en las zonas altoandinas, junto con la constatación de sobreproducción recurrente en este cultivo, indica que decisiones de siembra mal informadas se traducen en ingresos inestables o negativos, profundizando la vulnerabilidad de los hogares rurales (Durand, 2022; IICA, 2020). Del mismo modo, aunque el SIEA ofrece boletines diarios y mensuales de precios, estos se orientan principalmente a la difusión estadística y no a la traducción directa en decisiones de siembra; en consecuencia, el productor debe interpretar gráficos y tablas sin apoyo analítico o herramientas de pronóstico (MIDAGRI, s.f.-a; MIDAGRI, s.f.-b). A ello se suma que los estudios basados en ARIMA, SARIMA y ETS desarrollados en el contexto peruano suelen centrarse en variables agregadas o en usuarios institucionales, más que en necesidades concretas del productor a nivel de finca (Altiplano de Puno, 2025; INEI, s.f.).
+
+En este escenario, la propuesta de un sistema como \emph{AgroMarket Predictor} se justifica como un mecanismo para transformar datos oficiales y evidencia científica en pronósticos comprensibles y útiles para la toma de decisiones de siembra. Al utilizar precios históricos de productos como papa, arroz y maíz con frecuencia mensual o semanal como insumo principal para modelos de series de tiempo, el sistema puede contribuir a reducir la exposición a ciclos de sobreproducción, mejorar la interpretación de la información pública disponible y fortalecer la capacidad de adaptación frente a contextos de volatilidad de precios y cambio climático.
+
+En el sector agrícola peruano, una de las limitaciones más críticas para la optimización de la producción es la marcada dependencia en la experiencia empírica y la intuición del productor. Según Orihuela (2014), el dinamismo económico del sector es innegable; como se observa en la Figura~\ref{fig:vbp_agricola}, el Valor Bruto de la Producción (VBP) agrícola ha mantenido una relevancia constante en la economía nacional. Sin embargo, este crecimiento no ha sido impulsado por una planificación técnica sistemática, sino por un esfuerzo individual basado en el aprendizaje por ensayo y error. Esta situación es particularmente grave en las zonas rurales con mayores índices de pobreza, donde el acceso limitado a información técnica y mercados de asistencia técnica obliga al productor a basar su sustento en métodos tradicionales que no logran mitigar los riesgos del entorno.
+
+% Figura — formato APA 7 §7.22–7.28
+\apafigure{fig:vbp_agricola}{1}%
+  {Evolución del Valor Bruto de la Producción (VBP) de la actividad agrícola en el Perú (1994--2011).}%
+  {0.6\textwidth}{vbp_agricola.jpg}%
+  {El gráfico permite visualizar la importancia económica del sector agrícola. Esta relevancia contrasta con la vulnerabilidad del productor, quien, al carecer de herramientas predictivas, gestiona este valor económico bajo altos niveles de incertidumbre. Adaptado de Orihuela (2014).}
+
+Esta falta de sustento técnico se traduce en una toma de decisiones de siembra reactiva, basada primordialmente en las expectativas de precios o en los resultados obtenidos en la campaña anterior. Como se detalla en la sección de productividad del informe de referencia, no existe un patrón técnico definido en la evolución de los rendimientos; por el contrario, la productividad está intrínsecamente ligada a las fluctuaciones del mercado. La Figura~\ref{fig:variabilidad_precios_agricolas} evidencia esta inestabilidad, la cual se explica porque el agricultor incrementa o disminuye su esfuerzo y recursos basándose en la intuición de precios futuros. Esta \textquote{reactividad a precios coyunturales} fomenta decisiones impulsivas que suelen desencadenar ciclos de sobreproducción y escasez, exacerbando las ineficiencias en la cadena agrícola peruana al ignorar variables complejas como la demanda proyectada o las intervenciones estatales.
+
+% Figura — formato APA 7 §7.22–7.28
+\apafigure{fig:variabilidad_precios_agricolas}{2}%
+  {Variabilidad de la productividad agrícola y su relación con las expectativas de mercado.}%
+  {0.8\textwidth}{precios_agricolas.jpg}%
+  {Ilustra la ausencia de una tendencia técnica sostenida, corroborando lo expuesto en la sección 2.3 de la Referencia 1: la productividad depende del esfuerzo derivado de las expectativas de precios del productor y no de una planificación óptima. Adaptado de Orihuela (2014).}
+
+Además de la dependencia empírica, la agricultura peruana enfrenta una limitación estructural crítica: la falta de acceso a información oportuna y transparente sobre las dinámicas de mercado. Según la Conferencia de las Naciones Unidas sobre Comercio y Desarrollo [UNCTAD] (2015), la insuficiencia de datos fiables y en tiempo real constituye un problema de larga data que impide a los productores en países en desarrollo aprovechar plenamente los beneficios del comercio. Esta carencia de sistemas de monitoreo accesibles imposibilita que los agricultores anticipen tendencias de precios o identifiquen variaciones en la demanda, lo que perpetúa una vulnerabilidad constante en la planificación de la siembra. Al no contar con flujos informativos seguros, el productor se ve forzado a operar en un entorno de incertidumbre que limita su capacidad de respuesta ante la volatilidad de los productos básicos.
+
+% Figura — formato APA 7 §7.22–7.28
+\apafigure{fig:tic_rural_peru}{3}%
+  {Hogares con acceso a Internet, según área de residencia (2019--2022).}%
+  {0.8\textwidth}{tic_rural_peru.jpg}%
+  {El cuadro muestra la disparidad en la penetración de servicios digitales, donde el área rural apenas alcanza niveles de conectividad básicos en comparación con la urbana. Esta brecha tecnológica sustenta la limitación de acceso a información oportuna descrita por la UNCTAD (2015), imposibilitando que el productor reciba alertas de precios en tiempo real. Elaborado con datos del Informe Técnico N.°~04 (INEI, 2022).}
+
+Esta asimetría informativa afecta con mayor severidad a los productores en zonas remotas de la sierra y selva del Perú, donde la ausencia de canales de comunicación técnica genera un vacío que suele ser llenado por la especulación. Estudios de organismos internacionales como FAO et al. (2011) subrayan que la opacidad en los mercados y la falta de transparencia sobre las existencias físicas no solo generan ineficiencias logísticas, sino que también pueden desencadenar pánico y subidas innecesarias de precios. En consecuencia, la carencia de herramientas tecnológicas que democraticen el acceso a la información impide que el pequeño agricultor tome decisiones basadas en hechos, manteniéndolo en una posición de desventaja estratégica frente a los intermediarios y otros actores de la cadena de valor.
+
+La limitación fundamental de los modelos estadísticos tradicionales, como ARIMA, radica en su dependencia de la linealidad y la estacionariedad de los datos. Manogna et al. (2025) señalan que estos modelos asumen que las relaciones históricas se mantienen constantes, por lo que presentan dificultades para capturar las no linealidades y los cambios bruscos provocados por factores externos como el clima o las fluctuaciones del mercado. Como resultado, en entornos altamente volátiles como el sector agrícola, estos enfoques convencionales pierden información crítica durante el preprocesamiento y generan pronósticos subóptimos. En contraste, el estudio muestra que los modelos de \textit{deep learning}, específicamente GRU y LSTM, superan de manera significativa a los enfoques tradicionales en distintos productos agrícolas.
+
+La evidencia cuantitativa refuerza esta limitación estructural. En el caso de la cebolla, Manogna et al. (2025) reportan que el modelo GRU alcanzó un error cuadrático medio (RMSE) de 369.54, mientras que ARIMA elevó su error hasta 1564.62; de forma similar, para tomate, GRU registró un RMSE de 210.35 frente a 1298.60 de ARIMA. Esta brecha confirma que los métodos clásicos no procesan adecuadamente la complejidad estocástica, la no estacionariedad y las dependencias temporales de largo plazo presentes en los precios agrícolas actuales. En consecuencia, la adopción de enfoques basados en redes neuronales recurrentes no solo representa una mejora técnica, sino también una necesidad metodológica para construir sistemas de apoyo a la siembra con mayor precisión y utilidad práctica.
+
+\apafigure{fig:rmse_modelos}{4}%
+  {Modelos profundos vs. estadísticos tradicionales.}%
+  {0.8\textwidth}{rmse_modelos.jpg}%
+  {Basado en la Figura 6 de Manogna et al. (2025), se observa que el RMSE de ARIMA es drásticamente superior al de GRU y LSTM en productos volátiles como el tomate y la cebolla, evidenciando la incapacidad del método tradicional para ajustarse a la dinámica real del mercado.}
+
+\apafigure{fig:mape_modelos}{5}%
+  {Fiabilidad relativa del pronóstico en productos básicos agrícolas.}%
+  {0.8\textwidth}{mape_modelos.jpg}%
+  {Con base en la Figura 9 de Manogna et al. (2025), los modelos tradicionales presentan errores porcentuales absolutos medios considerablemente más altos que los modelos de \textit{deep learning}, lo que reduce su utilidad para la toma de decisiones estratégicas en mercados agrícolas volátiles.}
+
+% Figura — formato APA 7 §7.22–7.28
+\apafigure{fig:estacionariedad_adf_kpss}{6}%
+  {Diagnóstico de no estacionariedad en series de precios agrícolas.}%
+  {0.8\textwidth}{estacionariedad_adf_kpss.jpg}%
+  {A partir de la Tabla 2 de Manogna et al. (2025), esta figura resume los resultados de las pruebas ADF y KPSS y muestra que gran parte de las series analizadas no son estacionarias, condición que limita el desempeño de modelos estadísticos como ARIMA sin transformaciones que pueden eliminar información relevante.}
+
+\apafigure{fig:mae_modelos}{7}%
+  {Magnitud del error típico en el modelado de precios agrícolas.}%
+  {0.8\textwidth}{mae_modelos.jpg}%
+  {Derivado de la Figura 8 de Manogna et al. (2025), este gráfico muestra que los modelos tradicionales mantienen errores absolutos medios más elevados que GRU y LSTM, confirmando la ventaja de las redes neuronales recurrentes para capturar dependencias temporales complejas en series agrícolas.}
+
+En conclusión, la dependencia en el empirismo y la carencia de información oportuna limitan la planificación óptima y restan poder de negociación al productor frente a la cadena de valor. El agricultor peruano se encuentra atrapado en una gestión basada en la observación de eventos pasados y en señales de mercado incompletas, lo que lo deja desarmado ante dinámicas de precios volátiles.
+
+Esta vulnerabilidad se ve agravada por una limitación técnica crítica: la confianza en métodos estadísticos tradicionales (como ARIMA) que, al basarse en supuestos de linealidad y estacionariedad, resultan incapaces de procesar la complejidad estocástica de los mercados agrícolas. Como demuestra la evidencia empírica, estos modelos convencionales suelen presentar un Error Porcentual Absoluto Medio (MAPE) excesivamente alto alcanzando niveles cercanos al 90\% en productos de alta volatilidad, lo que invalida sus pronósticos para la toma de decisiones estratégicas.  
+
+Por tanto, existe un vacío crítico de herramientas tecnológicas que permitan transitar de una agricultura de expectativas hacia una agricultura de precisión. Se justifica la necesidad imperativa de implementar modelos de Deep Learning, específicamente arquitecturas como GRU y LSTM, las cuales han demostrado una superioridad significativa en la reducción de errores (RMSE y MAPE) al capturar dependencias temporales complejas y no lineales que los métodos tradicionales simplemente ignoran.
+
+
+En este contexto, y como respuesta a las limitaciones identificadas en los enfoques tradicionales de toma de decisiones agrícolas, se propone el desarrollo de un sistema de analítica predictiva denominado AgroMarket Predictor. Esta solución tiene como propósito estimar el comportamiento futuro de los precios agrícolas mediante el uso de modelos de series de tiempo, proporcionando a los productores una herramienta objetiva que complemente la toma de decisiones basada en la experiencia empírica.
+
+Desde una perspectiva técnica, el sistema se fundamenta en el procesamiento de datos históricos de precios de cultivos relevantes en el contexto peruano, tales como papa, arroz y maíz, recolectados con una frecuencia temporal mensual o semanal. Estos datos serán sometidos a un proceso de preparación que incluye limpieza, transformación y estructuración, con el fin de garantizar su calidad y adecuación para el análisis predictivo. Posteriormente, se llevará a cabo un análisis exploratorio de datos (EDA), orientado a identificar patrones fundamentales como tendencias, estacionalidad, ciclos productivos y valores atípicos, elementos clave para comprender la dinámica del mercado agrícola.
+
+El núcleo de la solución está constituido por la implementación de modelos de predicción basados en técnicas de series de tiempo, entre los cuales destacan ARIMA y Prophet. Estos modelos permitirán generar estimaciones de precios futuros, considerando tanto componentes estacionales como patrones históricos del comportamiento del mercado. Asimismo, se realizará una comparación de desempeño entre los modelos mediante métricas de evaluación como el error absoluto medio (MAE) y la raíz del error cuadrático medio (RMSE), con el objetivo de seleccionar el enfoque más adecuado para el contexto de aplicación.
+
+A partir de los resultados obtenidos, el sistema generará insights de negocio que faciliten la interpretación de la información por parte del usuario final. Entre estos se incluyen la identificación de tendencias esperadas de precios (alza, baja o estabilidad), el nivel de riesgo asociado a la variabilidad del mercado y la comparación entre diferentes cultivos. De esta manera, el sistema no solo proporcionará predicciones numéricas, sino también información comprensible que contribuya a mejorar la planificación de la siembra.
+
+En términos prácticos, la propuesta busca reducir la incertidumbre en la toma de decisiones agrícolas, permitiendo a los productores anticipar escenarios de mercado y evitar situaciones de sobreproducción o pérdida económica. En consecuencia, el sistema representa una alternativa tecnológica que integra datos históricos y modelos predictivos para transformar la información disponible en conocimiento accionable, contribuyendo al fortalecimiento de una agricultura más eficiente, informada y orientada a la toma de decisiones basada en datos.
+
+En el ámbito nacional, se destaca el trabajo desarrollado por Huitrón-Tierrablanca (2021), titulado \textit{Predicción de precios de productos agrícolas mediante redes neuronales recurrentes}. Esta investigación, realizada en la Universidad Autónoma de Querétaro, tuvo como propósito diseñar una metodología de pronóstico de precios para 23 productos agrícolas mexicanos, utilizando datos históricos del Sistema Nacional de Información e Integración de Mercados (SNIIM). El estudio parte de la premisa de que los modelos estadísticos tradicionales presentan limitaciones para capturar la naturaleza no lineal y la alta volatilidad inherente a los mercados de perecederos.
+
+En cuanto a la metodología empleada, el autor implementó una Red Neuronal Recurrente (RNN) de tipo Elman, desarrollada en el lenguaje de programación Python mediante las bibliotecas especializadas TensorFlow y Keras. El procesamiento de los datos incluyó una etapa crítica de remuestreo para convertir precios diarios en promedios semanales, así como la aplicación de una técnica de tipificación para normalizar las escalas de precios. La arquitectura del modelo fue entrenada utilizando ventanas de tiempo de ocho semanas para determinar los valores futuros, empleando la métrica de raíz del error cuadrático medio (RMSE) para la validación de los resultados.
+
+Los resultados obtenidos demostraron la superioridad del enfoque de aprendizaje profundo sobre los métodos econométricos convencionales. Huitrón-Tierrablanca (2021) concluyó que, en el 73.9\% de los productos analizados, el modelo de red neuronal superó en precisión al modelo estadístico estacional SARIMA. Específicamente, para productos con comportamiento errático como el plátano dominico y la fresa, que el modelo SARIMA no pudo procesar por ser considerados ruido blanco, la RNN logró identificar patrones predictivos viables. Este antecedente resulta fundamental para la presente tesis, ya que valida la eficacia de las redes recurrentes como una herramienta superior para la planeación comercial y la reducción de mermas en el sector agropecuario. El desempeño comparativo de ambos modelos se detalla en la Figura~\ref{fig:huitron_rmse}, donde se aprecia la reducción del error predictivo (RMSE) en el modelo RNN frente a la propuesta de SARIMA para los productos con mayor fluctuación de mercado.
+
+\apafigure{fig:huitron_rmse}{4}%
+  {Comparación del RMSE entre SARIMA y RNN en productos agrícolas seleccionados.}%
+  {0.8\textwidth}{huitron_fig27.jpg}%
+  {Adaptado de la Figura 27 de Huitrón-Tierrablanca (2021), el gráfico muestra que la RNN reduce el error predictivo frente a SARIMA en la mayoría de los productos evaluados, especialmente en aquellos con mayor volatilidad de mercado.}
+
+En el contexto internacional, Kumar y Sinha (2022) presentaron un estudio titulado \textit{Farm-forecast: AI driven crop and vegetables price prediction}, orientado a mitigar la incertidumbre del mercado mediante la implementación de modelos híbridos de aprendizaje profundo. La investigación subraya que los métodos estadísticos tradicionales, como ARIMA y las regresiones simples, fallan al intentar capturar las relaciones no lineales y las dependencias de largo plazo presentes en los datos agrícolas multidimensionales.
+
+La metodología propuesta consistió en el desarrollo de una arquitectura híbrida que combina Redes Neuronales Convolucionales (CNN) y redes de Memoria de Largo Corto Plazo (LSTM). En esta estructura, la capa CNN se encarga de la extracción de características locales y patrones espaciales en secuencias cortas, mientras que la capa LSTM procesa las dependencias secuenciales para identificar tendencias a largo plazo. Para el entrenamiento, se utilizó un conjunto de datos de 21 años proveniente del portal gubernamental \textit{data.gov.in}, el cual fue sometido a procesos de limpieza, codificación de variables categóricas mediante \textit{label encoding} y normalización de precios con la técnica \textit{MinMaxScaler} para asegurar una convergencia eficiente del modelo.
+
+Los resultados de la evaluación experimental indicaron un alto nivel de precisión en el pronóstico de precios. Kumar y Sinha (2022) reportaron un coeficiente de determinación ($R^2$) de 0.868, lo que implica que la arquitectura es capaz de explicar el 86.8\% de la varianza en el precio modal de los productos. Asimismo, se informaron valores de error mínimos, con un error cuadrático medio (MSE) de 0.000268 y una raíz del error cuadrático medio (RMSE) de 0.016. Los autores concluyen que la integración de múltiples variables, como precios históricos y demanda del mercado, permite que el sistema sea escalable y flexible para diferentes regiones, proporcionando una herramienta de decisión robusta para agricultores y formuladores de políticas.
+
+A pesar de los avances en el uso de modelos estadísticos y técnicas de aprendizaje automático para la predicción de precios agrícolas, existe un vacío importante en la literatura y en las aplicaciones prácticas orientadas al contexto peruano. Los estudios revisados se han centrado principalmente en la comparación de modelos predictivos, como ARIMA, SARIMA y redes neuronales recurrentes, demostrando mejoras en precisión; sin embargo, estos enfoques suelen desarrollarse en entornos experimentales o académicos, sin una integración directa en herramientas accesibles para los productores agrícolas.
+
+Asimismo, muchas investigaciones utilizan conjuntos de datos internacionales o contextos distintos al peruano, lo que limita la aplicabilidad de sus resultados debido a diferencias en dinámicas de mercado, condiciones climáticas y estructura productiva. En el caso peruano, si bien existen fuentes oficiales como el SIEA-MIDAGRI, estas no se han explotado suficientemente para el desarrollo de sistemas predictivos aplicados que traduzcan los datos en información útil para la toma de decisiones de siembra a nivel de productor.
+
+Por otro lado, los trabajos existentes se enfocan principalmente en la precisión del modelo, dejando de lado la generación de valor práctico, como la interpretación de resultados, la identificación de riesgos de mercado o la comparación entre cultivos para apoyar decisiones estratégicas. Tampoco se evidencia una integración clara entre modelos predictivos y sistemas de apoyo a decisiones que consideren la usabilidad, accesibilidad y comprensión por parte de usuarios no especializados.
+
+En este sentido, se identifica un vacío en el desarrollo de soluciones que no solo implementen modelos predictivos avanzados, sino que además integren datos locales, técnicas de análisis y visualización de información en una plataforma orientada al usuario final. La presente investigación busca cubrir este vacío mediante el diseño de un sistema que transforme datos históricos en conocimiento accionable, facilitando una toma de decisiones más informada y reduciendo la incertidumbre en la planificación agrícola.
+
+
+% ═══════════════════════════════════════════════════════════════════════════════
+%%  CAPÍTULO II: MÉTODO
+% ═══════════════════════════════════════════════════════════════════════════════
+
+\chapter{MÉTODO}
+
+%% ──────────────────────────────────────────────────────────
+\section{Tipo de investigación}
+
+\subsection{De acuerdo a la orientación o finalidad}
+
+Según su orientación o finalidad, la presente investigación es de tipo \textbf{aplicada}, dado que se utilizan los conocimientos consolidados sobre ciencia de datos, modelos de series de tiempo y técnicas de aprendizaje automático para resolver un problema real y concreto: la ausencia de herramientas tecnológicas que permitan a los productores agrícolas peruanos anticipar el comportamiento de los precios de papa, arroz y maíz previo a la toma de decisiones de siembra. El sistema AgroMarket Predictor constituye la solución tecnológica derivada de dicho conocimiento, orientada a generar un impacto directo en la planificación agrícola nacional y en la reducción de los ciclos de sobreproducción que afectan la rentabilidad del pequeño agricultor (IICA, 2020; Durand, 2022).
+
+\subsection{De acuerdo a la técnica de contrastación}
+
+Según la técnica de contrastación, la investigación es de naturaleza \textbf{explicativa}, pues pretende analizar y demostrar en qué medida el desarrollo e implementación del sistema AgroMarket Predictor, basado en modelos de series de tiempo (ARIMA y Prophet), permite estimar el comportamiento futuro de los precios agrícolas con una precisión superior a la ofrecida por los enfoques estadísticos convencionales. La relación causal entre la variable independiente (el sistema AgroMarket Predictor) y la variable dependiente (la precisión en la estimación de precios) se cuantifica mediante las métricas Error Absoluto Medio (MAE) y Raíz del Error Cuadrático Medio (RMSE).
+
+%% ──────────────────────────────────────────────────────────
+\section{Nivel de investigación}
+
+La investigación se realiza a nivel \textbf{experimental}, puesto que busca medir y cuantificar el efecto de la variable independiente —el sistema AgroMarket Predictor— sobre la variable dependiente —la precisión en la estimación de precios agrícolas—. La manipulación experimental consiste en la aplicación sistemática de los modelos ARIMA y Prophet sobre las mismas series históricas de precios, posibilitando la comparación controlada de su desempeño predictivo sobre un conjunto de prueba reservado para la evaluación.
+
+De acuerdo con la proyección temporal del análisis, el estudio es de corte \textbf{transversal}, pues emplea las series históricas de precios disponibles en el portal SIEA-MIDAGRI hasta el año 2026, evaluando el desempeño de los modelos en un periodo definido y acotado. La comparación entre el modelo de referencia (ARIMA) y el modelo propuesto (Prophet) se efectúa sobre el mismo conjunto de prueba, garantizando la validez interna del contraste estadístico.
+
+%% ──────────────────────────────────────────────────────────
+\section{Diseño de investigación}
+
+La investigación presenta un diseño \textbf{preexperimental con evaluación pretest-postest de un solo grupo}, aplicado sobre las series de precios agrícolas seleccionadas. Se miden los indicadores de precisión del pronóstico antes y después de la implementación del sistema AgroMarket Predictor, siguiendo el esquema clásico:
+
+\begin{center}
+  $G:\quad O_1 \quad\longrightarrow\quad X \quad\longrightarrow\quad O_2$
+\end{center}
+
+\begin{itemize}
+  \item \textbf{Pretest ($O_1$):} Se evalúa la capacidad predictiva del modelo estadístico de referencia ARIMA sobre las series de precios mensuales de papa, arroz cáscara y maíz amarillo duro, calculando el MAE y el RMSE como línea de base del error de pronóstico.
+
+  \item \textbf{Variable experimental ($X$):} Implementación del sistema AgroMarket Predictor con el modelo Prophet, entrenado con las series históricas de precios del SIEA-MIDAGRI, incluyendo la configuración de componentes de tendencia, estacionalidad múltiple y efectos de campañas agrícolas.
+
+  \item \textbf{Postest ($O_2$):} Se calculan el MAE y el RMSE del sistema AgroMarket Predictor sobre el mismo conjunto de prueba, y los resultados se contrastan estadísticamente con los obtenidos en el pretest para validar la hipótesis de superioridad predictiva del sistema propuesto.
+\end{itemize}
+
+%% ──────────────────────────────────────────────────────────
+\section{Población, muestra y muestreo}
+
+\subsection{Población}
+
+El escenario de la investigación es el sector agrícola peruano, tomando como unidad de análisis los registros históricos de precios al por mayor de cultivos agrícolas reportados por el Sistema de Información de Estadística Agraria (SIEA-MIDAGRI). La población de estudio se define en función de los indicadores estratégicos vinculados a los objetivos específicos e hipótesis formuladas.
+
+\vspace{0.5cm}
+
+\begin{table}[h!]
+\centering
+\caption{Análisis de datos por indicador de investigación}
+\label{tab:analisis_datos}
+\singlespacing
+\small
+\begin{tabular}{|>{\centering\arraybackslash}p{1cm}
+                |>{\raggedright\arraybackslash}p{4.5cm}
+                |>{\raggedright\arraybackslash}p{7.5cm}|}
+\hline
+\textbf{Nro.} & \textbf{Indicador} & \textbf{Objetivo asociado} \\
+\hline
+1 & Error Absoluto Medio (MAE) &
+  Comparar el desempeño de los modelos ARIMA y Prophet, y verificar que el sistema
+  AgroMarket Predictor supera en precisión al modelo de referencia estadístico \\
+\hline
+2 & Raíz del Error Cuadrático Medio (RMSE) &
+  Evaluar la magnitud global del error de pronóstico en las series de precios de
+  papa, arroz y maíz para cada modelo implementado \\
+\hline
+3 & Nivel de utilidad percibida del sistema &
+  Validar la utilidad del sistema AgroMarket Predictor como herramienta de apoyo
+  a la toma de decisiones de siembra en productores agrícolas del Perú \\
+\hline
+\end{tabular}
+\end{table}
+
+\vspace{0.3cm}
+
+\textbf{Indicador 1: Error Absoluto Medio (MAE)}
+
+La población está constituida por los registros históricos de precios mensuales al por mayor de papa, arroz cáscara y maíz amarillo duro en mercados mayoristas nacionales, reportados por el SIEA-MIDAGRI. Considerando un horizonte histórico de 10 años con frecuencia mensual para los tres cultivos seleccionados, la población total asciende a:
+
+\begin{equation}
+  N = 10 \;\text{años} \times 12 \;\text{meses} \times 3 \;\text{cultivos} = 360 \;\text{registros de precios}
+\end{equation}
+
+\textbf{Indicador 2: Raíz del Error Cuadrático Medio (RMSE)}
+
+La población es idéntica a la del Indicador 1, dado que el RMSE se calcula sobre el mismo conjunto de datos de entrenamiento y prueba de las series de precios agrícolas.
+
+\begin{equation}
+  N = 360 \;\text{registros de precios}
+\end{equation}
+
+\textbf{Indicador 3: Nivel de utilidad percibida del sistema}
+
+La población comprende a los productores agrícolas activos de papa, arroz y maíz en las principales regiones productoras del Perú: La Libertad, Cajamarca, Ancash, Junín y Lima. De acuerdo con las estadísticas del SIEA-MIDAGRI (2026), se estima que el número de productores activos para los tres cultivos seleccionados en dichas regiones asciende aproximadamente a:
+
+\begin{equation}
+  N = 1\,200 \;\text{productores agrícolas registrados}
+\end{equation}
+
+\subsection{Muestra}
+
+\textbf{Indicadores 1 y 2 (MAE y RMSE):} Dado que la totalidad de los registros históricos de precios es accesible a través del portal SIEA-MIDAGRI, se trabajará con el universo completo de datos disponibles. Siguiendo la convención estándar en modelado de series de tiempo, el 80\,\% de los registros se destinará al conjunto de entrenamiento y el 20\,\% restante al conjunto de prueba, sobre el cual se calcularán las métricas de evaluación:
+
+\begin{itemize}
+  \item Conjunto de entrenamiento: $n_{\text{train}} = 288$ registros (80\,\%).
+  \item Conjunto de prueba: $n_{\text{test}} = 72$ registros (20\,\%).
+\end{itemize}
+
+\textbf{Indicador 3 (Nivel de utilidad percibida):} Dado que la población es finita y conocida ($N = 1\,200$), se emplea la fórmula para poblaciones finitas con nivel de confianza del 95\,\% ($Z = 1{,}96$), margen de error del 5\,\% ($E = 0{,}05$), y proporciones $p = q = 0{,}5$:
+
+\begin{equation}
+  n = \frac{Z^2 \cdot p \cdot q \cdot N}{E^2 \cdot (N-1) + Z^2 \cdot p \cdot q}
+    = \frac{(1{,}96)^2 \times 0{,}5 \times 0{,}5 \times 1200}
+           {(0{,}05)^2 \times 1199 + (1{,}96)^2 \times 0{,}5 \times 0{,}5}
+    \approx 291 \;\text{productores}
+\end{equation}
+
+El muestreo aplicado será de tipo \textbf{no probabilístico por conveniencia}, seleccionando productores agrícolas que cuenten con acceso a telefonía móvil o internet en los mercados mayoristas de las regiones consideradas, condición necesaria para la interacción con el sistema AgroMarket Predictor (INEI, 2022).
+
+%% ──────────────────────────────────────────────────────────
+\section{Variables}
+
+\begin{itemize}
+  \item \textbf{Variable independiente:} Sistema AgroMarket Predictor, implementado mediante modelos de series de tiempo (ARIMA y Prophet) entrenados con datos históricos oficiales del SIEA-MIDAGRI para la estimación de precios de papa, arroz y maíz.
+
+  \item \textbf{Variable dependiente:} Precisión en la estimación de precios agrícolas y nivel de apoyo a la toma de decisiones de siembra, operacionalizada a través del Error Absoluto Medio (MAE), la Raíz del Error Cuadrático Medio (RMSE) y el nivel de utilidad percibida por los productores.
+\end{itemize}
+
+%% ──────────────────────────────────────────────────────────
+\section{Técnicas e instrumentos, validación y confiabilidad}
+
+\vspace{0.5cm}
+
+\begin{table}[h!]
+\centering
+\caption{Técnicas e instrumentos de recolección de datos}
+\label{tab:tecnicas_instrumentos}
+\singlespacing
+\small
+\begin{tabular}{|>{\centering\arraybackslash}p{0.8cm}
+                |>{\raggedright\arraybackslash}p{3cm}
+                |>{\raggedright\arraybackslash}p{2.8cm}
+                |>{\raggedright\arraybackslash}p{3.2cm}
+                |>{\raggedright\arraybackslash}p{3cm}|}
+\hline
+\textbf{Nro.} & \textbf{Indicador} & \textbf{Técnica} & \textbf{Instrumento} & \textbf{Fuente} \\
+\hline
+1 & Error Absoluto Medio (MAE) &
+  Análisis documental sistematizado &
+  Script Python (\texttt{pandas}, \texttt{statsmodels}, \texttt{prophet}) / Logs del sistema &
+  Portal SIEA-MIDAGRI \\
+\hline
+2 & Raíz del Error Cuadrático Medio (RMSE) &
+  Análisis documental sistematizado &
+  Script Python (\texttt{pandas}, \texttt{statsmodels}, \texttt{prophet}) / Logs del sistema &
+  Portal SIEA-MIDAGRI \\
+\hline
+3 & Nivel de utilidad percibida del sistema &
+  Encuesta &
+  Cuestionario de utilidad percibida (escala Likert de 5 puntos) &
+  Productores agrícolas de papa, arroz y maíz \\
+\hline
+\end{tabular}
+\end{table}
+
+\vspace{0.3cm}
+
+\textbf{Validación y confiabilidad:} Las series de precios recopiladas del SIEA-MIDAGRI serán validadas mediante contraste con los boletines mensuales oficiales del MIDAGRI y verificación de consistencia estadística, que incluye la identificación de valores atípicos mediante el método del rango intercuartílico (IQR) y el análisis de brechas temporales. El cuestionario de utilidad percibida será sometido a juicio de expertos (mínimo 3 docentes o profesionales especialistas en ciencia de datos e ingeniería de sistemas). Para evaluar la confiabilidad del instrumento se aplicará una prueba piloto con 30 productores y se calculará el Alfa de Cronbach, aceptándose valores iguales o superiores a 0{,}70 como indicativos de consistencia interna adecuada para la escala Likert empleada.
+
+%% ──────────────────────────────────────────────────────────
+\section*{Método de análisis de datos}
+\addcontentsline{toc}{section}{Método de análisis de datos}
+
+Se aplicarán pruebas de normalidad de \textbf{Kolmogórov-Smirnov} sobre los errores de predicción obtenidos en el conjunto de prueba (al ser las muestras mayores a 50 registros), con el objetivo de determinar el tipo de contraste estadístico apropiado para la validación de la hipótesis.
+
+Si los errores de predicción siguen una distribución normal, se empleará la prueba paramétrica \textbf{T de Student para muestras relacionadas}, comparando los errores del modelo ARIMA con los del sistema AgroMarket Predictor sobre el mismo conjunto de prueba. En caso contrario, se aplicará la prueba no paramétrica de \textbf{Wilcoxon}.
+
+\begin{itemize}
+  \item Para los indicadores \textit{MAE} y \textit{RMSE} (cuyo objetivo es la reducción del error), se aplicará una prueba de \textbf{cola derecha}, esperando que los errores del modelo ARIMA sean significativamente mayores que los del sistema AgroMarket Predictor ($H_a$: $\text{MAE}_{\text{ARIMA}} > \text{MAE}_{\text{AgroMarket}}$).
+
+  \item Para el indicador de \textit{nivel de utilidad percibida} (cuyo objetivo es el incremento respecto a la percepción inicial sin herramienta predictiva), se empleará una prueba de \textbf{cola izquierda}, esperando que la puntuación previa sea significativamente menor a la posterior ($H_a$: $\mu_{\text{antes}} < \mu_{\text{después}}$).
+\end{itemize}
+
+El procesamiento estadístico se realizará en Python, utilizando las bibliotecas \texttt{scipy.stats}, \texttt{statsmodels} y \texttt{scikit-learn}. Los resultados serán reportados indicando el estadístico de prueba, el valor $p$ y la decisión sobre la hipótesis nula, con un nivel de significancia de $\alpha = 0{,}05$.
+
+%% ──────────────────────────────────────────────────────────
+\section{Procedimiento}
+
+Dado el carácter de analítica predictiva del proyecto, el procedimiento metodológico sigue el marco \textbf{CRISP-DM} (\textit{Cross Industry Standard Process for Data Mining}), seleccionado como metodología principal por su orientación explícita a proyectos de ciencia de datos y su estructura cíclica e iterativa, que permite refinar los modelos predictivos en función de los resultados obtenidos en cada ciclo de evaluación (Chapman et al., 2000). Las seis fases del proceso se describen a continuación:
+
+\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2cm]
+
+  \item \textbf{Comprensión del negocio.}
+  Identificación de las necesidades del productor agrícola peruano mediante revisión de literatura especializada (IICA, 2020; Durand, 2022; Manogna et al., 2025) y consulta de boletines oficiales del SIEA-MIDAGRI. Se delimitan los cultivos objetivo (papa, arroz y maíz), se definen los indicadores de éxito del sistema —MAE y RMSE inferiores a los de ARIMA— y se establece el horizonte de pronóstico de corto a mediano plazo requerido por el usuario final.
+
+  \item \textbf{Comprensión de los datos.}
+  Extracción de las series históricas de precios al por mayor de papa, arroz cáscara y maíz amarillo duro del portal SIEA-MIDAGRI, con frecuencia mensual y cobertura temporal de al menos 10 años. Se realiza una exploración inicial mediante estadísticos descriptivos (media, mediana, desviación estándar, asimetría) y visualizaciones temporales (gráficos de línea, diagramas de caja) para identificar tendencias, estacionalidad, valores atípicos y periodos con datos faltantes. Se aplican asimismo las pruebas de estacionariedad ADF (\textit{Augmented Dickey-Fuller}) y KPSS para determinar las propiedades estadísticas de cada serie.
+
+  \item \textbf{Preparación de los datos.}
+  Limpieza y estructuración de las series mediante: (a) imputación de valores faltantes por interpolación lineal; (b) detección y tratamiento de valores atípicos con el método del rango intercuartílico (IQR); (c) descomposición STL (\textit{Seasonal and Trend decomposition using Loess}) para separar las componentes de tendencia, estacionalidad y residuo; y (d) generación de variables derivadas como rezagos temporales (\textit{lags}). Los datos se dividen en un conjunto de entrenamiento (80\,\%) y un conjunto de prueba (20\,\%), respetando el orden cronológico de las observaciones.
+
+  \item \textbf{Modelado.}
+  Implementación y ajuste de dos familias de modelos predictivos en Python para cada cultivo:
+
+  \begin{itemize}
+    \item \textbf{ARIMA / SARIMA:} Selección automática de los parámetros óptimos $(p, d, q)$ y $(P, D, Q, s)$ mediante el criterio de información de Akaike (AIC) con la función \texttt{auto\_arima} de la biblioteca \texttt{pmdarima}. La transformación de diferenciación necesaria se determina con base en los resultados de las pruebas ADF y KPSS realizadas en la fase anterior.
+
+    \item \textbf{Prophet:} Configuración del modelo con componentes de tendencia lineal o logística, estacionalidad anual (Fourier), estacionalidad mensual y ventanas de puntos de cambio (\textit{changepoints}) alineadas con los periodos de campaña agrícola. El modelo se entrena con la biblioteca \texttt{prophet} de Meta y se aprovecha su robustez intrínseca ante valores atípicos y datos faltantes.
+  \end{itemize}
+
+  Ambos modelos son entrenados de forma independiente para cada cultivo, garantizando que las particularidades estacionales y de volatilidad propias de la papa, el arroz y el maíz sean capturadas de manera adecuada.
+
+  \item \textbf{Evaluación.}
+  Cálculo del MAE, RMSE y MAPE sobre el conjunto de prueba para cada modelo y cada cultivo. Se aplica el contraste estadístico correspondiente (T de Student o Wilcoxon, según el resultado de la prueba de normalidad) para verificar si las diferencias en el error de pronóstico entre ARIMA y el sistema AgroMarket Predictor son estadísticamente significativas con $\alpha = 0{,}05$. El modelo con mejor desempeño por cultivo es seleccionado para su integración definitiva en el sistema.
+
+  \item \textbf{Despliegue.}
+  Generación de los \textit{insights} de negocio comprensibles para el productor final: (a) tendencia esperada de precios (alza / baja / estabilidad) para el próximo ciclo de siembra; (b) nivel de riesgo asociado a la variabilidad del mercado; y (c) comparación entre los tres cultivos para orientar la decisión de siembra. Los resultados se presentan en formato accesible mediante tablas y gráficos interpretativos. La utilidad del sistema AgroMarket Predictor es validada con los 291 productores seleccionados en la muestra, mediante la aplicación del cuestionario de utilidad percibida (Indicador 3).
+
+\end{enumerate}
+
+%% ============================================================
+%%  REFERENCIAS BIBLIOGRÁFICAS
+%% ============================================================
+\clearpage
+\renewcommand{\bibname}{Referencias Bibliográficas}
+\begin{singlespacing}
+
+Altiplano de Puno. (2025). \textit{Análisis y predicción del precio de la papa: estudio ARIMA y GAM}. Universidad Nacional del Altiplano.
+
+\bigskip\noindent
+Banco Interamericano de Desarrollo. (2016). \textit{La economía del cambio climático en el Perú: Impactos en el sector agricultura}.
+
+\bigskip\noindent
+Chapman, P., Clinton, J., Kerber, R., Khabaza, T., Reinartz, T., Shearer, C., y Wirth, R. (2000).
+\textit{CRISP-DM 1.0: Step-by-step data mining guide}. SPSS Inc.
+
+\bigskip\noindent
+Consorcio de Investigación Económica y Social. (s.f.). \textit{Impacto económico del cambio climático en la agricultura peruana}.
+
+\bigskip\noindent
+Durand, L. G. (2022). \textit{Calcular y comparar el comportamiento futuro de la papa,
+entre los pronósticos de los modelos ARIMA y GAM en el Perú, en el periodo
+2011–2022} [Tesis de licenciatura, Universidad La Salle]. Repositorio Institucional ULS.
+
+\bigskip\noindent
+ESAN. (s.f.). \textit{Elasticidad de la demanda y oferta en productos agrícolas del Perú}.
+
+\bigskip\noindent
+Food and Agriculture Organization of the United Nations, International Fund for Agricultural Development, International Monetary Fund, Organisation for Economic Co-operation and Development, United Nations Conference on Trade and Development, United Nations World Food Programme, the World Bank, World Trade Organization, International Food Policy Research Institute, y UN HLTF. (2011). \textit{Price volatility in food and agricultural markets: Policy responses}. FAO.
+
+\bigskip\noindent
+Guzmán Pacheco, E. (2015). \textit{Impacto económico del cambio climático en la agricultura en la región Cusco, Perú: una aproximación a través del modelo Ricardiano}. Consorcio de Investigación Económica y Social.
+
+\bigskip\noindent
+Huitrón-Tierrablanca, P. (2021). \textit{Predicción de precios de productos agrícolas mediante redes neuronales recurrentes} [Tesis de maestría, Universidad Autónoma de Querétaro]. Repositorio Institucional UAQ. \url{https://ri-ng.uaq.mx/bitstream/123456789/8369/1/RI007477.pdf}
+
+\bigskip\noindent
+Instituto Interamericano de Cooperación para la Agricultura. (2020).
+\textit{Volatilidad de precios en los mercados agrícolas (2000–2010)}. IICA.
+\url{https://repositorio.iica.int/handle/11324/XXXXX}
+
+\bigskip\noindent
+Instituto Nacional de Estadística e Informática. (s.f.). \textit{Modelos ARIMA}. INEI.
+
+\bigskip\noindent
+Instituto Nacional de Estadística e Informática. (2022).
+\textit{Perú: tecnologías de información y comunicación en los hogares, 2011–2021.
+Informe Técnico N.\textsuperscript{o} 04}. INEI.
+\url{https://www.inei.gob.pe/media/MenuRecursivo/boletines/04-informe-tecnico-tic.pdf}
+
+\bigskip\noindent
+Kumar, S., \& Sinha, U. (2022). Farm-forecast: AI driven crop and vegetables price prediction. \textit{IOSR Journal of Computer Engineering, 22}(6), 1--10. \url{https://www.iosrjournals.org/manuscript_paper/677008.pdf}
+
+\bigskip\noindent
+Manogna, R. L., Dharmaji, V., \& Sarang, S. (2025).
+Enhancing agricultural commodity price forecasting with deep learning.
+\textit{Scientific Reports}, \textit{15}, Article 20903.
+\url{https://doi.org/10.1038/s41598-025-05103-z}
+
+\bigskip\noindent
+Ministerio de Desarrollo Agrario y Riego. (s.f.-a). \textit{Boletines diarios de abastecimiento y precios de alimentos en mercados mayoristas}. SIEA--MIDAGRI.
+
+\bigskip\noindent
+Ministerio de Desarrollo Agrario y Riego. (s.f.-b). \textit{Lineamientos metodológicos de la estadística de comercialización interna de productos agrícolas y agroindustriales}. SIEA--MIDAGRI.
+
+\bigskip\noindent
+Ministerio de Desarrollo Agrario y Riego. (2026).
+\textit{Boletín mensual de precios agrícolas: enero 2026}. SIEA-MIDAGRI.
+\url{https://siea.midagri.gob.pe/portal/}
+
+\bigskip\noindent
+Orihuela, J. C. (2014). \textit{Efecto económico del cambio climático sobre los cultivos permanentes de la agricultura peruana: período 2011--2050} [Estudio]. Universidad Nacional Agraria La Molina. Consorcio de Investigación Económica y Social (CIES). Financiado por el Fondo de Estudios y Consultorías Belga Peruano (FECBP).
+
+\bigskip\noindent
+Revista AyPate. (2024). Predicción de precios de exportación del aceite y la harina de pescado mediante modelos de series de tiempo ARIMA. \textit{AyPate}, \textit{3}(1), 45--62.
+
+\bigskip\noindent
+United Nations Conference on Trade and Development. (2015). \textit{Policy measures to mitigate the impact of commodity price volatility on food security and to enhance access to market information, financial resources and markets for commodity-dependent developing countries} (TD/B/C.I/MEM.2/30). United Nations.
+
+\bigskip\noindent
+Universidad Señor de Sipán. (s.f.). Modelo SARIMA para el pronóstico del índice de precios al consumidor de Lima Metropolitana. \textit{Revista Tzh}.
+
+\end{singlespacing}
+
+\FloatBarrier
+
+\end{document}

@@ -1,0 +1,385 @@
+﻿\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\chapter{INTRODUCCI\'ON}
+
+\section{Realidad problem\'atica}
+
+El dinamismo del mercado internacional de la palta Hass (\textit{Persea americana} Mill.) constituye una de las transformaciones más relevantes del comercio agroalimentario contemporáneo, en la medida en que articula cambios en los patrones de consumo, reorganización de cadenas globales de abastecimiento, innovación logística y expansión de nuevas zonas productivas. Durante las dos últimas décadas, la palta pasó de ser un fruto de consumo relativamente estacional y localizado a convertirse en un alimento de alto valor asociado con dietas saludables, gastronomía globalizada y preferencia por productos frescos con atributos nutricionales diferenciados. Este posicionamiento responde a tendencias internacionales vinculadas con el incremento de la demanda por grasas vegetales, alimentos mínimamente procesados y dietas orientadas al bienestar, lo cual ha elevado la presencia de la palta Hass en supermercados, restaurantes, servicios de comida rápida saludable y plataformas de comercio minorista en Norteamérica, Europa y Asia (ADEX, 2023; Vittery-Flores \& Colchao-Ccahuana, 2023). En este escenario, la palta peruana ha adquirido importancia estratégica debido a su capacidad de abastecer ventanas comerciales específicas, competir en calidad con otros orígenes y sostener volúmenes crecientes en mercados exigentes. Sin embargo, el mismo proceso que ha favorecido el crecimiento exportador también ha introducido una mayor complejidad en la formación de precios, pues la expansión simultánea de la oferta mundial, las variaciones climáticas, los costos logísticos y la sensibilidad de la demanda internacional configuran una serie de tiempo marcada por volatilidad, no linealidad y alta exposición a perturbaciones externas (ComexPer\'u, 2025; Vel\'asquez et al., 2025).
+
+El Perú se ha consolidado como uno de los principales exportadores mundiales de palta fresca, posición que expresa la combinación de ventajas agroclimáticas, disponibilidad de valles costeros tecnificados, inversión privada en agroexportación y capacidad de inserción en cadenas internacionales de valor. Vittery-Flores y Colchao-Ccahuana (2023) sostienen que el país desplazó progresivamente a competidores tradicionales y logró ubicarse entre los primeros proveedores globales de palta, con especial protagonismo de la variedad Hass por su resistencia poscosecha, aceptación comercial y aptitud para viajes marítimos de larga distancia. Esta trayectoria fue reforzada por la ampliación de áreas sembradas en regiones de la costa norte y central, la adopción de certificaciones exigidas por compradores internacionales y la articulación con operadores logísticos especializados (Pantale\'on et al., 2024). Reportes sectoriales recientes señalan que las exportaciones peruanas de palta Hass mantuvieron una tendencia expansiva entre 2021 y 2025, aunque con variaciones interanuales asociadas con condiciones climáticas y alternancia productiva (MIDAGRI, 2024; PromPer\'u Exportemos, 2026). Esta posición, no obstante, no debe interpretarse únicamente como éxito comercial, sino como evidencia de una creciente exposición del productor peruano a señales de precios internacionales cuya lectura requiere herramientas analíticas más sofisticadas que la observación histórica simple (Capu\~nay et al., 2025).
+
+La evolución del precio FOB de la palta Hass peruana revela con claridad la tensión entre crecimiento exportador y presión competitiva. Vittery-Flores y Colchao-Ccahuana (2023) documentaron una caída del precio promedio FOB desde 2.38 USD/kg en 2016 hasta 1.53 USD/kg en 2022, descenso que no puede atribuirse a un único factor, sino a la interacción entre mayor oferta peruana, incremento de la competencia internacional, concentración de despachos en determinadas semanas, variaciones de calibres, cambios en la demanda europea y norteamericana, y ajustes logísticos posteriores a la pandemia. La formación del precio FOB no refleja solamente el valor intrínseco del fruto, sino una síntesis de expectativas, disponibilidad de fruta en origen, inventarios en destino, calidad, costos de transporte, tipo de cambio, calendario de cosecha y comportamiento de países competidores como México, Chile, Colombia y Kenia. En consecuencia, el productor que decide sembrar o ampliar hectáreas de palta Hass enfrenta un horizonte de incertidumbre que no se limita al rendimiento agrícola, sino que se extiende al precio internacional que recibirá cuando el cultivo alcance madurez productiva varios años después. Esta condición convierte al precio FOB en una variable estratégica para la planificación agraria, pues una decisión tomada bajo precios altos puede materializarse en un entorno de sobreoferta y márgenes reducidos.
+
+\begin{figure}[H]
+\caption{Factores que incrementan la incertidumbre del precio FOB de palta Hass}
+\centering
+\resizebox{0.92\textwidth}{!}{%
+\begin{tikzpicture}[
+  problem/.style={circle, draw=red!60!black, fill=red!12, align=center, minimum size=3.1cm},
+  factor/.style={rectangle, draw=green!45!black, fill=green!10, rounded corners=5pt, align=center, minimum width=3.2cm, minimum height=1cm},
+  risk/.style={rectangle, draw=orange!75!black, fill=orange!14, rounded corners=5pt, align=center, minimum width=3.2cm, minimum height=1cm},
+  arrow/.style={-{Stealth[length=2.4mm]}, thick, draw=gray!65!black}
+]
+\node[problem] (center) {Incertidumbre\\del precio FOB\\de palta Hass};
+\node[factor, above=1.0cm of center] (supply) {Mayor oferta\\exportable};
+\node[factor, left=1.5cm of center] (climate) {Clima y\\rendimiento};
+\node[factor, right=1.5cm of center] (markets) {Mercados\\concentrados};
+\node[factor, below left=0.9cm and 0.8cm of center] (costs) {Costos\\log\'isticos};
+\node[factor, below right=0.9cm and 0.8cm of center] (competition) {Competencia\\internacional};
+\node[risk, below=2.4cm of center] (decision) {Decisi\'on de siembra\\con retorno a mediano plazo};
+\draw[arrow] (supply) -- (center);
+\draw[arrow] (climate) -- (center);
+\draw[arrow] (markets) -- (center);
+\draw[arrow] (costs) -- (center);
+\draw[arrow] (competition) -- (center);
+\draw[arrow] (center) -- (decision);
+\end{tikzpicture}}
+\end{figure}
+
+
+\section{Evoluci\'on del precio de exportaci\'on}
+
+\begin{table}[H]
+\centering
+\caption{Evoluci\'on de las exportaciones peruanas de palta fresca y precio FOB referencial, 2017--2025}
+\small
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+Indicador & 2017 & 2018 & 2019 & 2020 & 2021 & 2022 & 2023 & 2024 & 2025 \\
+\midrule
+FOB (millones USD) & 588.1 & 723.0 & 757.1 & 757.9 & 1013.6 & 890.5 & 963.4 & 1247.0 & 1362.3 \\
+Peso (miles t) & 247.5 & 361.3 & 312.5 & 411.2 & 525.9 & 583.6 & 599.2 & 570.4 & 769.8 \\
+FOB referencial (USD/kg) & 2.38 & 2.00 & 2.42 & 1.84 & 1.93 & 1.53 & 1.61 & 2.19 & 1.77 \\
+\bottomrule
+\end{tabular}
+\parbox{0.94\textwidth}{\small \textit{Nota.} Los valores 2017--2022 se calculan a partir de Promper\'u, reportado por Vittery-Flores y Colchao-Ccahuana (2023). Los datos 2023 provienen de MIDAGRI (2024); 2024 de ComexPer\'u/Sunat; y 2025 de PromPer\'u-Exportemos/Sunat. El precio FOB referencial se calcul\'o como valor FOB dividido entre peso exportado.}
+\end{table}
+
+\begin{figure}[H]
+\caption{Precio FOB referencial de la palta fresca peruana, 2017--2025}
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.88\textwidth,height=6.2cm,xlabel={A\~no},ylabel={USD/kg},ymin=1.3,ymax=2.6,xtick={2017,2018,2019,2020,2021,2022,2023,2024,2025},ymajorgrids=true,grid style={gray!25},mark options={scale=1.1}]
+\addplot+[thick, mark=*] coordinates {(2017,2.38) (2018,2.00) (2019,2.42) (2020,1.84) (2021,1.93) (2022,1.53) (2023,1.61) (2024,2.19) (2025,1.77)};
+\end{axis}
+\end{tikzpicture}
+\end{figure}
+
+
+\section{Contexto productivo y exportador de La Libertad}
+
+La volatilidad del precio FOB de la palta Hass comparte rasgos metodológicos con las series financieras y de commodities agrícolas, especialmente por su comportamiento no estacionario, presencia de ciclos, cambios de régimen y sensibilidad a choques exógenos. En términos econométricos, una serie no estacionaria se caracteriza por media, varianza o estructura de autocorrelación variables en el tiempo, lo cual dificulta extrapolar tendencias lineales sin transformaciones adecuadas. Los precios agrícolas, además, incorporan componentes estacionales vinculados con campañas de cosecha, rezagos biológicos, restricciones de almacenamiento y concentración temporal de la oferta (Murugesan et al., 2022; Xia, 2024). En el caso de la palta, estos rasgos se intensifican porque el fruto fresco tiene una vida poscosecha limitada, depende de calibres demandados por mercado, exige cadena de frío y se comercializa en ventanas donde la entrada simultánea de varios orígenes puede modificar abruptamente la relación oferta-demanda (Vittery-Flores \& Colchao-Ccahuana, 2023). Por ello, la analogía con mercados financieros resulta útil no porque el productor agrícola opere bajo las mismas reglas que un inversionista bursátil, sino porque ambos enfrentan series históricas con ruido, tendencias reversibles, dependencia temporal y eventos extremos. Esta similitud justifica el uso de métodos de pronóstico capaces de capturar patrones autorregresivos, estacionalidad y relaciones no lineales, en lugar de depender exclusivamente de promedios históricos o juicios cualitativos (Chen et al., 2023; Reis Filho et al., 2022).
+
+En el contexto peruano, La Libertad ocupa un lugar central en la cadena de valor de la palta Hass debido a su liderazgo productivo, disponibilidad de tierras irrigadas y articulación con empresas agroexportadoras. La región ha sido identificada como el principal núcleo nacional de producción de palta, con participaciones cercanas a un tercio del volumen nacional, generalmente ubicadas entre 32\% y 36\% según campaña y fuente estadística (MIDAGRI, 2022; Vittery-Flores \& Colchao-Ccahuana, 2023). Este liderazgo se explica por la expansión de proyectos agroindustriales en valles como Chao, Virú, Moche y Chicama, así como por condiciones climáticas que permiten rendimientos competitivos y fruta de calidad exportable. La consolidación regional también está asociada con infraestructura de riego, cercanía relativa a puertos, disponibilidad de servicios de empaque y experiencia empresarial acumulada en otros cultivos de agroexportación como arándano, espárrago y uva. No obstante, el liderazgo productivo no elimina la vulnerabilidad frente a precios internacionales; por el contrario, la concentración regional de hectáreas sembradas amplifica el impacto de decisiones colectivas de expansión, pues un aumento no coordinado de áreas puede contribuir a presiones de sobreoferta en los años posteriores.
+
+La ventana comercial de la palta Hass peruana, y particularmente de la costa norte, suele concentrarse entre marzo y agosto, con picos de despacho durante mayo y junio. Esta temporalidad tiene implicancias directas sobre la planificación, porque el valor obtenido por el productor depende de la sincronización entre cosecha, disponibilidad de calibres comerciales, saturación de plantas empacadoras, programación naviera y demanda en destino. Una campaña con elevada concentración de fruta en pocas semanas puede reducir el precio promedio aun cuando el volumen total exportado aumente, fenómeno que resulta crítico para pequeños y medianos productores que no disponen de capacidad de almacenamiento, negociación contractual o diversificación de mercados. Los principales destinos de la palta peruana han sido los Países Bajos, por su rol como puerta de entrada y redistribución hacia Europa, y los Estados Unidos, por su profundidad de mercado y alto consumo per cápita. Sin embargo, la dependencia de estos destinos también expone a la cadena a variaciones regulatorias, requisitos fitosanitarios, costos logísticos y competencia de otros proveedores. En ese marco, el precio FOB recibido por exportadores y productores integrados sintetiza tanto oportunidades como riesgos de inserción internacional.
+
+\begin{figure}[H]
+\caption{Relaci\'on entre la cadena exportadora y la se\~nal de precio FOB}
+\centering
+\resizebox{0.9\textwidth}{!}{%
+\begin{tikzpicture}[
+  stage/.style={rectangle, draw=blue!55!black, fill=blue!8, rounded corners=5pt, align=center, minimum width=2.8cm, minimum height=1cm},
+  market/.style={rectangle, draw=green!45!black, fill=green!10, rounded corners=5pt, align=center, minimum width=2.8cm, minimum height=1cm},
+  arrow/.style={-{Stealth[length=2.4mm]}, thick, draw=gray!65!black}
+]
+\node[stage] (field) {Productor\\La Libertad};
+\node[stage, right=0.8cm of field] (pack) {Acopio y\\empaque};
+\node[stage, right=0.8cm of pack] (port) {Log\'istica\\portuaria};
+\node[market, right=0.8cm of port] (market) {Mercados\\internacionales};
+\node[market, below=0.65cm of pack, minimum width=5.8cm] (price) {Precio FOB: Se\~nal agregada que orienta la decisi\'on de siembra};
+\draw[arrow] (field) -- (pack);
+\draw[arrow] (pack) -- (port);
+\draw[arrow] (port) -- (market);
+\draw[arrow] (market.south) |- (price.east);
+\draw[arrow] (price.west) -| (field.south);
+\end{tikzpicture}}
+\end{figure}
+
+
+\section{Antecedentes y enfoques predictivos}
+
+\begin{table}[H]
+\centering
+\caption{S\'intesis de estudios sobre modelos predictivos de precios agr\'icolas, 2020--2025}
+\small
+\begin{tabular}{p{0.18\textwidth}p{0.18\textwidth}p{0.14\textwidth}p{0.12\textwidth}p{0.28\textwidth}}
+\toprule
+Autor/a\~no & Modelo & Cultivo o mercado & M\'etrica reportada & Aporte para la tesis \\
+\midrule
+Xia (2024) & ARIMA y LSTM & Productos agr\'icolas & Comparaci\'on de errores & Sustenta contrastar modelos lineales y no lineales. \\
+Krishnan et al. (2022) & LSTM, Bi-LSTM, Stacked LSTM, CNN-LSTM & Commodities agr\'icolas & Evaluaci\'on comparativa & Justifica explorar variantes profundas cuando hay dependencia temporal compleja. \\
+Zhang y Liang (2025) & TCN-MLP-Attention & Aguacate/palta & RMSE = 1.23; MSE = 1.51 & Antecedente directo de arquitecturas h\'ibridas para precios de palta. \\
+Reis Filho et al. (2022) & Series enriquecidas con texto & Commodities agr\'icolas & Mejora por variables textuales & Respalda incorporar se\~nales externas de mercado y reportes especializados. \\
+Agricultural Systems (2025) & Modelos h\'ibridos & Commodities agr\'icolas & Evaluaci\'on integrada & Evidencia que combinar ML, series temporales y simulaci\'on mejora robustez. \\
+\bottomrule
+\end{tabular}
+\parbox{0.94\textwidth}{\small \textit{Nota.} Las m\'etricas se reportan solo cuando fueron explicitadas en las fuentes revisadas. La tabla prioriza comparabilidad metodol\'ogica y pertinencia para el precio FOB de palta Hass.}
+\end{table}
+
+
+La incorporación de mecanismos de atención y modelos de descomposición responde a una dificultad central de los precios agrícolas: No todas las observaciones históricas tienen la misma relevancia para predecir el futuro. En una serie de palta Hass, las semanas de pico exportador, los periodos de ingreso de competidores, los eventos climáticos extremos o los cambios de demanda en destinos principales pueden pesar más que observaciones ordinarias. Los mecanismos de atención permiten ponderar dinámicamente esas señales, mientras que las técnicas de descomposición separan tendencia, estacionalidad y residuo antes de aplicar modelos de aprendizaje profundo (Chen et al., 2023; Zhang et al., 2025). Esta estrategia puede mejorar la precisión al reducir ruido y permitir que cada componente sea modelado por el algoritmo más adecuado. En precios con alta variabilidad, una descomposición seguida de LSTM o TCN puede capturar patrones de largo plazo y fluctuaciones locales con mayor estabilidad que un modelo único (Murugesan et al., 2022; Zhang et al., 2025). Sin embargo, su implementación exige decisiones metodológicas cuidadosas: Selección de ventana temporal, normalización, validación cruzada temporal, prevención de fuga de información y evaluación fuera de muestra. La relevancia de estas arquitecturas para La Libertad dependerá de la calidad de los datos FOB, la granularidad semanal o mensual disponible y la posibilidad de integrar variables que representen oferta y demanda.
+
+El enriquecimiento multimodal de series temporales constituye otra frontera metodológica pertinente. Reis Filho, Marcacini y Rezende (2022) propusieron el enriquecimiento de series con datos textuales para pronosticar precios de commodities agrícolas, mostrando que noticias, reportes de mercado y textos especializados pueden contener señales anticipatorias no capturadas por la serie numérica. Esta perspectiva es relevante porque los precios agrícolas responden a expectativas: Una noticia sobre sequía, bloqueo logístico, nueva regulación fitosanitaria, apertura de mercado o caída de producción en un país competidor puede modificar decisiones comerciales antes de reflejarse plenamente en datos históricos. En el caso de la palta Hass peruana, variables textuales provenientes de reportes de USDA-FAS, comunicados de ProHass, boletines de MIDAGRI, noticias de comercio exterior y reportes de puertos podrían enriquecer un modelo predictivo. La combinación de texto y series temporales mediante técnicas de procesamiento de lenguaje natural permitiría extraer indicadores de sentimiento, tópicos o eventos relevantes para la formación de precios. Aunque esta línea puede exceder el alcance inicial de una tesis aplicada si no se dispone de corpus suficiente, constituye un referente para justificar futuras ampliaciones del modelo.
+
+Además de datos textuales, los modelos de precios agrícolas pueden mejorar mediante variables exógenas cuantitativas. Entre ellas destacan volúmenes exportados por semana, producción regional, superficie cosechada, tipo de cambio, temperatura, anomalías de precipitación, costos de flete, precios de competidores, inventarios en destino y calendario de festividades o consumo. La literatura de aprendizaje automático muestra que modelos multivariados pueden superar a modelos univariados cuando las variables adicionales contienen información predictiva genuina y no introducen ruido excesivo (Chen et al., 2023; Reis Filho et al., 2022). En el caso de la palta, el clima afecta floración, cuajado, calibre y rendimiento; el tipo de cambio incide sobre ingresos en moneda local; los fletes alteran márgenes exportadores; y los volúmenes acumulados modifican presión de oferta (ADEX, 2023; MIDAGRI, 2024). Sin embargo, la selección de variables debe ser rigurosa, porque incluir predictores correlacionados o disponibles solo después del periodo de pronóstico puede generar sobreajuste o fuga temporal. Para productores de La Libertad, un modelo multivariado sería especialmente útil si traduce dichas variables en escenarios de precio esperados para el periodo en que nuevas plantaciones entren en producción. Así, el pronóstico dejaría de ser una extrapolación mecánica del pasado y pasaría a representar una herramienta de inteligencia agrícola.
+
+Las aplicaciones específicas al aguacate y a la palta peruana todavía muestran vacíos importantes. A nivel internacional, Zhang y Liang (2025) constituyen un avance directo al modelar precios de aguacate mediante una arquitectura TCN-MLP-Attention; sin embargo, su estudio no aborda la realidad institucional, productiva y comercial de la palta Hass peruana ni la decisión de siembra en productores regionales. En el contexto latinoamericano, Vittery-Flores y Colchao-Ccahuana (2023) ofrecieron una caracterización valiosa de la producción peruana de palta en el comercio internacional, incluyendo evolución de precios FOB, distribución regional y perspectivas sectoriales, pero su contribución es principalmente descriptiva y estratégica, no predictiva. El artículo sobre desempeño competitivo de exportaciones de frutas y hortalizas en La Libertad publicado en \textit{Manglar} (2025) aporta evidencia sobre la ventaja comparativa regional y el rol de la palta dentro de la canasta agroexportadora, aunque tampoco desarrolla modelos de pronóstico orientados al productor. Esta combinación de antecedentes evidencia una brecha: Existe información sectorial sobre palta y literatura algorítmica sobre predicción de precios, pero falta una integración aplicada al precio FOB de palta Hass en La Libertad con finalidad explícita de apoyar decisiones de siembra.
+
+La brecha de investigación no es únicamente académica, sino tecnológica y social. Los avances en ARIMA, LSTM, TCN, atención y modelos híbridos han demostrado capacidad para reducir errores de pronóstico en precios agrícolas, pero su adopción por productores peruanos sigue siendo limitada. Parte de esta distancia se explica por la falta de datos limpios, la dispersión de fuentes, la escasa traducción de métricas técnicas a indicadores de decisión y la ausencia de herramientas adaptadas a la cadena local. La palta peruana presenta particularidades que un modelo genérico difícilmente capturaría: Calibres diferenciados, estacionalidad de costa norte, concentración de exportación entre marzo y agosto, dependencia de Países Bajos y Estados Unidos, costos locales de manejo, heterogeneidad entre grandes agroexportadoras y productores medianos, y sensibilidad a decisiones de expansión de áreas. Por ello, la presente investigación se justifica por la necesidad de diseñar un modelo predictivo contextualizado, que articule evidencia histórica de precios FOB, variables de oferta y mercado, y técnicas de pronóstico comparables. Su contribución esperada consiste en reducir la incertidumbre informacional que enfrenta el productor al evaluar nuevas siembras, mejorar la planificación regional y aportar una base tecnológica para decisiones más sostenibles.
+
+Desde una perspectiva económica, el valor de un modelo predictivo radica en su potencial para anticipar escenarios adversos y evitar decisiones de inversión basadas en ciclos transitorios de precios altos. Si el productor dispone de una estimación razonada sobre la tendencia probable del precio FOB en el horizonte de maduración del cultivo, puede ajustar densidad de siembra, calendario de inversión, estrategia de financiamiento, diversificación productiva o negociación con exportadores. Desde una perspectiva tecnológica, la investigación contribuye al uso de ciencia de datos en el agro peruano, promoviendo métodos reproducibles, evaluación con métricas estandarizadas y comparación entre modelos clásicos y avanzados. Desde una perspectiva social, puede beneficiar a productores que no cuentan con áreas de inteligencia comercial, reduciendo asimetrías frente a actores con mayor acceso a información. Esta justificación es coherente con la necesidad de modernizar la toma de decisiones agrarias mediante herramientas digitales, sin sustituir el conocimiento del productor, sino complementándolo con evidencia cuantitativa. En consecuencia, el modelo predictivo propuesto debe concebirse como un sistema de apoyo, no como un mecanismo determinista, porque toda predicción agrícola permanece sujeta a incertidumbre climática, comercial y política.
+
+
+La interpretaci\'on de estas cifras exige reconocer que el precio FOB referencial no equivale al precio recibido por cada productor individual, pero s\'i constituye una se\~nal agregada de gran importancia para orientar decisiones de siembra. En la pr\'actica, el precio final que percibe un productor depende de la relaci\'on contractual con el exportador, del calibre, de la calidad, de los costos de acondicionamiento, de las mermas, de la oportunidad de cosecha y de los descuentos asociados a log\'istica o servicios (Capu\~nay et al., 2025; Pantale\'on et al., 2024). Aun as\'i, la serie FOB permite observar la presi\'on general del mercado externo y sirve como variable objetivo razonable para un modelo predictivo de apoyo a decisiones. Si la serie muestra recuperaci\'on coyuntural en 2024 pero ca\'ida referencial en 2025 por aumento fuerte del volumen, el productor no deber\'ia interpretar un solo a\~no favorable como garant\'ia de rentabilidad futura (ComexPer\'u, 2025; PromPer\'u Exportemos, 2026).
+
+La regi\'on La Libertad concentra una combinaci\'on singular de ventajas y riesgos. Su liderazgo productivo le otorga econom\'ias de escala, presencia empresarial, experiencia log\'istica y conocimiento t\'ecnico acumulado; sin embargo, tambi\'en la expone a ciclos de decisi\'on colectiva (Vittery-Flores \& Colchao-Ccahuana, 2023). Cuando la mayor parte de productores observa el mismo precio reciente y decide expandir plantaciones bajo una expectativa similar, la oferta futura puede incrementarse de manera sincronizada. Esta sincronizaci\'on es peligrosa en cultivos perennes, porque no existe una respuesta inmediata de reducci\'on de siembra como ocurre con cultivos anuales. La palta plantada hoy seguir\'a demandando manejo y recursos incluso si el precio cae dentro de tres a\~nos (Vel\'asquez et al., 2025).
+
+Otro elemento que debe incorporarse a la discusi\'on es la heterogeneidad de productores. La Libertad no est\'a compuesta \'unicamente por grandes agroexportadoras tecnificadas; tambi\'en existen medianos y peque\~nos productores que participan mediante asociaciones, contratos de compra, intermediarios o venta a plantas empacadoras. Estos productores suelen enfrentar mayores restricciones de informaci\'on, menor poder de negociaci\'on y menor capacidad para absorber p\'erdidas temporales (Pantale\'on et al., 2024; Vel\'asquez et al., 2025). Para ellos, un error de decisi\'on de siembra puede comprometer liquidez, endeudamiento y estabilidad familiar.
+
+Desde el punto de vista metodol\'ogico, la construcci\'on del modelo debe evitar una confusi\'on frecuente: Predecir con precisi\'on estad\'istica no siempre equivale a apoyar una buena decisi\'on. Un modelo con bajo RMSE puede ser poco \'util si no comunica incertidumbre, si no identifica semanas cr\'iticas o si no traduce sus resultados en implicancias para el productor. Por ello, la presente tesis debe evaluar la precisi\'on del pron\'ostico y, al mismo tiempo, la utilidad decisional del resultado.
+
+La selecci\'on de variables ex\'ogenas tambi\'en debe responder al horizonte de decisi\'on. Para pron\'osticos de corto plazo, variables como volumen semanal exportado, precio reciente, destino, calibre y calendario de campa\~na pueden tener alta relevancia. Para decisiones de siembra, cuyo retorno se materializa a\~nos despu\'es, conviene complementar el modelo con indicadores estructurales: Crecimiento de \'areas certificadas, evoluci\'on de producci\'on regional, tendencia de demanda internacional, concentraci\'on de destinos y comportamiento de competidores.
+
+En la literatura de sistemas agr\'icolas, los modelos h\'ibridos han ganado relevancia porque permiten aproximarse mejor a la complejidad del mercado. Un enfoque h\'ibrido no debe entenderse necesariamente como una arquitectura sofisticada y opaca; tambi\'en puede ser una estrategia ordenada de combinaci\'on: Primero se modela la estacionalidad con SARIMA, luego se analiza el residuo con LSTM o SVR, y finalmente se integran escenarios econ\'omicos mediante reglas de decisi\'on.
+
+La palta Hass ofrece un caso de estudio adecuado para la ingenier\'ia de sistemas porque combina datos, procesos, usuarios y decisiones bajo incertidumbre. No basta con entrenar un algoritmo; es necesario dise\~nar un flujo completo de informaci\'on: Captura de datos, validaci\'on, limpieza, transformaci\'on, modelado, evaluaci\'on, visualizaci\'on y retroalimentaci\'on. Cada etapa puede introducir errores y cada error puede afectar la recomendaci\'on final.
+
+La dimensi\'on institucional tampoco debe omitirse. El Per\'u dispone de plataformas p\'ublicas y privadas con informaci\'on valiosa, como Sunat, PromPer\'u, MIDAGRI, Senasa, ComexPer\'u, ADEX y reportes especializados del sector. Sin embargo, la informaci\'on aparece distribuida en formatos heterog\'eneos, con distintos niveles de actualizaci\'on y granularidad. El productor rara vez dispone de tiempo o capacidades para integrar esas fuentes en un an\'alisis predictivo.
+
+La sostenibilidad econ\'omica del cultivo tambi\'en depende de evitar decisiones guiadas por expectativas exageradas. La experiencia de otros cultivos de agroexportaci\'on muestra que los periodos de alta rentabilidad atraen inversi\'on r\'apida, pero la rentabilidad puede comprimirse cuando la oferta crece m\'as r\'apido que la demanda o cuando los costos laborales, h\'idricos y log\'isticos aumentan.
+
+El enfoque propuesto tambi\'en puede contribuir a una mejor coordinaci\'on entre actores. Asociaciones de productores, cooperativas, exportadores y entidades p\'ublicas podr\'ian utilizar pron\'osticos agregados para planificar campa\~nas, orientar asistencia t\'ecnica, promover diversificaci\'on de mercados o evitar concentraci\'on de cosecha. La informaci\'on predictiva no elimina la competencia, pero puede reducir decisiones desordenadas que terminan perjudicando al conjunto de la cadena.
+
+Finalmente, la investigaci\'on adquiere pertinencia acad\'emica porque articula tres campos que suelen estudiarse por separado: El an\'alisis del mercado agroexportador de palta, la predicci\'on de series temporales y el apoyo a decisiones agr\'icolas. La contribuci\'on esperada consiste en integrar estos enfoques en una propuesta contextualizada para La Libertad, donde el problema no es la falta absoluta de datos, sino la falta de transformaci\'on de esos datos en pron\'osticos \'utiles para decidir siembra bajo incertidumbre.
+
+
+Desde una lectura complementaria, la interpretaci\'on de estas cifras exige reconocer que el precio FOB referencial no equivale al precio recibido por cada productor individual, pero s\'i constituye una se\~nal agregada de gran importancia para orientar decisiones de siembra. En la pr\'actica, el precio final que percibe un productor depende de la relaci\'on contractual con el exportador, del calibre, de la calidad, de los costos de acondicionamiento, de las mermas, de la oportunidad de cosecha y de los descuentos asociados a log\'istica o servicios. Aun as\'i, la serie FOB permite observar la presi\'on general del mercado externo y sirve como variable objetivo razonable para un modelo predictivo de apoyo a decisiones. Si la serie muestra recuperaci\'on coyuntural en 2024 pero ca\'ida referencial en 2025 por aumento fuerte del volumen, el productor no deber\'ia interpretar un solo a\~no favorable como garant\'ia de rentabilidad futura.
+
+La regi\'on La Libertad concentra una combinaci\'on singular de ventajas y riesgos. Su liderazgo productivo le otorga econom\'ias de escala, presencia empresarial, experiencia log\'istica y conocimiento t\'ecnico acumulado; sin embargo, tambi\'en la expone a ciclos de decisi\'on colectiva. Cuando la mayor parte de productores observa el mismo precio reciente y decide expandir plantaciones bajo una expectativa similar, la oferta futura puede incrementarse de manera sincronizada. Esta sincronizaci\'on es peligrosa en cultivos perennes, porque no existe una respuesta inmediata de reducci\'on de siembra como ocurre con cultivos anuales. La palta plantada hoy seguir\'a demandando manejo y recursos incluso si el precio cae dentro de tres a\~nos.
+
+Otro elemento que debe incorporarse a la discusi\'on es la heterogeneidad de productores. La Libertad no est\'a compuesta \'unicamente por grandes agroexportadoras tecnificadas; tambi\'en existen medianos y peque\~nos productores que participan mediante asociaciones, contratos de compra, intermediarios o venta a plantas empacadoras. Estos productores suelen enfrentar mayores restricciones de informaci\'on, menor poder de negociaci\'on y menor capacidad para absorber p\'erdidas temporales. Para ellos, un error de decisi\'on de siembra puede comprometer liquidez, endeudamiento y estabilidad familiar.
+
+Desde el punto de vista metodol\'ogico, la construcci\'on del modelo debe evitar una confusi\'on frecuente: Predecir con precisi\'on estad\'istica no siempre equivale a apoyar una buena decisi\'on. Un modelo con bajo RMSE puede ser poco \'util si no comunica incertidumbre, si no identifica semanas cr\'iticas o si no traduce sus resultados en implicancias para el productor. Por ello, la presente tesis debe evaluar la precisi\'on del pron\'ostico y, al mismo tiempo, la utilidad decisional del resultado.
+
+La selecci\'on de variables ex\'ogenas tambi\'en debe responder al horizonte de decisi\'on. Para pron\'osticos de corto plazo, variables como volumen semanal exportado, precio reciente, destino, calibre y calendario de campa\~na pueden tener alta relevancia. Para decisiones de siembra, cuyo retorno se materializa a\~nos despu\'es, conviene complementar el modelo con indicadores estructurales: Crecimiento de \'areas certificadas, evoluci\'on de producci\'on regional, tendencia de demanda internacional, concentraci\'on de destinos y comportamiento de competidores.
+
+En la literatura de sistemas agr\'icolas, los modelos h\'ibridos han ganado relevancia porque permiten aproximarse mejor a la complejidad del mercado. Un enfoque h\'ibrido no debe entenderse necesariamente como una arquitectura sofisticada y opaca; tambi\'en puede ser una estrategia ordenada de combinaci\'on: Primero se modela la estacionalidad con SARIMA, luego se analiza el residuo con LSTM o SVR, y finalmente se integran escenarios econ\'omicos mediante reglas de decisi\'on.
+
+La palta Hass ofrece un caso de estudio adecuado para la ingenier\'ia de sistemas porque combina datos, procesos, usuarios y decisiones bajo incertidumbre. No basta con entrenar un algoritmo; es necesario dise\~nar un flujo completo de informaci\'on: Captura de datos, validaci\'on, limpieza, transformaci\'on, modelado, evaluaci\'on, visualizaci\'on y retroalimentaci\'on. Cada etapa puede introducir errores y cada error puede afectar la recomendaci\'on final.
+
+La dimensi\'on institucional tampoco debe omitirse. El Per\'u dispone de plataformas p\'ublicas y privadas con informaci\'on valiosa, como Sunat, PromPer\'u, MIDAGRI, Senasa, ComexPer\'u, ADEX y reportes especializados del sector. Sin embargo, la informaci\'on aparece distribuida en formatos heterog\'eneos, con distintos niveles de actualizaci\'on y granularidad. El productor rara vez dispone de tiempo o capacidades para integrar esas fuentes en un an\'alisis predictivo.
+
+La sostenibilidad econ\'omica del cultivo tambi\'en depende de evitar decisiones guiadas por expectativas exageradas. La experiencia de otros cultivos de agroexportaci\'on muestra que los periodos de alta rentabilidad atraen inversi\'on r\'apida, pero la rentabilidad puede comprimirse cuando la oferta crece m\'as r\'apido que la demanda o cuando los costos laborales, h\'idricos y log\'isticos aumentan.
+
+El enfoque propuesto tambi\'en puede contribuir a una mejor coordinaci\'on entre actores. Asociaciones de productores, cooperativas, exportadores y entidades p\'ublicas podr\'ian utilizar pron\'osticos agregados para planificar campa\~nas, orientar asistencia t\'ecnica, promover diversificaci\'on de mercados o evitar concentraci\'on de cosecha. La informaci\'on predictiva no elimina la competencia, pero puede reducir decisiones desordenadas que terminan perjudicando al conjunto de la cadena.
+
+Finalmente, la investigaci\'on adquiere pertinencia acad\'emica porque articula tres campos que suelen estudiarse por separado: El an\'alisis del mercado agroexportador de palta, la predicci\'on de series temporales y el apoyo a decisiones agr\'icolas. La contribuci\'on esperada consiste en integrar estos enfoques en una propuesta contextualizada para La Libertad, donde el problema no es la falta absoluta de datos, sino la falta de transformaci\'on de esos datos en pron\'osticos \'utiles para decidir siembra bajo incertidumbre.
+
+
+En t\'erminos de dise\~no de la soluci\'on, la interpretaci\'on de estas cifras exige reconocer que el precio FOB referencial no equivale al precio recibido por cada productor individual, pero s\'i constituye una se\~nal agregada de gran importancia para orientar decisiones de siembra. En la pr\'actica, el precio final que percibe un productor depende de la relaci\'on contractual con el exportador, del calibre, de la calidad, de los costos de acondicionamiento, de las mermas, de la oportunidad de cosecha y de los descuentos asociados a log\'istica o servicios. Aun as\'i, la serie FOB permite observar la presi\'on general del mercado externo y sirve como variable objetivo razonable para un modelo predictivo de apoyo a decisiones. Si la serie muestra recuperaci\'on coyuntural en 2024 pero ca\'ida referencial en 2025 por aumento fuerte del volumen, el productor no deber\'ia interpretar un solo a\~no favorable como garant\'ia de rentabilidad futura.
+
+La regi\'on La Libertad concentra una combinaci\'on singular de ventajas y riesgos. Su liderazgo productivo le otorga econom\'ias de escala, presencia empresarial, experiencia log\'istica y conocimiento t\'ecnico acumulado; sin embargo, tambi\'en la expone a ciclos de decisi\'on colectiva. Cuando la mayor parte de productores observa el mismo precio reciente y decide expandir plantaciones bajo una expectativa similar, la oferta futura puede incrementarse de manera sincronizada. Esta sincronizaci\'on es peligrosa en cultivos perennes, porque no existe una respuesta inmediata de reducci\'on de siembra como ocurre con cultivos anuales. La palta plantada hoy seguir\'a demandando manejo y recursos incluso si el precio cae dentro de tres a\~nos.
+
+Otro elemento que debe incorporarse a la discusi\'on es la heterogeneidad de productores. La Libertad no est\'a compuesta \'unicamente por grandes agroexportadoras tecnificadas; tambi\'en existen medianos y peque\~nos productores que participan mediante asociaciones, contratos de compra, intermediarios o venta a plantas empacadoras. Estos productores suelen enfrentar mayores restricciones de informaci\'on, menor poder de negociaci\'on y menor capacidad para absorber p\'erdidas temporales. Para ellos, un error de decisi\'on de siembra puede comprometer liquidez, endeudamiento y estabilidad familiar.
+
+Desde el punto de vista metodol\'ogico, la construcci\'on del modelo debe evitar una confusi\'on frecuente: Predecir con precisi\'on estad\'istica no siempre equivale a apoyar una buena decisi\'on. Un modelo con bajo RMSE puede ser poco \'util si no comunica incertidumbre, si no identifica semanas cr\'iticas o si no traduce sus resultados en implicancias para el productor. Por ello, la presente tesis debe evaluar la precisi\'on del pron\'ostico y, al mismo tiempo, la utilidad decisional del resultado.
+
+La selecci\'on de variables ex\'ogenas tambi\'en debe responder al horizonte de decisi\'on. Para pron\'osticos de corto plazo, variables como volumen semanal exportado, precio reciente, destino, calibre y calendario de campa\~na pueden tener alta relevancia. Para decisiones de siembra, cuyo retorno se materializa a\~nos despu\'es, conviene complementar el modelo con indicadores estructurales: Crecimiento de \'areas certificadas, evoluci\'on de producci\'on regional, tendencia de demanda internacional, concentraci\'on de destinos y comportamiento de competidores.
+
+En la literatura de sistemas agr\'icolas, los modelos h\'ibridos han ganado relevancia porque permiten aproximarse mejor a la complejidad del mercado. Un enfoque h\'ibrido no debe entenderse necesariamente como una arquitectura sofisticada y opaca; tambi\'en puede ser una estrategia ordenada de combinaci\'on: Primero se modela la estacionalidad con SARIMA, luego se analiza el residuo con LSTM o SVR, y finalmente se integran escenarios econ\'omicos mediante reglas de decisi\'on.
+
+La palta Hass ofrece un caso de estudio adecuado para la ingenier\'ia de sistemas porque combina datos, procesos, usuarios y decisiones bajo incertidumbre. No basta con entrenar un algoritmo; es necesario dise\~nar un flujo completo de informaci\'on: Captura de datos, validaci\'on, limpieza, transformaci\'on, modelado, evaluaci\'on, visualizaci\'on y retroalimentaci\'on. Cada etapa puede introducir errores y cada error puede afectar la recomendaci\'on final.
+
+La dimensi\'on institucional tampoco debe omitirse. El Per\'u dispone de plataformas p\'ublicas y privadas con informaci\'on valiosa, como Sunat, PromPer\'u, MIDAGRI, Senasa, ComexPer\'u, ADEX y reportes especializados del sector. Sin embargo, la informaci\'on aparece distribuida en formatos heterog\'eneos, con distintos niveles de actualizaci\'on y granularidad. El productor rara vez dispone de tiempo o capacidades para integrar esas fuentes en un an\'alisis predictivo.
+
+La sostenibilidad econ\'omica del cultivo tambi\'en depende de evitar decisiones guiadas por expectativas exageradas. La experiencia de otros cultivos de agroexportaci\'on muestra que los periodos de alta rentabilidad atraen inversi\'on r\'apida, pero la rentabilidad puede comprimirse cuando la oferta crece m\'as r\'apido que la demanda o cuando los costos laborales, h\'idricos y log\'isticos aumentan.
+
+El enfoque propuesto tambi\'en puede contribuir a una mejor coordinaci\'on entre actores. Asociaciones de productores, cooperativas, exportadores y entidades p\'ublicas podr\'ian utilizar pron\'osticos agregados para planificar campa\~nas, orientar asistencia t\'ecnica, promover diversificaci\'on de mercados o evitar concentraci\'on de cosecha. La informaci\'on predictiva no elimina la competencia, pero puede reducir decisiones desordenadas que terminan perjudicando al conjunto de la cadena.
+
+Finalmente, la investigaci\'on adquiere pertinencia acad\'emica porque articula tres campos que suelen estudiarse por separado: El an\'alisis del mercado agroexportador de palta, la predicci\'on de series temporales y el apoyo a decisiones agr\'icolas. La contribuci\'on esperada consiste en integrar estos enfoques en una propuesta contextualizada para La Libertad, donde el problema no es la falta absoluta de datos, sino la falta de transformaci\'on de esos datos en pron\'osticos \'utiles para decidir siembra bajo incertidumbre.
+
+
+
+\section{Mercados de destino y concentraci\'on comercial}
+
+\begin{table}[H]
+\centering
+\caption{Principales destinos de exportaci\'on de palta peruana en 2024}
+\begin{tabular}{lrr}
+\toprule
+Destino & Participaci\'on FOB & FOB estimado (millones USD) \\
+\midrule
+Pa\'ises Bajos & 30.8\% & 384.1 \\
+Espa\~na & 21.7\% & 270.6 \\
+Estados Unidos & 13.1\% & 163.4 \\
+Chile & 9.4\% & 117.2 \\
+Reino Unido & 7.5\% & 93.5 \\
+Otros destinos & 17.5\% & 218.2 \\
+\bottomrule
+\end{tabular}
+\parbox{0.94\textwidth}{\small \textit{Nota.} Elaboraci\'on propia con porcentajes reportados por ComexPer\'u (2025) sobre un total de US\$ 1,247 millones exportados en 2024, seg\'un cifras de Sunat.}
+\end{table}
+
+\begin{figure}[H]
+\caption{Distribuci\'on de los principales destinos de la palta peruana en 2024}
+\centering
+\begin{tikzpicture}
+\begin{axis}[ybar,width=0.88\textwidth,height=6.5cm,ylabel={Participaci\'on FOB (\%)},symbolic x coords={Pa\'ises Bajos,Espa\~na,EE.UU.,Chile,Reino Unido,Otros},xtick=data,x tick label style={rotate=35, anchor=east},ymin=0,ymax=35,nodes near coords,nodes near coords align={vertical},ymajorgrids=true,grid style={gray!25}]
+\addplot coordinates {(Pa\'ises Bajos,30.8) (Espa\~na,21.7) (EE.UU.,13.1) (Chile,9.4) (Reino Unido,7.5) (Otros,17.5)};
+\end{axis}
+\end{tikzpicture}
+\end{figure}
+
+\begin{figure}[H]
+\caption{Producci\'on regional de palta en Per\'u durante 2021}
+\centering
+\begin{tikzpicture}
+\begin{axis}[ybar,width=0.88\textwidth,height=6.4cm,ylabel={Producci\'on 2021 (miles de toneladas)},symbolic x coords={La Libertad,Lima,Ica,Jun\'in,Lambayeque,Otros},xtick=data,x tick label style={rotate=35, anchor=east},ymin=0,nodes near coords,nodes near coords align={vertical},ymajorgrids=true,grid style={gray!25}]
+\addplot coordinates {(La Libertad,226.7) (Lima,125.6) (Ica,124.4) (Jun\'in,81.7) (Lambayeque,52.1) (Otros,168.3)};
+\end{axis}
+\end{tikzpicture}
+\end{figure}
+
+\begin{figure}[H]
+\caption{Producci\'on nacional y exportaci\'on peruana de palta fresca, 2016--2021}
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.88\textwidth,height=6.4cm,xlabel={A\~no},ylabel={Miles de toneladas},xtick={2016,2017,2018,2019,2020,2021},ymin=0,ymax=850,legend pos=north west,ymajorgrids=true,grid style={gray!25}]
+\addplot+[thick, mark=*] coordinates {(2016,455.4) (2017,466.8) (2018,504.5) (2019,572.0) (2020,672.2) (2021,778.8)}; \addlegendentry{Producci\'on nacional}
+\addplot+[thick, mark=square*] coordinates {(2016,194.1) (2017,247.5) (2018,361.3) (2019,312.5) (2020,411.2) (2021,525.9)}; \addlegendentry{Exportaci\'on fresca}
+\end{axis}
+\end{tikzpicture}
+\end{figure}
+
+\section{Alcance del apoyo a la decisi\'on de siembra}
+
+El modelo predictivo propuesto no debe entenderse como una herramienta que decide por el productor, sino como un soporte para ordenar informaci\'on de mercado antes de comprometer una inversi\'on agr\'icola de mediano plazo. En el caso de la palta Hass, la decisi\'on de siembra implica costos de instalaci\'on, mantenimiento, riego, fertilizaci\'on, certificaci\'on y espera productiva; por ello, requiere una lectura m\'as amplia que el precio observado en una sola campa\~na (Capu\~nay et al., 2025; Vel\'asquez et al., 2025).
+
+El aporte central de esta investigaci\'on consiste en transformar series hist\'oricas de precios de exportaci\'on, vol\'umenes, destinos y condiciones del mercado en una se\~nal prospectiva que pueda ser interpretada por productores agr\'icolas de La Libertad. Esta se\~nal permitir\'ia comparar escenarios, reconocer periodos de mayor riesgo y evaluar si una ampliaci\'on o instalaci\'on de cultivo se sostiene frente a posibles cambios en la demanda internacional (Chen et al., 2023; Xia, 2024).
+
+De esta manera, el valor del modelo no se limita a estimar un precio futuro, sino a reducir la incertidumbre durante la planificaci\'on. Una predicci\'on acompa\~nada de rangos, tendencias y explicaci\'on de variables relevantes puede orientar decisiones m\'as prudentes sobre el momento de siembra, la escala de inversi\'on, el tipo de articulaci\'on comercial y la necesidad de diversificar mercados o estrategias productivas (Torres, 2022; Vel\'asquez et al., 2025).
+
+\section{Justificaci\'on del modelo predictivo}
+
+El horizonte temporal de la siembra de palta Hass obliga a distinguir entre decisiones operativas y decisiones estrat\'egicas. Las primeras se relacionan con cosecha, poda, fertilizaci\'on, riego, calibre y oportunidad de venta dentro de una campa\~na determinada. Las segundas, en cambio, comprometen la instalaci\'on o ampliaci\'on de hect\'areas, la adopci\'on de tecnolog\'ia, el financiamiento y la forma de articulaci\'on con exportadores. Esta tesis se ubica principalmente en el segundo nivel, porque busca que el pron\'ostico de precios contribuya a evaluar si conviene iniciar o expandir una siembra bajo condiciones de mercado inciertas.
+
+La diferencia entre ambos niveles es importante porque un buen precio en la campa\~na actual puede ser una se\~nal enga\~nosa para una inversi\'on que madurar\'a en varios a\~nos. En cultivos perennes, el productor no puede retirarse del mercado con rapidez cuando las condiciones cambian; una vez instalada la plantaci\'on, debe sostener costos de mantenimiento, manejo sanitario y riego aun cuando el precio internacional disminuya. Por ello, el modelo propuesto debe mirar m\'as all\'a de la coyuntura y reconocer patrones de mediano plazo.
+
+La informaci\'on sectorial disponible muestra que el crecimiento del volumen exportado no siempre se traduce en mejores ingresos unitarios. En algunos a\~nos, el valor FOB total aumenta porque se exporta m\'as fruta, pero el precio por kilogramo disminuye por presi\'on de oferta (ComexPer\'u, 2025; MIDAGRI, 2024). Para un productor individual, esta diferencia es decisiva: La noticia de que el sector export\'o m\'as puede ser positiva a nivel macroecon\'omico, pero no necesariamente garantiza una rentabilidad superior a nivel de parcela.
+
+La concentraci\'on de destinos tambi\'en debe ser considerada en la introducci\'on del problema. Los Pa\'ises Bajos, Espa\~na, Estados Unidos, Chile y Reino Unido explican una parte sustancial de la demanda externa de palta peruana (ComexPer\'u, 2025). Esta estructura ofrece ventajas comerciales, porque existen mercados consolidados y compradores recurrentes, pero tambi\'en genera dependencia. Una variaci\'on en preferencias de consumo, exigencias fitosanitarias, costos log\'isticos o competencia en esos destinos puede modificar el precio FOB recibido por la cadena peruana (ADEX, 2023; PromPer\'u Exportemos, 2026).
+
+La Libertad presenta una situaci\'on particularmente sensible porque combina liderazgo productivo con una alta exposici\'on a la din\'amica exportadora. Su participaci\'on en la producci\'on nacional la convierte en un territorio clave para explicar la oferta peruana de palta Hass. Al mismo tiempo, esa relevancia implica que las decisiones de siembra tomadas por productores y empresas de la regi\'on pueden incidir en la disponibilidad futura de fruta y, por tanto, en la presi\'on comercial de las campa\~nas siguientes.
+
+El enfoque predictivo no pretende reemplazar la experiencia agron\'omica del productor. La experiencia de campo sigue siendo indispensable para interpretar suelo, agua, clima, edad de plantaci\'on, manejo fitosanitario y calidad de fruta. Lo que aporta el modelo es una capa adicional de evidencia cuantitativa para observar tendencias de precio, contrastar escenarios y reducir decisiones basadas solo en intuici\'on o en el recuerdo de la \'ultima campa\~na.
+
+Desde la perspectiva de la ingenier\'ia de sistemas, el problema puede entenderse como una necesidad de transformar datos dispersos en conocimiento accionable. Los datos se encuentran en fuentes como Sunat, PromPer\'u, MIDAGRI, reportes gremiales y bases internacionales; sin embargo, no siempre est\'an integrados, limpios ni preparados para modelamiento. La investigaci\'on debe ordenar ese flujo de informaci\'on para que el resultado final sea t\'ecnicamente verificable y comprensible para usuarios no especializados.
+
+La preparaci\'on de datos es una etapa cr\'itica. Antes de entrenar modelos, se requiere revisar consistencia de fechas, unidades de medida, valores at\'ipicos, datos faltantes, cambios de clasificaci\'on arancelaria y diferencias entre fuentes. Si la serie de precios se construye con errores, el modelo puede aprender patrones falsos y generar recomendaciones inadecuadas. Por ello, la calidad del dato forma parte de la calidad de la decisi\'on.
+
+El precio FOB referencial debe interpretarse como una variable agregada de mercado y no como el ingreso exacto de cada productor. Entre el valor FOB y el precio en chacra intervienen costos de cosecha, empaque, selecci\'on, certificaci\'on, transporte, comisiones, mermas y condiciones contractuales. Aun as\'i, la serie FOB es pertinente porque resume la se\~nal internacional que condiciona la rentabilidad de la cadena exportadora.
+
+Un modelo predictivo aplicado a decisiones de siembra debe comunicar incertidumbre. La presentaci\'on de un valor \'unico puede inducir una falsa sensaci\'on de certeza, especialmente en mercados vol\'atiles. Por ello, la investigaci\'on debe considerar escenarios optimista, esperado y pesimista, o al menos rangos de variaci\'on que permitan comprender la magnitud del riesgo.
+
+La evaluaci\'on del modelo tampoco debe limitarse a una sola m\'etrica. El RMSE penaliza con fuerza errores grandes, el MAPE facilita la interpretaci\'on porcentual y el $R^{2}$ permite observar capacidad explicativa relativa. Utilizar varias m\'etricas permite evitar conclusiones apresuradas y seleccionar un modelo que no solo sea preciso en promedio, sino tambi\'en estable frente a periodos de alta variabilidad (Murugesan et al., 2022; Zhang et al., 2025).
+
+El dise\~no metodol\'ogico debe respetar la naturaleza temporal de los datos. En series de tiempo, no corresponde mezclar aleatoriamente observaciones de entrenamiento y prueba, porque se puede filtrar informaci\'on del futuro hacia el pasado. La validaci\'on debe realizarse con cortes temporales, ventanas deslizantes o separaciones cronol\'ogicas que simulen el uso real del modelo.
+
+La interpretabilidad constituye otro requisito central. Un modelo de aprendizaje profundo puede mostrar buen desempe\~no estad\'istico, pero si sus resultados no pueden explicarse de manera razonable al productor, su adopci\'on ser\'a limitada. Por ello, la tesis debe equilibrar precisi\'on, transparencia y utilidad pr\'actica, especialmente si se busca orientar decisiones con consecuencias econ\'omicas importantes.
+
+La comparaci\'on con modelos cl\'asicos es necesaria para justificar la complejidad. ARIMA y SARIMA permiten establecer una l\'inea base, mientras que LSTM, TCN o modelos h\'ibridos pueden capturar relaciones no lineales y dependencias temporales m\'as complejas (Chen et al., 2023; Xia, 2024). Si la mejora de un modelo avanzado es marginal, podr\'ia preferirse una alternativa m\'as simple; si la mejora es significativa, la complejidad queda mejor sustentada.
+
+El uso de variables ex\'ogenas debe responder a una pregunta clara: Qu\'e informaci\'on estaba disponible antes del momento de pronosticar. Variables como volumen exportado, destino, tipo de cambio, calendario de campa\~na y clima pueden aportar valor predictivo, pero solo si se incorporan con cuidado temporal. De lo contrario, el modelo podr\'ia parecer exitoso en pruebas y fallar cuando se use con datos reales.
+
+La tesis tambi\'en debe reconocer que la decisi\'on de siembra no depende \'unicamente del precio. El productor eval\'ua disponibilidad de agua, acceso a financiamiento, costos de instalaci\'on, mano de obra, asistencia t\'ecnica, certificaciones, riesgo sanitario y alternativas de cultivo. El precio FOB es una variable clave, pero su utilidad aumenta cuando se interpreta dentro de una matriz m\'as amplia de decisi\'on agr\'icola.
+
+La vulnerabilidad de productores peque\~nos y medianos refuerza la pertinencia social del estudio. Estos actores suelen tener menor capacidad de negociaci\'on, menor acceso a reportes especializados y menor margen financiero para absorber errores. Un sistema de apoyo basado en datos puede contribuir a reducir asimetr\'ias de informaci\'on y mejorar la calidad de sus decisiones productivas.
+
+La articulaci\'on con asociaciones y cooperativas puede ampliar el impacto del modelo. Cuando los pron\'osticos se comparten de manera agregada, pueden servir para programar asistencia t\'ecnica, coordinar ventanas de cosecha, discutir contratos y promover estrategias de diversificaci\'on. En ese sentido, la utilidad del modelo no se limita a una parcela individual, sino que puede fortalecer la gesti\'on colectiva de la cadena.
+
+La sostenibilidad ambiental tambi\'en se relaciona con la decisi\'on de siembra. Expandir hect\'areas de palta sin una lectura adecuada del mercado puede intensificar la presi\'on sobre agua, suelo e infraestructura. Si el precio futuro no compensa los costos, el productor queda expuesto econ\'omicamente y el territorio asume una presi\'on productiva que pudo planificarse mejor. Pronosticar precios no resuelve por s\'i solo el problema ambiental, pero aporta informaci\'on para decidir con mayor prudencia.
+
+La investigaci\'on se justifica, finalmente, por su aporte aplicado. No se trata solo de demostrar que un algoritmo puede estimar una serie, sino de construir una propuesta coherente entre problema real, datos disponibles, t\'ecnicas predictivas y decisi\'on de siembra. Esa coherencia es lo que convierte al modelo en una herramienta de apoyo y no en un ejercicio aislado de programaci\'on o estad\'istica.
+
+La ampliaci\'on de la frontera agroexportadora de palta Hass en La Libertad debe analizarse como una decisi\'on de inversi\'on de mediano plazo. El productor no solo decide instalar plantones; decide inmovilizar capital, agua, suelo, mano de obra y asistencia t\'ecnica durante varios ciclos antes de observar retornos comerciales consistentes. Esta condici\'on transforma la siembra en una apuesta sobre precios futuros y no en una simple respuesta al precio observado en la campa\~na inmediata.
+
+La informaci\'on hist\'orica disponible muestra que el mercado puede premiar o castigar con rapidez los cambios de oferta. Un incremento de volumen puede elevar el valor total exportado y, al mismo tiempo, reducir el precio unitario. Esta paradoja es central para la presente tesis: El productor puede escuchar que el sector crece, pero dicho crecimiento no garantiza que su margen individual mejore si los costos aumentan o si el precio FOB se reduce.
+
+La utilidad de un modelo predictivo depende de su capacidad para convertir datos en escenarios accionables. No basta con producir un valor puntual de precio; se requiere mostrar rangos, direcciones de tendencia, riesgo de ca\'ida y sensibilidad frente a cambios de volumen. En decisiones de siembra, la incertidumbre es inevitable, pero puede gestionarse mejor cuando el productor conoce la distribuci\'on posible de resultados y no solo un promedio hist\'orico.
+
+La cadena de valor de la palta Hass tambi\'en contiene asimetr\'ias tecnol\'ogicas. Las empresas exportadoras grandes suelen contar con equipos comerciales, plataformas de inteligencia de mercado y capacidad para leer reportes internacionales. En cambio, un productor mediano o peque\~no puede depender de referencias informales, precios de la campa\~na anterior o recomendaciones de intermediarios. Esta diferencia en acceso a informaci\'on puede convertirse en una diferencia de rentabilidad.
+
+Desde la perspectiva de la ingenier\'ia de sistemas, el problema no se reduce al algoritmo. La soluci\'on requiere una arquitectura de datos que integre fuentes, valide registros, procese series temporales, genere variables explicativas, entrene modelos, eval\'ue errores y presente resultados comprensibles. Cada componente debe dise\~narse con trazabilidad, porque una recomendaci\'on de siembra mal explicada podr\'ia inducir decisiones costosas.
+
+Los modelos cl\'asicos, como ARIMA y SARIMA, siguen siendo necesarios porque ofrecen interpretabilidad y una l\'inea base estad\'istica. Si un modelo complejo no supera claramente a un modelo cl\'asico, su adopci\'on no se justifica. Por ello, la comparaci\'on metodol\'ogica debe formar parte del dise\~no de la investigaci\'on, tanto para medir error predictivo como para explicar por qu\'e un enfoque resulta m\'as conveniente en el contexto de La Libertad.
+
+Las redes LSTM y sus variantes son relevantes porque la serie de precios de palta puede contener dependencias de largo plazo. Las decisiones de siembra tomadas en un periodo de precios altos pueden influir en la oferta varios a\~nos despu\'es, cuando las plantaciones entran en producci\'on. Esta memoria temporal no siempre es capturada por modelos lineales simples, lo que justifica explorar m\'etodos capaces de aprender patrones no lineales.
+
+Los modelos h\'ibridos resultan atractivos porque permiten separar el componente lineal, el componente estacional y el componente no lineal de la serie. Una arquitectura bien planteada podr\'ia usar SARIMA para explicar estacionalidad y LSTM o SVR para capturar residuos complejos. Esta combinaci\'on puede ofrecer un equilibrio entre precisi\'on e interpretabilidad, dos requisitos importantes para una herramienta de apoyo a productores.
+
+El uso de variables ex\'ogenas debe realizarse con cuidado. Incorporar volumen exportado, destino, tipo de cambio, calendario de campa\~na o clima puede mejorar el modelo si esas variables est\'an disponibles antes del periodo a pronosticar. Si se incorporan datos conocidos solo despu\'es del evento, se produce fuga de informaci\'on y el modelo parecer\'a preciso en pruebas, pero fallar\'a en uso real.
+
+La justificaci\'on social de la investigaci\'on se relaciona con la reducci\'on de incertidumbre. Un productor que comprende escenarios de precio y margen puede decidir con mayor prudencia si conviene sembrar, esperar, diversificar o ajustar su escala. La tecnolog\'ia, en este sentido, no reemplaza la experiencia agr\'icola, sino que la complementa con evidencia cuantitativa y actualizable.
+
+\begin{figure}[H]
+\caption{Flujo propuesto para transformar datos de mercado en apoyo a decisiones de siembra}
+\centering
+\resizebox{0.94\textwidth}{!}{%
+\begin{tikzpicture}[
+  item/.style={rectangle, draw=gray!60!black, fill=gray!8, rounded corners=5pt, align=center, minimum width=2.85cm, minimum height=1cm},
+  model/.style={rectangle, draw=purple!65!black, fill=purple!10, rounded corners=5pt, align=center, minimum width=2.85cm, minimum height=1cm},
+  decision/.style={rectangle, draw=green!45!black, fill=green!12, rounded corners=5pt, align=center, minimum width=2.85cm, minimum height=1cm},
+  arrow/.style={-{Stealth[length=2.4mm]}, thick, draw=gray!65!black}
+]
+\node[item] (sources) {Fuentes de datos\\Sunat, MIDAGRI\\PromPer\'u};
+\node[item, right=0.75cm of sources] (prep) {Limpieza y\\variables\\temporales};
+\node[model, right=0.75cm of prep] (training) {Modelos\\ARIMA, LSTM\\h\'ibridos};
+\node[model, right=0.75cm of training] (forecast) {Pron\'ostico\\precio FOB\\y escenarios};
+\node[decision, right=0.75cm of forecast] (decision) {Apoyo a\\decisi\'on\\de siembra};
+\draw[arrow] (sources) -- (prep);
+\draw[arrow] (prep) -- (training);
+\draw[arrow] (training) -- (forecast);
+\draw[arrow] (forecast) -- (decision);
+\end{tikzpicture}}
+\end{figure}
+
+\section{Objetivo de la investigaci\'on}
+
+El objetivo general de la investigación consiste en desarrollar un modelo predictivo de precios de exportación FOB de palta Hass que permita apoyar la toma de decisiones de siembra en productores agrícolas de la región La Libertad, Perú. Este objetivo responde a la necesidad de transformar datos históricos y variables relevantes del mercado en información anticipatoria útil para decisiones de inversión agrícola de mediano plazo. Para alcanzarlo, resulta necesario, en primer lugar, caracterizar la evolución histórica del precio FOB de la palta Hass peruana y su relación con la dinámica productiva y exportadora de La Libertad, pues sin una comprensión del comportamiento temporal de la serie no es posible seleccionar modelos adecuados. En segundo lugar, se requiere identificar y procesar variables explicativas asociadas con oferta, estacionalidad, destinos de exportación y factores externos que puedan mejorar el desempeño predictivo frente a modelos univariados. En tercer lugar, corresponde implementar y comparar modelos estadísticos y de aprendizaje profundo, tales como ARIMA, SARIMA, LSTM y arquitecturas híbridas, evaluando su desempeño mediante RMSE, MAPE y $R^{2}$. En cuarto lugar, se debe seleccionar el modelo con mejor balance entre precisión, estabilidad e interpretabilidad para el contexto de decisión de siembra. Finalmente, se busca proponer lineamientos de uso del modelo como herramienta de apoyo para productores, de modo que sus resultados puedan traducirse en escenarios comprensibles de riesgo, oportunidad y planificación productiva.
+
+\section{Hip\'otesis de investigaci\'on}
+
+La investigaci\'on plantea una hip\'otesis general y cinco hip\'otesis espec\'ificas asociadas con las soluciones funcionales del modelo predictivo. Esta formulaci\'on permite vincular el desarrollo tecnol\'ogico con indicadores verificables de precisi\'on, utilidad percibida, interpretaci\'on de informaci\'on y apoyo econ\'omico a la decisi\'on de siembra.
+
+\begin{itemize}
+  \item \textbf{Hg:} El desarrollo de un modelo predictivo de precios de exportaci\'on de palta Hass impacta positivamente en el apoyo a la toma de decisiones de siembra en productores agr\'icolas de La Libertad, Per\'u, al mejorar la precisi\'on del pron\'ostico, la evaluaci\'on de rentabilidad, la simulaci\'on de escenarios, el an\'alisis hist\'orico y la generaci\'on de reportes para la planificaci\'on agr\'icola.
+  \item \textbf{He1:} El m\'odulo de rentabilidad mejora la estimaci\'on econ\'omica de la decisi\'on de siembra en productores agr\'icolas de palta Hass de La Libertad, al permitir calcular ingresos esperados, costos proyectados y margen de ganancia probable.
+  \item \textbf{He2:} El simulador de escenarios reduce la incertidumbre en la toma de decisiones de siembra, al permitir evaluar escenarios optimistas, esperados y pesimistas frente a variaciones del precio FOB, volumen exportado y costos de producci\'on.
+  \item \textbf{He3:} El modelo predictivo de precios FOB mejora la precisi\'on del pron\'ostico de precios de exportaci\'on de palta Hass, al comparar modelos SARIMA y LSTM mediante m\'etricas de error como RMSE y MAPE.
+  \item \textbf{He4:} El an\'alisis hist\'orico interactivo permite identificar patrones relevantes de comportamiento del precio FOB de la palta Hass, tales como tendencias, estacionalidad, variaciones interanuales y periodos de mayor volatilidad.
+  \item \textbf{He5:} Los reportes de ciclos mejoran la interpretaci\'on de la informaci\'on hist\'orica y predictiva, al facilitar la identificaci\'on de periodos favorables o desfavorables para la siembra y planificaci\'on productiva.
+\end{itemize}
+
+\section{Correspondencia entre objetivos, soluciones e hip\'otesis}
+
+Con el fin de mantener coherencia metodol\'ogica entre problema, objetivos, soluciones e hip\'otesis, los objetivos espec\'ificos se organizan de acuerdo con las cinco soluciones planteadas para el sistema de apoyo a la decisi\'on. Esta correspondencia permite que cada componente propuesto tenga una finalidad evaluable.
+
+\begin{table}[H]
+\caption{Correspondencia entre soluciones, hip\'otesis y objetivos espec\'ificos}
+\centering
+\small
+\begin{tabularx}{\textwidth}{p{2.5cm}p{2cm}X}
+\toprule
+\textbf{Soluci\'on} & \textbf{Hip\'otesis} & \textbf{Objetivo espec\'ifico reformulado} \\
+\midrule
+S-1: M\'odulo de rentabilidad & He1 & Dise\~nar e implementar un m\'odulo de rentabilidad que permita estimar ingresos, costos y margen esperado de la siembra de palta Hass en productores agr\'icolas de La Libertad. \\
+S-2: Simulador de escenarios & He2 & Desarrollar un simulador de escenarios que permita evaluar condiciones optimistas, esperadas y pesimistas del precio FOB, costos y volumen exportado para apoyar la decisi\'on de siembra. \\
+S-3: Modelo predictivo de precios FOB & He3 & Implementar y comparar modelos SARIMA y LSTM para pronosticar precios FOB de exportaci\'on de palta Hass, evaluando su desempe\~no mediante RMSE y MAPE. \\
+S-4: An\'alisis hist\'orico interactivo & He4 & Construir un m\'odulo de an\'alisis hist\'orico interactivo que permita visualizar tendencias, estacionalidad y comportamiento del precio FOB de la palta Hass entre 2018 y 2026. \\
+S-5: Reportes de ciclos & He5 & Generar reportes de ciclos productivos y comerciales que faciliten la interpretaci\'on de periodos favorables o desfavorables para la planificaci\'on de siembra. \\
+\bottomrule
+\end{tabularx}
+\parbox{0.94\textwidth}{\small \textit{Nota.} La relaci\'on entre objetivos e hip\'otesis facilita la posterior contrastaci\'on estad\'istica y funcional de cada soluci\'on propuesta.}
+\end{table}

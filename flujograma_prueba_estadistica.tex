@@ -1,0 +1,155 @@
+\documentclass[12pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage[landscape, margin=1.2cm]{geometry}
+\usepackage{newtxtext, newtxmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage[hidelinks]{hyperref}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+{\bfseries\Large Flujograma para seleccionar la prueba estadística en la contrastación de hipótesis}
+\end{center}
+
+\vspace{0.2cm}
+
+\begin{figure}[h!]
+\centering
+\resizebox{0.98\linewidth}{!}{%
+\begin{tikzpicture}[
+  node distance=1.05cm and 1.25cm,
+  every node/.style={font=\small},
+  startstop/.style={
+    rectangle,
+    rounded corners,
+    draw,
+    align=center,
+    text width=3.3cm,
+    minimum height=0.9cm
+  },
+  process/.style={
+    rectangle,
+    draw,
+    align=center,
+    text width=3.4cm,
+    minimum height=0.9cm
+  },
+  decision/.style={
+    diamond,
+    draw,
+    align=center,
+    aspect=2.15,
+    text width=3.0cm,
+    inner sep=1pt
+  },
+  note/.style={
+    rectangle,
+    draw,
+    align=center,
+    text width=4.1cm,
+    minimum height=0.75cm
+  },
+  arrow/.style={-{Stealth[length=2.2mm]}, thick}
+]
+
+% Main path
+\node[startstop] (start) {Inicio\\Definir hipótesis};
+\node[process, right=of start] (desc) {Siempre aplicar\\estadística descriptiva};
+\node[decision, right=of desc] (objective) {Objetivo del análisis};
+
+% Descriptive-only branch
+\node[process, above=2.0cm of objective] (descriptive) {Un solo grupo\\sin comparación\\Describir resultados};
+
+% Correlation branch
+\node[decision, below=2.1cm of objective] (corrnormal) {Correlación\\¿normalidad?};
+\node[process, right=of corrnormal] (pearson) {Pearson\\si normal};
+\node[process, below=of pearson] (spearman) {Spearman\\si no normal\\u ordinal};
+
+% Comparison branch
+\node[decision, right=2.0cm of objective] (scale) {Escala de la\\variable};
+
+% Qualitative branch
+\node[decision, above=1.9cm of scale] (qualrel) {Cualitativa\\¿muestras relacionadas?};
+\node[process, right=of qualrel] (mcnemar) {McNemar};
+\node[process, below=of mcnemar] (chi) {Chi-cuadrada\\Fisher si esperado $<5$};
+
+% Quantitative branch
+\node[decision, below=1.9cm of scale] (groups) {Cuantitativa\\número de grupos};
+\node[decision, right=1.6cm of groups] (two) {2 grupos\\o 2 momentos};
+\node[decision, below=1.35cm of two] (three) {$\geq 3$ grupos\\o mediciones};
+
+% Two-group branch
+\node[decision, right=1.55cm of two] (normal2) {¿Normalidad?\\Shapiro-Wilk $n\leq50$\\Kolmogorov-Smirnov $n>50$};
+\node[decision, right=1.65cm of normal2] (rel2normal) {Normal\\¿relacionadas?};
+\node[decision, below=1.35cm of rel2normal] (rel2nonnormal) {No normal\\¿relacionadas?};
+
+\node[process, right=1.45cm of rel2normal] (tpaired) {t-Student\\relacionada};
+\node[process, below=of tpaired] (tind) {t-Student\\independiente};
+\node[process, right=1.45cm of rel2nonnormal] (wilcoxon) {Wilcoxon};
+\node[process, below=of wilcoxon] (mann) {U de\\Mann-Whitney};
+
+% Three-or-more branch
+\node[decision, right=1.55cm of three] (normal3) {¿Normalidad?};
+\node[decision, right=1.65cm of normal3] (rel3normal) {Normal\\¿relacionadas?};
+\node[decision, below=1.35cm of rel3normal] (rel3nonnormal) {No normal\\¿relacionadas?};
+
+\node[process, right=1.45cm of rel3normal] (anova2) {ANOVA\\2 vías / medidas repetidas};
+\node[process, below=of anova2] (anova1) {ANOVA\\1 vía};
+\node[process, right=1.45cm of rel3nonnormal] (friedman) {Friedman};
+\node[process, below=of friedman] (kruskal) {Kruskal-Wallis};
+
+% Final note
+\node[note, below=1.6cm of groups] (justify) {Justificar en el protocolo:\\diseño, mediciones, escala, normalidad y prueba elegida};
+
+% Arrows
+\draw[arrow] (start) -- (desc);
+\draw[arrow] (desc) -- (objective);
+\draw[arrow] (objective) -- node[left] {Describir} (descriptive);
+\draw[arrow] (objective) -- node[left] {Correlación} (corrnormal);
+\draw[arrow] (objective) -- node[above] {Comparar} (scale);
+
+\draw[arrow] (corrnormal) -- node[above] {Normal} (pearson);
+\draw[arrow] (corrnormal) |- node[right] {No normal} (spearman);
+
+\draw[arrow] (scale) -- node[right] {Cualitativa} (qualrel);
+\draw[arrow] (scale) -- node[right] {Cuantitativa} (groups);
+
+\draw[arrow] (qualrel) -- node[above] {Sí} (mcnemar);
+\draw[arrow] (qualrel) |- node[right] {No} (chi);
+
+\draw[arrow] (groups) -- node[above] {2} (two);
+\draw[arrow] (groups) |- node[right] {$\geq3$} (three);
+
+\draw[arrow] (two) -- (normal2);
+\draw[arrow] (normal2) -- node[above] {Sí} (rel2normal);
+\draw[arrow] (normal2) |- node[right] {No} (rel2nonnormal);
+
+\draw[arrow] (rel2normal) -- node[above] {Sí} (tpaired);
+\draw[arrow] (rel2normal) |- node[right] {No} (tind);
+\draw[arrow] (rel2nonnormal) -- node[above] {Sí} (wilcoxon);
+\draw[arrow] (rel2nonnormal) |- node[right] {No} (mann);
+
+\draw[arrow] (three) -- (normal3);
+\draw[arrow] (normal3) -- node[above] {Sí} (rel3normal);
+\draw[arrow] (normal3) |- node[right] {No} (rel3nonnormal);
+
+\draw[arrow] (rel3normal) -- node[above] {Sí} (anova2);
+\draw[arrow] (rel3normal) |- node[right] {No} (anova1);
+\draw[arrow] (rel3nonnormal) -- node[above] {Sí} (friedman);
+\draw[arrow] (rel3nonnormal) |- node[right] {No} (kruskal);
+
+\draw[arrow] (groups) -- (justify);
+
+\end{tikzpicture}%
+}
+\caption*{Fuente: Elaboración propia con base en criterios de diseño del estudio, número de mediciones, escala de variables y supuesto de normalidad.}
+\end{figure}
+
+\end{document}
