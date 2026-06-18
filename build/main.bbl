@@ -18,115 +18,17 @@ Chen, J., Li, X., and Wang, Y. (2023).
   forecasting based on {VMD} and {LSTM} network.
 \newblock {\em Scientific Reports}, 13(1):9932.
 
-\bibitem[{ComexPer{\'u}}, 2025]{ComexPeru2025}
-{ComexPer{\'u}} (2025).
-\newblock Paltas y diversificaci{\'o}n de mercados.
-\newblock
-  \url{https://www.comexperu.org.pe/articulo/paltas-y-diversificacion-de-mercados}.
-
-\bibitem[{Food and Agriculture Organization of the United Nations},
-  2026]{FAO2026}
-{Food and Agriculture Organization of the United Nations} (2026).
-\newblock Principales frutas tropicales: resultados 2025.
-\newblock Technical report, FAO, Rome, Italy.
-
-\bibitem[Kaggle, nd]{KaggleAvocado}
-Kaggle (n.d.).
-\newblock Avocado prices.
-\newblock \url{https://www.kaggle.com/datasets/neuromusic/avocado-prices}.
-
-\bibitem[Kurnadipare et~al., 2025]{Kurnadipare2025}
-Kurnadipare, N. et~al. (2025).
-\newblock Comparative analysis of {SARIMA} and {LSTM} for agricultural export
-  forecasting.
-\newblock {\em [Journal]}.
-
-\bibitem[{Ministerio de Desarrollo Agrario y Riego}, 2024]{MIDAGRI2024}
-{Ministerio de Desarrollo Agrario y Riego} (2024).
-\newblock Exportaci{\'o}n de palta super{\'o} las 36 mil toneladas en primer
-  bimestre de 2024.
-\newblock
-  \url{https://www.gob.pe/institucion/sse/noticias/930071-midagri-exportacion-de-palta-supero-las-36-mil-toneladas-en-primer-bimestre-de-2024}.
-
-\bibitem[{Ministerio de Desarrollo Agrario y Riego}, 2025]{MIDAGRI2025}
-{Ministerio de Desarrollo Agrario y Riego} (2025).
-\newblock El agro en cifras: diciembre 2024.
-\newblock Technical report, MIDAGRI, Lima, Per{\'u}.
-
-\bibitem[Murugesan et~al., 2022]{Murugesan2022}
-Murugesan, R., Mishra, E., and Krishnan, A.~H. (2022).
-\newblock Forecasting agricultural commodities prices using deep learning-based
-  models.
-\newblock {\em International Journal of Sustainable Agricultural Management and
-  Informatics}, 8(3):242--277.
-
 \bibitem[Pantale{\'o}n et~al., 2024]{Pantaleon2024}
 Pantale{\'o}n, L., Montes, I., Aza{\~n}ero, R., et~al. (2024).
 \newblock Sostenibilidad de las empresas exportadoras de palta en el {Per{\'u}}
   a nivel internacional (2012--2023).
 \newblock Technical report, Repositorio Alicia CONCYTEC.
 
-\bibitem[Paul et~al., 2022]{Paul2022}
-Paul, N. et~al. (2022).
-\newblock Machine learning for brinjal price prediction.
-\newblock {\em PLOS ONE}, 17(3):e0265000.
-
-\bibitem[{PromPer{\'u} Exportemos}, 2026]{PromPeru2026}
-{PromPer{\'u} Exportemos} (2026).
-\newblock Aguacates (paltas), frescas o secas: subpartida 0804400000.
-\newblock
-  \url{https://exportemos.pe/descubre-oportunidades-de-exportacion/producto/palta-0804400000}.
-
-\bibitem[Reis~Filho et~al., 2022]{ReisFilho2022}
-Reis~Filho, I.~J., Marcacini, R.~M., and Rezende, S.~O. (2022).
-\newblock On the enrichment of time series with textual data for forecasting
-  agricultural commodity prices.
-\newblock {\em MethodsX}, 9:101758.
-
-\bibitem[{Sierra y Selva Exportadora}, 2020]{SierraSelva2020}
-{Sierra y Selva Exportadora} (2020).
-\newblock An{\'a}lisis de mercado de palta 2015--2019.
-\newblock Technical report, Ministerio de Agricultura y Riego del Per{\'u},
-  Lima, Per{\'u}.
-
-\bibitem[Theofilou et~al., 2025]{Theofilou2025}
-Theofilou, A. et~al. (2025).
-\newblock A systematic review of agricultural price forecasting techniques.
-\newblock {\em Sustainability}, 17(1):1--30.
-
-\bibitem[Torres, 2022]{Torres2022}
-Torres, A. (2022).
-\newblock Propuesta de mejora de la cadena de suministros de la palta mediante
-  el uso de herramientas de an{\'a}lisis de series de tiempo.
-\newblock Master's thesis, Pontificia Universidad Cat{\'o}lica del Per{\'u}.
-
-\bibitem[Trincado~Gajardo, 2022]{Trincado2022}
-Trincado~Gajardo, N. (2022).
-\newblock An{\'a}lisis de precios hed{\'o}nicos de palta hass en chile.
-\newblock Master's thesis, Universidad [Instituci{\'o}n], Chile.
-
-\bibitem[UNData, nd]{UNDataFAO}
-UNData (n.d.).
-\newblock {FAOSTAT} agricultural data.
-\newblock \url{https://data.un.org/Data.aspx?d=FAO&f=itemCode%3A572}.
-
-\bibitem[Vargas~C{\'o}rdova, 2025]{VargasCordova2025}
-Vargas~C{\'o}rdova, N. (2025).
-\newblock Cadena de valor de palta hass en el valle torobamba, ayacucho.
-\newblock Master's thesis, Universidad [Instituci{\'o}n], Per{\'u}.
-
 \bibitem[Vel{\'a}squez et~al., 2025]{Velasquez2025}
 Vel{\'a}squez, F., Cardona, R., Sierra, S., and Jim{\'e}nez, E. (2025).
 \newblock Methodological proposal for market risk quantification: A case study
   of the {Hass} avocado.
 \newblock {\em Revista de Economia e Sociologia Rural}, 63(2):e234567.
-
-\bibitem[Vittery-Flores and Colchao-Ccahuana, 2023]{VitteryFlores2023}
-Vittery-Flores, E.~R. and Colchao-Ccahuana, R. (2023).
-\newblock Situaci{\'o}n actual y perspectivas de la producci{\'o}n de palta
-  (\textit{Persea americana}) peruana en el contexto del comercio
-  internacional.
-\newblock {\em Ingenier{\'i}a Industrial}, 44:157--178.
 
 \bibitem[Xia, 2024]{Xia2024}
 Xia, C. (2024).

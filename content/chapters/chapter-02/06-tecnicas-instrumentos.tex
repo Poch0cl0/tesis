@@ -1,28 +1,27 @@
 \section{Técnicas e instrumentos, validación y confiabilidad}
 
-Las técnicas principales serán el análisis documental de fuentes abiertas, el
-procesamiento de series temporales, el entrenamiento comparativo de modelos y la
-evaluación funcional de los módulos de apoyo a la decisión.
+\subsection{Técnicas e instrumentos}
 
 \begin{table}[H]
 \centering
-\caption{Técnicas e instrumentos de recolección y análisis}
-\begin{tabular}{p{4cm}p{5cm}p{5cm}}
+\caption{Técnicas e instrumentos del estudio}
+\small
+\begin{tabularx}{\textwidth}{p{3.4cm}p{4.1cm}X}
 \toprule
-\textbf{Técnica} & \textbf{Instrumento} & \textbf{Fuente / aplicación} \\
+\textbf{Técnica} & \textbf{Instrumento} & \textbf{Fuente o aplicación} \\
 \midrule
-Análisis documental & Ficha de extracción de datos & UNData, Kaggle y fuentes nacionales de exportación. \\
-Procesamiento de datos & Scripts en Python & Limpieza, normalización, rezagos y variables temporales. \\
-Modelado predictivo & SARIMA, LSTM y SVR & Entrenamiento y comparación de modelos. \\
-Evaluación de modelos & MAE, RMSE, MAPE & Medición del error de pronóstico. \\
-Validación funcional & Cuestionario de utilidad percibida & Productores de palta de La Libertad. \\
+Análisis documental & Ficha de extracción y diccionario de datos & Microdatos INEI y operaciones Aduanet 0804400000. \\
+Procesamiento de datos & Scripts reproducibles en Python & Limpieza, integración, agregación y creación de variables. \\
+Modelado predictivo & Random Forest, HistGradientBoosting, ElasticNet, regresión logística, Prophet y ensamble FOB & Predicción FOB a seis semanas, margen, riesgo de margen bajo y nivel de acuerdo entre modelos. \\
+Evaluación técnica & Ficha de métricas & MAE, RMSE y MAPE por modelo y horizonte. \\
+Encuesta & Cuestionario pretest--postest & Participantes de la prueba piloto del prototipo. \\
+Juicio de expertos & Ficha de validación de contenido & Especialistas en agricultura, datos y metodología. \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
-\textbf{Validación y confiabilidad:} la calidad de datos será verificada mediante
-revisión de valores faltantes, duplicados, rangos atípicos y consistencia
-temporal. La confiabilidad del modelo se evaluará con partición temporal,
-comparación de métricas y, de ser posible, validación cruzada para series de
-tiempo. La utilidad del sistema se validará con productores mediante criterios
-de claridad, pertinencia y facilidad de interpretación.
+\subsection{Validación y confiabilidad}
+
+El cuestionario será revisado por al menos tres jueces especialistas. La validez de contenido se estimará mediante V de Aiken por ítem y para el instrumento total. Antes de la aplicación principal se realizará una prueba piloto con un mínimo de 30 participantes. La consistencia interna se calculará con alfa de Cronbach y, cuando sea posible, omega de McDonald.
+
+La confiabilidad del componente de datos se sustentará en reglas reproducibles: unicidad por operación o clave compuesta, dominio de fechas y destinos, valor FOB y peso neto positivos, trazabilidad de transformaciones y registro de exclusiones. La confiabilidad predictiva se evaluará mediante particiones temporales, comparación con una línea base y repetición del proceso con parámetros documentados.

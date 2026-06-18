@@ -1,0 +1,21 @@
+{
+  "model_name": "06_margen_elasticnet",
+  "target": "margen_exportador_soles_kg",
+  "rows": 585,
+  "train_rows": 438,
+  "test_rows": 147,
+  "mae": 0.3922243350760695,
+  "rmse": 0.5531768049203571,
+  "mape_pct": 7.093658231600887,
+  "r2": 0.7244994911378679,
+  "features_num": [
+    "precio_fob_usd_kg",
+    "rendimiento_kg_ha",
+    "porcentaje_vendido"
+  ],
+  "features_cat": [
+    "region",
+    "provincia",
+    "tipo_conduccion_cultivo"
+  ]
+}

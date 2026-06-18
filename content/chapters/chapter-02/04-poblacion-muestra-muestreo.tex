@@ -1,69 +1,19 @@
 \section{Población, muestra y muestreo}
 
-La investigación considera dos unidades de análisis principales. La primera corresponde a los registros históricos mensuales de precios FOB de exportación de palta Hass, utilizados para entrenar y evaluar los modelos predictivos. La segunda corresponde a los productores agrícolas de palta Hass de la región La Libertad, quienes constituyen la población usuaria del sistema de apoyo a la toma de decisiones de siembra.
-
 \subsection{Población}
 
-Para el indicador de precisión predictiva, la población está conformada por 96 registros mensuales de precios FOB de palta Hass correspondientes al periodo 2018--2026. Esta serie se utiliza para comparar el desempeño de los modelos SARIMA y LSTM mediante las métricas RMSE y MAPE.
+La población documental está constituida por los registros de la Encuesta Nacional Agropecuaria del INEI y las operaciones de Aduanet para la subpartida 0804400000 disponibles en el periodo de estudio. El documento técnico de base reporta aproximadamente 5\,607 observaciones por año en la fuente agropecuaria y 128\,222 registros aduaneros antes de la depuración. Estas cantidades son referencias del origen y no se asumirán como el número final de observaciones válidas.
 
-Para los indicadores de utilidad percibida y mejora en rentabilidad, la población está conformada por productores agrícolas activos de palta Hass de La Libertad. De manera referencial, y considerando la disponibilidad de información sectorial, se asume una población finita de $N=400$ productores.
+La población usuaria está conformada por productores, asesores y técnicos vinculados con la producción de palta Hass en La Libertad que puedan utilizar información de precios, rentabilidad y ciclos para apoyar decisiones de campaña.
 
-\subsection{Cálculo de muestra para productores}
+\subsection{Muestra}
 
-Para determinar la muestra de productores se emplea la fórmula de poblaciones finitas:
+En el componente documental se aplicará un criterio censal: se conservarán todos los registros que cumplan los criterios de inclusión y calidad. La muestra analítica definitiva se informará después del proceso ETL, junto con el número de registros excluidos y su causa.
 
-\[
-n = \frac{N Z^{2} p q}{E^{2}(N-1)+Z^{2}p q}
-\]
+Para la evaluación del instrumento y del prototipo se realizará una prueba piloto con un mínimo de 30 participantes, de acuerdo con la guía UNT-2026. Esta cantidad corresponde a una evaluación inicial de confiabilidad y usabilidad; no sustituye una muestra probabilística representativa de todos los productores de La Libertad.
 
-Donde:
+\subsection{Muestreo}
 
-\begin{table}[H]
-\caption{Parámetros para el cálculo de muestra finita}
-\centering
-\begin{tabular}{lcl}
-\toprule
-\textbf{Símbolo} & \textbf{Valor} & \textbf{Descripción} \\
-\midrule
-$N$ & 400 & Población referencial de productores. \\
-$Z$ & 1.96 & Nivel de confianza de 95\%. \\
-$E$ & 0.05 & Error máximo permitido. \\
-$p$ & 0.50 & Probabilidad de ocurrencia. \\
-$q$ & 0.50 & Probabilidad de no ocurrencia. \\
-\bottomrule
-\end{tabular}
-\end{table}
+El muestreo documental será no probabilístico por criterios y cobertura censal de los registros accesibles. Se incluirán operaciones con fecha válida, valor FOB positivo, peso neto positivo, destino identificable y correspondencia con la subpartida seleccionada. Se excluirán duplicados, operaciones anuladas, valores imposibles y registros sin información suficiente para calcular el precio unitario.
 
-Reemplazando los valores:
-
-\[
-n = \frac{400(1.96)^2(0.50)(0.50)}{(0.05)^2(400-1)+(1.96)^2(0.50)(0.50)}
-\]
-
-\[
-n \approx 196
-\]
-
-Por tanto, la muestra estimada para la evaluación con productores es de 196 participantes.
-
-\subsection{Muestra y muestreo por indicador}
-
-\begin{table}[H]
-\caption{Población, muestra y muestreo por indicador principal}
-\centering
-\small
-\begin{tabularx}{\textwidth}{p{3.4cm}X p{2.8cm}p{3.1cm}}
-\toprule
-\textbf{Indicador} & \textbf{Población} & \textbf{Muestra} & \textbf{Muestreo} \\
-\midrule
-Precisión predictiva: RMSE y MAPE & 96 registros mensuales de precios FOB, 2018--2026 & 77 entrenamiento; 19 prueba & Temporal secuencial \\
-Utilidad percibida & 400 productores agrícolas activos de palta Hass en La Libertad & 196 productores & Estratificado por tamaño de parcela \\
-Mejora en rentabilidad & 400 productores agrícolas activos de palta Hass en La Libertad & 196 productores & Estratificado por tamaño de parcela \\
-\bottomrule
-\end{tabularx}
-\parbox{0.94\textwidth}{\small \textit{Nota.} Para el análisis predictivo se conserva el orden cronológico de los datos, evitando fuga de información entre pasado y futuro. Para utilidad percibida y rentabilidad se propone estratificar por tamaño de parcela, con el fin de representar productores pequeños, medianos y grandes.}
-\end{table}
-
-\subsection{Fuentes de datos}
-
-De acuerdo con el documento base, se consideran fuentes abiertas y registros nacionales que permiten construir el conjunto de datos inicial: precios FOB, volumen exportado, fecha, destino, temporada y variables económicas asociadas al cultivo. Las fuentes internacionales, como Kaggle y UNData, pueden emplearse como apoyo exploratorio; sin embargo, la aplicación al contexto de La Libertad requiere priorizar registros nacionales de exportación, precios FOB y costos de producción.
+La selección de participantes será no probabilística e intencional, considerando experiencia o participación en la cadena de palta Hass, disponibilidad para completar las dos mediciones y consentimiento informado. Se procurará incluir perfiles con diferentes tamaños de unidad productiva para ampliar la diversidad de la prueba piloto.

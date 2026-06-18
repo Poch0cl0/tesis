@@ -1,0 +1,14 @@
+{
+  "components": [
+    "01_fob_random_forest",
+    "02_fob_hist_gradient_boosting",
+    "03_fob_elasticnet",
+    "10_fob_prophet"
+  ],
+  "weights": [
+    0.25,
+    0.25,
+    0.25,
+    0.25
+  ]
+}

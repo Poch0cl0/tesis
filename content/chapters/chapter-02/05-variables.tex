@@ -1,31 +1,30 @@
 \section{Variables}
 
-\begin{itemize}
-  \item \textbf{Variable independiente:} modelo predictivo de precios de
-  exportación de palta Hass, implementado mediante algoritmos de series de
-  tiempo y aprendizaje automático.
-  \item \textbf{Variable dependiente:} apoyo a la toma de decisiones de siembra,
-  medido a través de la reducción de incertidumbre, claridad del margen esperado
-  y recomendación de escenarios de campaña.
-\end{itemize}
+\subsection{Tipo}
+
+La variable independiente es el \textbf{sistema predictivo de precios de exportación de palta Hass}, compuesto por los modelos de precio, margen y riesgo, el simulador de escenarios, el análisis histórico y los reportes de ciclos. La variable dependiente es el \textbf{apoyo a la toma de decisiones de siembra}, evaluado mediante precisión predictiva, comprensión de la información, reducción de incertidumbre y utilidad percibida.
+
+Como variables de entrada se utilizarán fecha, valor FOB, peso neto, destino, temporada, costos agrícolas, superficie y producción. El precio FOB unitario, la productividad, el ingreso, el costo total, el margen y la ganancia serán variables calculadas y deberán conservar trazabilidad respecto de los campos originales.
 
 \begin{table}[H]
 \centering
-\caption{Variables y factores considerados}
-\begin{tabular}{p{4cm}p{8cm}}
+\caption{Variables analíticas y fuente prevista}
+\small
+\begin{tabularx}{\textwidth}{p{3.3cm}p{3.1cm}X}
 \toprule
-\textbf{Variable / factor} & \textbf{Uso dentro del proyecto} \\
+\textbf{Variable} & \textbf{Campo o cálculo} & \textbf{Fuente y uso} \\
 \midrule
-Precio FOB & Variable objetivo para el pronóstico mensual o semanal. \\
-Volumen exportado & Factor explicativo de oferta y presión de mercado. \\
-Temporada & Captura patrones de cosecha, estacionalidad y ciclos recurrentes. \\
-Fecha & Permite ordenar la serie temporal y crear rezagos. \\
-Destino o mercado & Ayuda a segmentar comportamiento comercial por demanda. \\
-Costos de producción por kilogramo & Insumo para el cálculo de rentabilidad. \\
-Flete & Componente de costo logístico para estimar margen. \\
-Margen & Indicador económico derivado para apoyar la decisión de siembra. \\
-Hectáreas y productividad & Variables para simular escenarios de campaña. \\
-Ganancia & Resultado económico esperado por escenario. \\
+Precio FOB unitario & Valor FOB / peso neto & Aduanet; variable objetivo del pronóstico. \\
+Volumen exportado & PESO\_NETO & Aduanet; presión de oferta y agregación temporal. \\
+Fecha y temporada & FECHA, semana, mes & Aduanet e INEI; orden temporal y estacionalidad. \\
+Destino & PAIS\_DESC & Aduanet; segmentación por mercado. \\
+Costos agrícolas & P235\_VAL, P237\_VAL, P239, P241 & INEI; estimación del costo productivo. \\
+Producción & P219\_CANT\_1, P219\_CANT\_2, P219\_EQUIV\_KG & INEI; productividad y escenarios. \\
+Margen y ganancia & Variables calculadas & Simulador; diferencia entre ingresos y costos. \\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
+
+\subsection{Operacionalización}
+
+La matriz de operacionalización se presenta en el Anexo A. Allí se especifican las definiciones conceptual y operacional, dimensiones, indicadores y escalas de medición de las variables independiente y dependiente.

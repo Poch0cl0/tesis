@@ -1,36 +1,20 @@
 \babel@toc {spanish}{}\relax 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Principales frutas tropicales: vol\'umenes totales de exportaci\'on agregados (2016--2025)}}{3}{figure.caption.2}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Proporciones del volumen de exportaci\'on por tipo (USD y toneladas), 2025}}{3}{figure.caption.3}%
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Producci\'on mundial de palta en proporci\'on por pa\'is}}{5}{figure.caption.5}%
-\contentsline {figure}{\numberline {1.4}{\ignorespaces Valores unitarios medios de exportaci\'on mundial de aguacate (ene 2023 -- jul 2025)}}{7}{figure.caption.7}%
-\contentsline {figure}{\numberline {1.5}{\ignorespaces Formaci\'on de precios y distribuci\'on de ingresos en la cadena de palta}}{9}{figure.caption.10}%
-\contentsline {figure}{\numberline {1.6}{\ignorespaces Ingresos totales por venta de palta Hass, a\~no 2024}}{9}{figure.caption.11}%
-\contentsline {figure}{\numberline {1.7}{\ignorespaces Precios promedio por kilo de palta Hass en mercado mayorista Lo Valledor, Santiago de Chile, 2021}}{10}{figure.caption.12}%
-\contentsline {figure}{\numberline {1.8}{\ignorespaces Aguacate: precios medios al por mayor en EE.UU. (ene 2023 -- nov 2025)}}{10}{figure.caption.13}%
-\contentsline {figure}{\numberline {1.9}{\ignorespaces Evoluci\'on de producci\'on y exportaci\'on de paltas, periodo 2015--2019, Per\'u}}{13}{figure.caption.17}%
-\contentsline {figure}{\numberline {1.10}{\ignorespaces Principales pa\'ises de destino de paltas peruanas (2015--2019)}}{15}{figure.caption.20}%
-\contentsline {figure}{\numberline {1.11}{\ignorespaces Eslabones y actores de la cadena de valor de palta en el valle Torobamba}}{15}{figure.caption.21}%
-\contentsline {figure}{\numberline {1.12}{\ignorespaces Visualizaci\'on del modelo SARIMA y comparaci\'on con datos reales}}{19}{figure.caption.23}%
-\contentsline {figure}{\numberline {1.13}{\ignorespaces Algoritmo de SVR (Support Vector Regression)}}{20}{figure.caption.24}%
-\contentsline {figure}{\numberline {1.14}{\ignorespaces Representaci\'on esquem\'atica de Random Forest}}{20}{figure.caption.25}%
-\contentsline {figure}{\numberline {1.15}{\ignorespaces Procedimiento secuencial en Gradient Boosting Machine (GBM)}}{21}{figure.caption.26}%
-\contentsline {figure}{\numberline {1.16}{\ignorespaces Gr\'afico circular y radar de rendimiento de modelos ML}}{21}{figure.caption.27}%
-\contentsline {figure}{\numberline {1.17}{\ignorespaces Arquitectura LSTM (Long Short-Term Memory)}}{22}{figure.caption.28}%
-\contentsline {figure}{\numberline {1.18}{\ignorespaces Visualizaci\'on del modelo LSTM y comparaci\'on con datos reales}}{22}{figure.caption.29}%
-\contentsline {figure}{\numberline {1.19}{\ignorespaces Taxonom\'ia de t\'ecnicas de predicci\'on de precios agr\'icolas}}{24}{figure.caption.30}%
-\contentsline {figure}{\numberline {1.20}{\ignorespaces Evoluci\'on de las t\'ecnicas de predicci\'on de precios agr\'icolas}}{24}{figure.caption.31}%
-\contentsline {figure}{\numberline {1.21}{\ignorespaces Frecuencia de t\'ecnicas y modelos en predicci\'on de precios agr\'icolas}}{25}{figure.caption.32}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Flujograma para seleccionar la prueba estadística en la contrastación de hipótesis}}{44}{figure.caption.47}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Procedimiento de la investigación basado en CRISP-DM}}{15}{figure.caption.4}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Comparación temporal y error de todos los modelos FOB}}{23}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Resultados del ensamble para precio FOB}}{23}{figure.caption.21}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Resultados de todos los modelos de margen exportador}}{25}{figure.caption.23}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Comparación completa de todos los modelos de riesgo}}{26}{figure.caption.25}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Diagrama de Ishikawa: causas de la decisi\'on de siembra sin informaci\'on anticipada}}{31}{figure.caption.28}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Diagrama de Ishikawa: causas de la decisi\'on de siembra sin informaci\'on anticipada}}{57}{figure.caption.60}%
+\contentsline {figure}{\numberline {D.1}{\ignorespaces \'Arbol de problemas: decisi\'on de siembra de palta Hass en La Libertad}}{32}{figure.caption.29}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {D.1}{\ignorespaces \'Arbol de problemas: decisi\'on de siembra de palta Hass en La Libertad}}{58}{figure.caption.61}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {E.1}{\ignorespaces \'Arbol de objetivos: modelo predictivo para apoyo a la decisi\'on de siembra}}{59}{figure.caption.62}%
+\contentsline {figure}{\numberline {E.1}{\ignorespaces \'Arbol de objetivos: modelo predictivo para apoyo a la decisi\'on de siembra}}{33}{figure.caption.30}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

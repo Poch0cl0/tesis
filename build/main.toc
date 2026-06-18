@@ -1,88 +1,53 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{\numberline {1}INTRODUCCI\'ON}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Contexto mundial de la producci\'on y exportaci\'on de palta Hass}{1}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Importancia econ\'omica de la palta Hass}{1}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Crecimiento del consumo mundial}{2}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}Principales pa\'ises productores y exportadores}{4}{subsection.1.1.3}%
-\contentsline {subsection}{\numberline {1.1.4}Posicionamiento del Per\'u en el mercado internacional}{5}{subsection.1.1.4}%
-\contentsline {section}{\numberline {1.2}Problem\'atica de la volatilidad de precios agr\'icolas}{6}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Comportamiento variable de los precios agr\'icolas}{6}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Influencia de oferta y demanda, clima y estacionalidad}{7}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Impacto econ\'omico en productores y exportadores}{9}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}Riesgo asociado a la toma de decisiones}{11}{subsection.1.2.4}%
-\contentsline {section}{\numberline {1.3}Situaci\'on del sector paltero en Per\'u y La Libertad}{11}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Producci\'on y exportaci\'on peruana}{11}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Participaci\'on de La Libertad}{13}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Problemas de planificaci\'on de campa\~nas}{15}{subsection.1.3.3}%
-\contentsline {subsection}{\numberline {1.3.4}Dependencia de precios hist\'oricos y experiencia emp\'irica}{16}{subsection.1.3.4}%
-\contentsline {section}{\numberline {1.4}Transformaci\'on digital y agricultura inteligente}{16}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Agricultura 4.0}{16}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}Uso de Big Data e Inteligencia Artificial}{17}{subsection.1.4.2}%
-\contentsline {subsection}{\numberline {1.4.3}Beneficios de la anal\'itica predictiva para la agricultura}{17}{subsection.1.4.3}%
-\contentsline {section}{\numberline {1.5}Predicci\'on de precios agr\'icolas mediante series temporales}{18}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}Modelos estad\'isticos tradicionales (ARIMA, SARIMA)}{18}{subsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.5.2}Modelos de Machine Learning (SVR, Random Forest, XGBoost)}{19}{subsection.1.5.2}%
-\contentsline {subsection}{\numberline {1.5.3}Modelos Deep Learning (RNN, LSTM, BiLSTM)}{21}{subsection.1.5.3}%
-\contentsline {subsection}{\numberline {1.5.4}Modelos h\'ibridos recientes (ARIMA-LSTM, CNN-LSTM, TCN-MLP-Attention)}{23}{subsection.1.5.4}%
-\contentsline {subsubsection}{Antecedentes internacionales}{25}{subsubsection*.34}%
-\contentsline {section}{\numberline {1.6}Limitaciones de las investigaciones existentes}{26}{section.1.6}%
-\contentsline {subsection}{\numberline {1.6.1}Predicciones orientadas a mercados asi\'aticos o chinos}{26}{subsection.1.6.1}%
-\contentsline {subsection}{\numberline {1.6.2}Pocos estudios para Latinoam\'erica}{26}{subsection.1.6.2}%
-\contentsline {subsection}{\numberline {1.6.3}Escasez de sistemas de apoyo para peque\~nos productores}{27}{subsection.1.6.3}%
-\contentsline {subsection}{\numberline {1.6.4}Ausencia de herramientas m\'oviles orientadas a decisiones de siembra}{27}{subsection.1.6.4}%
-\contentsline {section}{\numberline {1.7}Necesidad de una soluci\'on tecnol\'ogica para productores de La Libertad}{28}{section.1.7}%
-\contentsline {subsection}{\numberline {1.7.1}Necesidad de anticipar precios FOB}{28}{subsection.1.7.1}%
-\contentsline {subsection}{\numberline {1.7.2}Necesidad de evaluar escenarios de rentabilidad}{28}{subsection.1.7.2}%
-\contentsline {subsection}{\numberline {1.7.3}Importancia de disponer de recomendaciones de siembra}{29}{subsection.1.7.3}%
-\contentsline {section}{\numberline {1.8}Propuesta de investigaci\'on}{29}{section.1.8}%
-\contentsline {subsection}{\numberline {1.8.1}Uso de datos de Aduanet e INEI}{29}{subsection.1.8.1}%
-\contentsline {subsection}{\numberline {1.8.2}Comparaci\'on entre SARIMA, LSTM y SVR}{30}{subsection.1.8.2}%
-\contentsline {subsection}{\numberline {1.8.3}Predicci\'on de precios FOB de 4, 6 y 8 semanas}{31}{subsection.1.8.3}%
-\contentsline {subsection}{\numberline {1.8.4}Backend en FastAPI}{31}{subsection.1.8.4}%
-\contentsline {subsection}{\numberline {1.8.5}Aplicaci\'on m\'ovil en React}{31}{subsection.1.8.5}%
-\contentsline {subsection}{\numberline {1.8.6}Simulador de rentabilidad y recomendaciones de siembra}{32}{subsection.1.8.6}%
-\contentsline {section}{\numberline {1.9}Objetivo de la investigaci\'on}{33}{section.1.9}%
-\contentsline {section}{\numberline {1.10}Hip\'otesis de investigaci\'on}{33}{section.1.10}%
-\contentsline {section}{\numberline {1.11}Correspondencia entre objetivos, soluciones e hip\'otesis}{34}{section.1.11}%
-\contentsline {chapter}{\numberline {2}MÉTODO}{36}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Tipo de investigación}{36}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}De acuerdo a la orientación o finalidad}{36}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}De acuerdo a la técnica de contrastación}{36}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}Nivel de investigación}{36}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Diseño de investigación}{36}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Población, muestra y muestreo}{38}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Población}{38}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Cálculo de muestra para productores}{39}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Muestra y muestreo por indicador}{40}{subsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.4.4}Fuentes de datos}{40}{subsection.2.4.4}%
-\contentsline {section}{\numberline {2.5}Variables}{40}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Técnicas e instrumentos, validación y confiabilidad}{41}{section.2.6}%
-\contentsline {section}{Método de análisis de datos}{42}{table.caption.45}%
-\contentsline {subsection}{Flujograma para seleccionar la prueba estadística}{43}{section*.46}%
-\contentsline {subsection}{Contrastación de hipótesis}{45}{figure.caption.47}%
-\contentsline {subsection}{Síntesis de la metodología estadística}{46}{table.2.7}%
-\contentsline {section}{\numberline {2.7}Procedimiento}{46}{section.2.7}%
-\contentsline {chapter}{\numberline {3}ASPECTOS ADMINISTRATIVOS}{48}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Recursos y presupuesto}{48}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Recursos}{48}{subsection.3.1.1}%
-\contentsline {subsubsection}{Personal}{48}{subsubsection*.49}%
-\contentsline {subsubsection}{Bienes}{48}{subsubsection*.50}%
-\contentsline {subsubsection}{Viajes}{48}{subsubsection*.51}%
-\contentsline {subsubsection}{Servicios}{49}{subsubsection*.52}%
-\contentsline {subsubsection}{Tecnol\'ogicos}{49}{subsubsection*.53}%
-\contentsline {subsection}{\numberline {3.1.2}Presupuesto}{49}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Financiamiento}{50}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}De fuentes externas}{50}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Autofinanciaci\'on}{51}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}Cronograma de ejecuci\'on}{51}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Per\'iodo}{51}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Cronograma}{51}{subsection.3.3.2}%
-\contentsline {chapter}{\numberline {A}Matriz de operacionalizaci\'on de variables}{55}{appendix.Alph1}%
-\contentsline {chapter}{\numberline {B}Matriz de consistencia}{56}{appendix.Alph2}%
-\contentsline {chapter}{\numberline {C}Diagrama de Ishikawa}{57}{appendix.Alph3}%
-\contentsline {chapter}{\numberline {D}\'Arbol de problemas}{58}{appendix.Alph4}%
-\contentsline {chapter}{\numberline {E}\'Arbol de objetivos}{59}{appendix.Alph5}%
-\contentsline {chapter}{\numberline {F}Instrumentos de recolecci\'on de datos}{60}{appendix.Alph6}%
-\contentsline {section}{\numberline {F.1}Cuestionario de utilidad percibida (pretest y postest)}{60}{section.Alph6.1}%
-\contentsline {section}{\numberline {F.2}Ficha de extracci\'on de datos (Aduanet / INEI)}{61}{section.Alph6.2}%
-\contentsline {chapter}{\numberline {G}Constancia de aplicaci\'on de instrumentos}{62}{appendix.Alph7}%
+\contentsline {chapter}{\numberline {2}MÉTODO}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Tipo de investigación}{7}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}De acuerdo con la orientación o finalidad}{7}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}De acuerdo con la técnica de contrastación}{7}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Clasificación del diseño de estudio}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Diseño de investigación}{8}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Población, muestra y muestreo}{9}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Población}{9}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Muestra}{9}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Muestreo}{9}{subsection.2.4.3}%
+\contentsline {section}{\numberline {2.5}Variables}{10}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Tipo}{10}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Operacionalización}{11}{subsection.2.5.2}%
+\contentsline {section}{\numberline {2.6}Técnicas e instrumentos, validación y confiabilidad}{12}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Técnicas e instrumentos}{12}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Validación y confiabilidad}{12}{subsection.2.6.2}%
+\contentsline {section}{\numberline {2.7}Método de análisis de datos}{13}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Procedimiento}{14}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Consideraciones éticas}{15}{section.2.9}%
+\contentsline {chapter}{\numberline {3}ASPECTOS ADMINISTRATIVOS}{17}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Recursos y presupuesto}{17}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Recursos}{17}{subsection.3.1.1}%
+\contentsline {subsubsection}{Personal}{17}{subsubsection*.5}%
+\contentsline {subsubsection}{Bienes}{18}{subsubsection*.7}%
+\contentsline {subsubsection}{Viajes}{18}{subsubsection*.9}%
+\contentsline {subsubsection}{Servicios}{18}{subsubsection*.11}%
+\contentsline {subsubsection}{Tecnológicos}{19}{subsubsection*.13}%
+\contentsline {subsection}{\numberline {3.1.2}Presupuesto}{19}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Financiamiento}{19}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}De fuentes externas}{19}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Autofinanciación}{20}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Cronograma de ejecución}{20}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Período}{20}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Cronograma}{20}{subsection.3.3.2}%
+\contentsline {chapter}{\numberline {4}RESULTADOS PRELIMINARES DEL ENTRENAMIENTO}{21}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Arquitectura multimodelo evaluada}{21}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Conjuntos de datos obtenidos}{21}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Predicción del precio FOB a seis semanas}{22}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Estimación del margen exportador}{24}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Clasificación del riesgo de margen bajo}{25}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Síntesis y limitaciones de los resultados}{26}{section.4.6}%
+\contentsline {chapter}{\numberline {A}Matriz de operacionalización de variables}{29}{chapter.A}%
+\contentsline {chapter}{\numberline {B}Matriz de consistencia}{30}{chapter.B}%
+\contentsline {chapter}{\numberline {C}Diagrama de Ishikawa}{31}{chapter.C}%
+\contentsline {chapter}{\numberline {D}\'Arbol de problemas}{32}{chapter.D}%
+\contentsline {chapter}{\numberline {E}\'Arbol de objetivos}{33}{chapter.E}%
+\contentsline {chapter}{\numberline {F}Instrumentos de recolecci\'on de datos}{34}{chapter.F}%
+\contentsline {section}{\numberline {F.1}Cuestionario de apoyo a la decisión (pretest y postest)}{34}{section.F.1}%
+\contentsline {section}{\numberline {F.2}Ficha de extracci\'on de datos (Aduanet / INEI)}{35}{section.F.2}%
+\contentsline {section}{\numberline {F.3}Consentimiento informado abreviado}{35}{section.F.3}%
+\contentsline {chapter}{\numberline {G}Constancia de aplicaci\'on de instrumentos}{36}{chapter.G}%

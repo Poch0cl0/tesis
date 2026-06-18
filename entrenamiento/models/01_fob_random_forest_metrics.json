@@ -1,0 +1,22 @@
+{
+  "model_name": "01_fob_random_forest",
+  "target": "target_fob_6_semanas",
+  "rows": 2312,
+  "train_rows": 1849,
+  "test_rows": 463,
+  "mae": 0.3214583950999719,
+  "rmse": 0.42540567311066596,
+  "mape_pct": 19.48190614988418,
+  "r2": 0.24717206462559604,
+  "features_num": [
+    "precio_fob_por_kilogramo",
+    "semana_iso",
+    "log_volumen_exportado",
+    "precio_lag_1",
+    "precio_prom_movil_4"
+  ],
+  "features_cat": [
+    "destino",
+    "temporada"
+  ]
+}

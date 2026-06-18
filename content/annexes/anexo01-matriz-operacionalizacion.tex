@@ -1,23 +1,29 @@
-\chapter{Matriz de operacionalizaci\'on de variables}
+\chapter{Matriz de operacionalización de variables}
 
-\begin{table}[H]
-\centering
-\caption{Matriz de operacionalizaci\'on de variables del estudio}
-\label{tab:anexo_operacionalizacion}
-\footnotesize
-\begin{tabularx}{\textwidth}{p{2cm}p{2.8cm}p{1.8cm}p{2.5cm}p{1.5cm}}
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{longtable}{p{2.1cm}p{3cm}p{3cm}p{2cm}p{2.4cm}p{1.4cm}}
+\caption{Matriz de operacionalización de variables}\\
 \toprule
-\textbf{Variable} & \textbf{Definici\'on operacional} & \textbf{Dimensi\'on} & \textbf{Indicador} & \textbf{Escala} \\
+\textbf{Variable} & \textbf{Definición conceptual} & \textbf{Definición operacional} & \textbf{Dimensión} & \textbf{Indicador} & \textbf{Escala} \\
 \midrule
-Precio FOB & Valor unitario promedio de exportaci\'on de palta Hass & Econ\'omica & USD/kg mensual & Continua \\
-Volumen exportado & Cantidad de palta Hass exportada por periodo & Comercial & Toneladas/mes & Continua \\
-Mes / temporada & Periodo calendario y ventana comercial peruana & Temporal & Mes (1--12) & Ordinal \\
-Rezago precio & Valores hist\'oricos rezagados de la serie FOB & Temporal & USD/kg ($t-1$, $t-2$) & Continua \\
-Destino principal & Pa\'is de destino con mayor participaci\'on & Comercial & C\'odigo pa\'is & Nominal \\
-Utilidad percibida & Valoraci\'on del productor sobre la herramienta & Cognitiva & Puntaje Likert 1--5 & Ordinal \\
-Precisi\'on predictiva & Error del modelo seleccionado & T\'ecnica & RMSE, MAPE & Continua \\
-Margen proyectado & Diferencia entre ingresos y costos simulados & Econ\'omica & Soles/ha & Continua \\
+\endfirsthead
+\toprule
+\textbf{Variable} & \textbf{Definición conceptual} & \textbf{Definición operacional} & \textbf{Dimensión} & \textbf{Indicador} & \textbf{Escala} \\
+\midrule
+\endhead
+Sistema predictivo de precios de palta Hass & Solución tecnológica que utiliza datos históricos y algoritmos para estimar precios y producir información de apoyo. & Implementación de modelos de ensamble, regularizados y temporales, integrada con módulos de rentabilidad, escenarios, histórico y reportes. & Predicción & MAE, RMSE, MAPE y $R^2$ a seis semanas. & Razón \\
+\midrule
+Sistema predictivo de precios de palta Hass &  &  & Rentabilidad & Margen y ganancia esperada por escenario. & Razón \\
+\midrule
+Sistema predictivo de precios de palta Hass &  &  & Información histórica & Tendencias, estacionalidad, picos, caídas y destinos identificados. & Razón / nominal \\
+\midrule
+Apoyo a la toma de decisiones de siembra & Grado en que la información del sistema facilita comprender alternativas, riesgos y resultados económicos antes de decidir una campaña. & Diferencia entre las respuestas pretest y postest al utilizar el prototipo. & Comprensión & Puntaje de claridad e interpretación. & Ordinal \\
+\midrule
+Apoyo a la toma de decisiones de siembra &  &  & Incertidumbre & Puntaje de seguridad para comparar escenarios. & Ordinal \\
+\midrule
+Apoyo a la toma de decisiones de siembra &  &  & Utilidad percibida & Puntaje global del cuestionario. & Ordinal \\
 \bottomrule
-\end{tabularx}
-\parbox{0.94\textwidth}{\small \textit{Nota.} Elaboraci\'on propia a partir de las variables del modelo predictivo (Cap\'itulo I) y los indicadores de evaluaci\'on (Cap\'itulo II).}
-\end{table}
+\end{longtable}
+\endgroup

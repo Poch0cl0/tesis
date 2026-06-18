@@ -1,57 +1,33 @@
-﻿\section{Procedimiento}
+\section{Procedimiento}
 
-El procedimiento se organiza siguiendo una adaptación del marco CRISP-DM, debido
-a que el proyecto combina comprensión del negocio, análisis de datos, modelado y
-despliegue de una solución de apoyo a la decisión.
+Se utilizará CRISP-DM porque relaciona las necesidades del negocio con la preparación de datos, el modelado, la evaluación y el despliegue. El procedimiento comprende las siguientes fases:
 
-\begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=2cm]
-  \item \textbf{Comprensión del negocio.}
-  Se identifica como objetivo principal reducir el riesgo de pérdida económica
-  por campaña en productores de palta de La Libertad. Para ello, se priorizan
-  tres necesidades: Estimar precios FOB futuros, calcular rentabilidad y generar
-  escenarios de decisión.
-
-  \item \textbf{Comprensión de los datos.}
-  Se analizan las fuentes UNData y Kaggle, así como posibles fuentes nacionales
-  de exportación. Se revisan variables como precio promedio, volumen, fecha,
-  región, tipo, destino, temporada y factores comerciales asociados al precio
-  FOB.
-
-  \item \textbf{Preparación de los datos.}
-  Se limpian registros inconsistentes, se normalizan variables numéricas, se
-  transforman fechas y se generan variables de rezago. También se construyen
-  variables para escenarios económicos, tales como costo por kilogramo, flete,
-  productividad, margen y ganancia esperada.
-
-  \item \textbf{Modelado.}
-  Se evalúan los algoritmos propuestos en el documento base:
-
-  \begin{table}[H]
-  \centering
-  \caption{Soluciones y algoritmos propuestos}
-  \begin{tabular}{p{4cm}p{4cm}p{5cm}}
-  \toprule
-  \textbf{Solución} & \textbf{Tipo de algoritmo} & \textbf{Algoritmos candidatos} \\
-  \midrule
-  S-1: Cálculo de rentabilidad & Regresión no lineal con variables temporales & Random Forest, XGBoost, SVR con rezagos \\
-  S-2: Simulador de escenarios & Optimización / prescriptivo & Regresión logística multinomial, XGBoost, árbol CART \\
-  S-3: Modelo predictivo de precios FOB & Series de tiempo / deep learning & SARIMA, LSTM, SVR con rezagos \\
-  S-4: Análisis histórico interactivo & Analítica descriptiva & Segmentación temporal, filtros por mercado y visualización dinámica \\
-  S-5: Reportes de ciclos & Analítica descriptiva & Detección de picos, caídas y comparación anual \\
-  \bottomrule
-  \end{tabular}
-  \end{table}
-
-  \item \textbf{Evaluación.}
-  Se comparan los modelos predictivos mediante MAE, RMSE y MAPE. Además, se
-  evalúa la utilidad de los módulos prescriptivos a partir de la claridad de los
-  escenarios generados y su capacidad para orientar decisiones de campaña.
-
-  \item \textbf{Despliegue conceptual.}
-  La solución final se plantea como un sistema de apoyo a la decisión que integra
-  cinco módulos: Cálculo de rentabilidad (S-1), simulador de escenarios (S-2),
-  modelo predictivo de precios FOB (S-3), análisis histórico interactivo (S-4) y
-  generador automático de reportes de ciclos (S-5). Estos módulos permitirán al
-  productor interpretar precios futuros, márgenes esperados y riesgos antes de
-  decidir la siembra.
+\begin{enumerate}[label=\textbf{\arabic*.}]
+  \item \textbf{Comprensión del negocio.} Precisar las necesidades de rentabilidad, pronóstico y análisis de ciclos; definir indicadores y criterios de aceptación con apoyo de especialistas del sector.
+  \item \textbf{Comprensión de los datos.} Descargar y documentar los microdatos INEI y las operaciones Aduanet de la subpartida 0804400000; identificar claves, unidades y cobertura temporal.
+  \item \textbf{Preparación.} Eliminar duplicados, validar dominios, tratar ausentes, calcular precio FOB unitario, agregar la serie y construir rezagos, temporada, productividad, costos y margen.
+  \item \textbf{Modelado.} Ajustar Random Forest, HistGradientBoosting, ElasticNet, regresión logística y Prophet mediante divisiones reproducibles y parámetros documentados; construir un ensamble FOB con las salidas de los cuatro modelos de regresión y pronóstico.
+  \item \textbf{Evaluación.} Comparar MAE, RMSE y MAPE por horizonte; revisar residuos, estabilidad e interpretabilidad; seleccionar el modelo que supere la línea base con comportamiento consistente.
+  \item \textbf{Desarrollo.} Implementar servicios en FastAPI y una interfaz React o React Native con acceso, pronóstico, histórico, simulación, recomendación, reportes y notificaciones.
+  \item \textbf{Validación.} Validar instrumentos con jueces, ejecutar la prueba piloto, analizar confiabilidad y comparar las mediciones pretest y postest.
+  \item \textbf{Despliegue y documentación.} Preparar una versión de prueba y documentar código, diccionario de datos, parámetros, resultados y limitaciones.
 \end{enumerate}
+
+\begin{figure}[H]
+\caption{Procedimiento de la investigación basado en CRISP-DM}
+\centering
+\begin{tikzpicture}[node distance=7mm, every node/.style={font=\small}, box/.style={draw, rounded corners, align=center, text width=3.7cm, minimum height=9mm}, arr/.style={-{Latex[length=2mm]}, thick}]
+\node[box] (n1) {Comprensión del negocio};
+\node[box, below=of n1] (n2) {Comprensión de los datos};
+\node[box, below=of n2] (n3) {Preparación};
+\node[box, below=of n3] (n4) {Modelado};
+\node[box, below=of n4] (n5) {Evaluación};
+\node[box, below=of n5] (n6) {Desarrollo y despliegue};
+\draw[arr] (n1)--(n2);
+\draw[arr] (n2)--(n3);
+\draw[arr] (n3)--(n4);
+\draw[arr] (n4)--(n5);
+\draw[arr] (n5)--(n6);
+\draw[arr, bend left=50] (n5.east) to (n2.east);
+\end{tikzpicture}
+\end{figure}

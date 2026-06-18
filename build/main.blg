@@ -1,50 +1,50 @@
 This is BibTeX, Version 0.99e
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: C:\Users\Jefferson Peña\Desktop\tesis\build\main.aux
+The top-level auxiliary file: C:\Users\m_rob\OneDrive\Desktop\tarea-tesis\tesis\build\main.aux
 Reallocating 'name_of_file' (item size: 1) to 8 items.
 The style file: apalike.bst
 Reallocating 'name_of_file' (item size: 1) to 31 items.
 Database file #1: content/references/referencias.bib
 Warning--empty institution in ADEX2023
-You've used 24 entries,
+You've used 7 entries,
             1935 wiz_defined-function locations,
-            614 strings with 7906 characters,
-and the built_in function-call counts, 7631 in all, are:
-= -- 767
-> -- 279
-< -- 17
-+ -- 92
-- -- 88
-* -- 584
-:= -- 1440
-add.period$ -- 72
-call.type$ -- 24
-change.case$ -- 165
-chr.to.int$ -- 24
-cite$ -- 25
-duplicate$ -- 291
-empty$ -- 512
-format.name$ -- 117
-if$ -- 1441
+            514 strings with 5140 characters,
+and the built_in function-call counts, 2513 in all, are:
+= -- 239
+> -- 114
+< -- 2
++ -- 40
+- -- 38
+* -- 209
+:= -- 467
+add.period$ -- 21
+call.type$ -- 7
+change.case$ -- 55
+chr.to.int$ -- 7
+cite$ -- 8
+duplicate$ -- 92
+empty$ -- 167
+format.name$ -- 45
+if$ -- 472
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 10
-newline$ -- 123
-num.names$ -- 72
-pop$ -- 108
+missing$ -- 4
+newline$ -- 38
+num.names$ -- 21
+pop$ -- 47
 preamble$ -- 1
-purify$ -- 160
+purify$ -- 53
 quote$ -- 0
-skip$ -- 235
+skip$ -- 66
 stack$ -- 0
-substring$ -- 458
-swap$ -- 10
+substring$ -- 144
+swap$ -- 4
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 144
+type$ -- 42
 warning$ -- 1
-while$ -- 60
+while$ -- 18
 width$ -- 0
-write$ -- 310
+write$ -- 90
 (There was 1 warning)

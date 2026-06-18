@@ -1,0 +1,22 @@
+{
+  "model_name": "02_fob_hist_gradient_boosting",
+  "target": "target_fob_6_semanas",
+  "rows": 2312,
+  "train_rows": 1849,
+  "test_rows": 463,
+  "mae": 0.3188558491876756,
+  "rmse": 0.42596680509957013,
+  "mape_pct": 19.000771474211795,
+  "r2": 0.24518471715606582,
+  "features_num": [
+    "precio_fob_por_kilogramo",
+    "semana_iso",
+    "log_volumen_exportado",
+    "precio_lag_1",
+    "precio_prom_movil_4"
+  ],
+  "features_cat": [
+    "destino",
+    "temporada"
+  ]
+}

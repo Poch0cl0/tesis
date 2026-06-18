@@ -1,15 +1,28 @@
-\section{Cronograma de ejecuci\'on}
+\section{Cronograma de ejecución}
 
-El cronograma organiza temporalmente las actividades del proyecto, garantizando coherencia con la metodolog\'ia CRISP-DM descrita en el Cap\'itulo II y con los objetivos planteados en el Cap\'itulo I.
+\subsection{Período}
 
-\subsection{Per\'iodo}
-
-El proyecto se ejecutar\'a en un per\'iodo de seis meses, comprendido entre marzo y agosto de 2025, con una dedicaci\'on promedio de 20 horas semanales por cada autor. Este horizonte permite completar la recolecci\'on de datos de Aduanet e INEI, el entrenamiento y comparaci\'on de modelos predictivos, el desarrollo del backend FastAPI y la aplicaci\'on React, la evaluaci\'on con productores de La Libertad, la redacci\'on del informe y la sustentaci\'on final.
+El proyecto se ejecutará del 1 de julio al 31 de diciembre de 2026, con una dedicación estimada de 20 horas semanales por autor. Las fechas deberán ajustarse mediante adenda si la aprobación formal del proyecto ocurre después del inicio previsto.
 
 \subsection{Cronograma}
 
-La Tabla~\ref{tab:cronograma_gantt} presenta el cronograma de actividades en formato de diagrama de Gantt simplificado. Las marcas indican los meses en que se desarrolla cada actividad principal del proyecto.
-
-\input{tablas/tabla3_cronograma}
-
-Las actividades se articulan de la siguiente manera: en los meses 1 y 2 se validan instrumentos y se recolectan datos; en los meses 2 y 3 se realiza el an\'alisis, tratamiento y modelado; en los meses 3 y 4 se desarrolla la soluci\'on tecnol\'ogica; en los meses 4 y 5 se interpretan resultados y se eval\'ua con productores; y en los meses 5 y 6 se redacta, revisa y sustenta el informe final.
+\begin{table}[H]
+\centering
+\caption{Cronograma de ejecución del proyecto}
+\label{tab:cronograma_gantt}
+\scriptsize
+\begin{tabularx}{\textwidth}{X*{6}{>{\centering\arraybackslash}p{0.9cm}}}
+\toprule
+\textbf{Actividad} & \textbf{Jul.} & \textbf{Ago.} & \textbf{Set.} & \textbf{Oct.} & \textbf{Nov.} & \textbf{Dic.} \\
+\midrule
+Validación de instrumentos por jueces & X & & & & & \\
+Extracción y documentación de Aduanet e INEI & X & X & & & & \\
+Limpieza, integración y análisis exploratorio & & X & X & & & \\
+Entrenamiento y comparación de modelos & & & X & X & & \\
+Desarrollo de API y aplicación & & & X & X & X & \\
+Prueba piloto y evaluación & & & & & X & \\
+Análisis e interpretación de resultados & & & & & X & X \\
+Redacción, revisión y entrega & & & & X & X & X \\
+\bottomrule
+\end{tabularx}
+\end{table}

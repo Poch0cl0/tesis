@@ -1,0 +1,21 @@
+{
+  "model_name": "04_margen_random_forest",
+  "target": "margen_exportador_soles_kg",
+  "rows": 585,
+  "train_rows": 438,
+  "test_rows": 147,
+  "mae": 0.3428322498137589,
+  "rmse": 0.49817028758556803,
+  "mape_pct": 5.980163422683133,
+  "r2": 0.7765655553059252,
+  "features_num": [
+    "precio_fob_usd_kg",
+    "rendimiento_kg_ha",
+    "porcentaje_vendido"
+  ],
+  "features_cat": [
+    "region",
+    "provincia",
+    "tipo_conduccion_cultivo"
+  ]
+}

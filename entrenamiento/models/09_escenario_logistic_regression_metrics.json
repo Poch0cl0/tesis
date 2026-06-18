@@ -1,0 +1,25 @@
+{
+  "model_name": "09_escenario_logistic_regression",
+  "target": "riesgo_margen_bajo",
+  "rows": 585,
+  "train_rows": 438,
+  "test_rows": 147,
+  "accuracy": 0.8775510204081632,
+  "precision": 0.7111111111111111,
+  "recall": 0.8648648648648649,
+  "class_balance": {
+    "0": 438,
+    "1": 147
+  },
+  "features_num": [
+    "precio_fob_usd_kg",
+    "rendimiento_kg_ha",
+    "porcentaje_vendido"
+  ],
+  "features_cat": [
+    "region",
+    "sequia",
+    "plagas_enfermedades"
+  ],
+  "roc_auc": 0.9646191646191646
+}

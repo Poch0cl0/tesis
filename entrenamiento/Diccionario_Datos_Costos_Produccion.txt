@@ -1,0 +1,207 @@
+ENCUESTA NACIONAL AGROPECUARIA 2024 
+DICCIONARIO DE DATOS 
+Lima - Perú 
+NOMENCLATURA DE ARCHIVOS SPSS 
+Archivos del Cuestionario ENA2024 
+N°  Nombre de archivo SPSS Descripción 
+1 CARATULA.sav Características de la unidad agropecuaria al día de la entrevista 
+2 CAP100A_01.sav Características de la unidad agropecuaria al día de la entrevista 
+3 CAP100A_02.sav Características de la unidad agropecuaria al día de la entrevista 
+4 CAP100A_03.sav Características de la unidad agropecuaria al día de la entrevista 
+5 CAP100A_04.sav Características de la unidad agropecuaria al día de la entrevista 
+6 USOSTIERRA.sav Características de la unidad agropecuaria al día de la entrevista 
+7 CAP100B_01.sav Características de la unidad agropecuaria en los últimos 12 meses 
+8 CAP100B_02.sav Características de la unidad agropecuaria en los últimos 12 meses 
+9 CAP200AB.sav Superficie cosechada y sembrada, producción y destino de los cultivos cosechados 
+10 CAP200A.sav Superficie cosechada y sembrada, producción y destino de los cultivos cosechados 
+11 CAP200B_1.sav Pérdida total de producción o superficie sembrada 
+12 CAP200C.sav Derivados agrícolas de los cultivos cosechados 
+13 CAP200D.sav Subproductos agrícolas de los cultivos cosechados 
+14 CAP200E.sav Costos de producción de los cultivos cosechados 
+15 CAP300AB.sav Buenas prácticas agrícolas (para los cultivos cosechados y no cosechados) 
+16 CAP400A.sav Producción pecuaria al día de la entrevista 
+17 CAP400A_1.sav Producción pecuaria en los últimos 12 meses 
+18 CAP400A_2.sav Producción pecuaria en los últimos 12 meses 
+19 CAP400A_3.sav Producción pecuaria en los últimos 12 meses 
+20 CAP400B.sav Subproductos pecuarios 
+21 CAP400C.sav Derivados pecuarios 
+22 CAP500AB.sav Buenas prácticas pecuarias 
+23 CAP600.sav Inocuidad 
+24 CAP700.sav Servicios de extensión agraria 
+25 CAP800.sav Asociatividad 
+26 CAP900.sav Servicios financieros 
+27 CAP1000.sav Costos de producción de la actividad agropecuaria 
+28 CAP1100.sav Características del productor agropecuario y su familia 
+29 CAP1200A_IS.sav Intención de siembra 
+30 CAP1200B_ME.sav Maquinaria y/o equipo 
+Nº NOMBRE DE 
+LA VARIABLE DESCRIPCIÓN DE LAS VARIABLES VALOR TIPO LONGITUD DECIMAL 
+1 ANIO AÑO N 4 
+2 CCDD Código de Departamento AN 2 
+3 NOMBREDD Nombre de Departamento A 100 
+4 CCPP Código de Provincia AN 2 
+5 NOMBREPV Nombre de la Provincia A 100 
+6 CCDI Código del Distrito AN 2 
+7 NOMBREDI Nombre del Distrito A 100 
+8 NSEGM NÚMERO CORRELATIVO EN SECUENCIA 
+SERPENTIN POR REGIÓN AN 5 
+9 ID_PROD Identificador de la Unidad Agropecuaria N 2 
+10 UA Unidad Agropecuaria N° AN 2 
+11 RESFIN Resultado FINAL de la encuesta 1 Completa 
+2 Incompleta N 1 
+12 REGION REGIÓN NATURAL 
+1 Costa 
+2 Sierra 
+3 Selva 
+N 1 
+13 ESTRATO ESTRATO MUESTRAL N 10 
+14 FACTOR_PROD 
+UCTOR 
+FACTOR DE EXPANSIÓN DE PRODUCTOR 
+AGROPECUARIO N 6 2 
+15 CODIGO CÓDIGO DE IDENTIFICACIÓN 
+1. Productor agropecuario - Persona 
+natural 
+2. Productor agropecuario - Empresas 
+N 1 
+16 P101A SU CONDICIÓN JURÍDICA COMO PRODUCTOR ES 
+…. 
+1 ¿Persona natural? 
+2 ¿Sociedad anónima cerrada (SAC)? 
+3 ¿Sociedad anónima abierta (SAA)? 
+4 ¿Sociedad de responsabilidad 
+limitada (SRL)? 
+5 ¿Empresa individual de 
+responsabilidad limitada (EIRL)? 
+6 ¿Cooperativa agraria? 
+7 ¿Sociedad anónima? 
+8 ¿Otro? 
+N 1 
+17 P142_1 EN LOS ÚLTIMOS 12 MESES, DE…..A……..LA 
+EMPRESA/UD. REALIZÓ ACTIVIDAD: ¿Agrícola? N 1 
+18 P142_2 EN LOS ÚLTIMOS 12 MESES, DE…..A……..LA 
+EMPRESA/UD. REALIZÓ ACTIVIDAD: ¿Pecuaria? N 1 
+19 P234_N CULTIVO N° N 3 
+20 P234_NOM 
+NOMBRE  Y TIPO DE CULTIVO COSECHADO EN 
+LOS ÚLTIMOS 12 MESES EN LA UNIDAD 
+AGROPECUARIA 
+A 50 
+21 P234_COD CÓDIGO DE CULTIVO N 4 
+22 P234_TIPO TIPO DE CULTIVO 
+1 Transitorio 
+2 Permanente de cosecha estacional 
+3 Permanente de cosecha continua 
+N 1 
+23 P235A_1 PARA LA SIEMBRA DE …………, ¿LAS SEMILLAS 
+FUERON: Propias? N 1 
+24 P235A_2 
+PARA LA SIEMBRA DE …………, ¿LAS SEMILLAS 
+FUERON: Obtenidas por intercambio con otros/as 
+productores/as? 
+N 1 
+25 P235A_3 PARA LA SIEMBRA DE …………, ¿LAS SEMILLAS 
+FUERON: Compradas a otros/as productores/as? N 1 
+26 P235A_4 PARA LA SIEMBRA DE …………, ¿LAS SEMILLAS 
+FUERON: Compradas a semilleros? N 1 
+CAPÍTULO 200: CULTIVOS COSECHADOS EN LA UNIDAD AGROPECUARIA 
+SECCIÓN 200E: COSTOS DE PRODUCCIÓN DE LOS CULTIVOS COSECHADOS 
+Nº NOMBRE DE 
+LA VARIABLE DESCRIPCIÓN DE LAS VARIABLES VALOR TIPO LONGITUD DECIMAL 
+CAPÍTULO 200: CULTIVOS COSECHADOS EN LA UNIDAD AGROPECUARIA 
+SECCIÓN 200E: COSTOS DE PRODUCCIÓN DE LOS CULTIVOS COSECHADOS 
+27 P235A_5 PARA LA SIEMBRA DE …………, ¿LAS SEMILLAS 
+FUERON: Compradas a viveros? N 1 
+28 P235A_6 PARA LA SIEMBRA DE …………, ¿LAS SEMILLAS 
+FUERON: Regaladas? N 1 
+29 P235A_7 PARA LA SIEMBRA DE …………, ¿LAS SEMILLAS 
+FUERON: Donadas por instituciones? N 1 
+30 P235A_8 
+PARA LA SIEMBRA DE …………, ¿LAS SEMILLAS 
+FUERON: Recibidas como parte de pago del 
+acopiador? 
+N 1 
+31 P235A_9 
+PARA LA SIEMBRA DE …………, ¿LAS SEMILLAS 
+FUERON: Compradas en establecimientos 
+comerciales? 
+N 1 
+32 P235A_10 PARA LA SIEMBRA DE …………, ¿LAS SEMILLAS 
+FUERON: Otro N 1 
+33 P235_VAL 
+EN LOS ÚLTIMOS 12 MESES, DE ………… A 
+…………, ¿CUÁNTO GASTÓ EN SEMILLA? VALOR 
+S/ (Enteros) 
+N 8 
+34 P235_CANT_1 
+EN LOS ÚLTIMOS 12 MESES, DE ………… A 
+…………, ¿CUÁNTO GASTÓ EN SEMILLA? 
+CANTIDAD ENTERO 
+N 8 
+35 P235_CANT_2 
+EN LOS ÚLTIMOS 12 MESES, DE ………… A 
+…………, ¿CUÁNTO GASTÓ EN SEMILLA? 
+CANTIDAD DECIMAL 
+AN 3 
+36 P235_UM 
+EN LOS ÚLTIMOS 12 MESES, DE ………… A 
+…………, ¿CUÁNTO GASTÓ EN SEMILLA? UNIDAD 
+DE MEDIDA 
+A 50 
+37 P235_UM_COD 
+EN LOS ÚLTIMOS 12 MESES, DE ………… A 
+…………, ¿CUÁNTO GASTÓ EN SEMILLA? CÓDIGO 
+UNIDAD DE MEDIDA 
+AN 2 
+38 P235_EQUI_KG 
+EN LOS ÚLTIMOS 12 MESES, DE ………… A 
+…………, ¿CUÁNTO GASTÓ EN SEMILLA?¿CUÁNTO 
+PESA UN/A ....EN KILOGRAMOS? 
+N 12 4 
+39 P235_PRE_UM 
+EN LOS ÚLTIMOS 12 MESES, DE ………… A 
+…………, ¿CUÁNTO GASTÓ EN SEMILLA? PRECIO 
+DE GASTO EN SEMILLA POR UNIDAD DE MEDIDA 
+N 10 4 
+40 P235_PRE_KG 
+EN LOS ÚLTIMOS 12 MESES, DE ………… A 
+…………, ¿CUÁNTO GASTÓ EN SEMILLA? PRECIO 
+DE GASTO EN SEMILLA POR KILOGRAMO 
+N 10 4 
+41 P236 
+EN LOS ÚLTIMOS 12 MESES, DE ………… A 
+…………, ¿CUÁNTO GASTÓ EN ABONO? EN LOS 
+ÚLTIMOS 12 MESES, DE…A…. , ¿UTILIZÓ ABONO? 
+1 Sí 
+2 No N 1 
+42 P237_VAL ¿CUÁNTO GASTÓ EN ABONO? VALOR S/ (Enteros) N 8 
+43 P237_CANT_1 ¿CUÁNTO GASTÓ EN ABONO? CANTIDAD ENTERO N 8 
+44 P237_CANT_2 ¿CUÁNTO GASTÓ EN ABONO? CANTIDAD 
+DECIMAL AN 2 
+45 P237_UM ¿CUÁNTO GASTÓ EN ABONO? UNIDAD DE MEDIDA A 50 
+46 P237_UM_COD ¿CUÁNTO GASTÓ EN ABONO? CÓDIGO UNIDAD 
+DE MEDIDA AN 2 
+47 P237_EQUI_KG ¿CUÁNTO GASTÓ EN ABONO? ¿CUÁNTO PESA 
+UN/A ....EN KILOGRAMOS? N 12 4 
+48 P237_PRE_UM ¿CUÁNTO GASTÓ EN ABONO? PRECIO DE GASTO 
+EN ABONO POR UNIDAD DE MEDIDA N 10 4 
+Nº NOMBRE DE 
+LA VARIABLE DESCRIPCIÓN DE LAS VARIABLES VALOR TIPO LONGITUD DECIMAL 
+CAPÍTULO 200: CULTIVOS COSECHADOS EN LA UNIDAD AGROPECUARIA 
+SECCIÓN 200E: COSTOS DE PRODUCCIÓN DE LOS CULTIVOS COSECHADOS 
+49 P237_PRE_KG ¿CUÁNTO GASTÓ EN ABONO? PRECIO DE GASTO 
+EN ABONO POR KILOGRAMO N 10 4 
+50 P238 EN LOS ÚLTIMOS 12 MESES, DE…A…. , ¿UTILIZÓ 
+FERTILIZANTES? 
+1 Sí 
+2 No N 1 
+51 P239 ¿CUÁNTO GASTÓ EN FERTILIZANTES? VALOR S/ 
+(Enteros) N 8 
+52 P240 EN LOS ÚLTIMOS 12 MESES, DE…A…. , ¿UTILIZÓ 
+PLAGUICIDAS? 
+1 Sí 
+2 No N 1 
+53 P241 ¿CUÁNTO GASTÓ EN PLAGUICIDAS? VALOR S/ 
+(Enteros) N 8 
+54 OMICAP200_04 OMISIÓN DE COSTOS DE PRODUCCIÓN DE 
+CULTIVOS COSECHADOS AN 2 

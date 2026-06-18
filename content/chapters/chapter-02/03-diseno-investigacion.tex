@@ -1,50 +1,34 @@
 \section{Diseño de investigación}
 
-La investigación adopta un diseño aplicado de enfoque mixto, debido a que combina la evaluación técnica de modelos predictivos con la valoración funcional de una herramienta de apoyo a la toma de decisiones de siembra. Para el componente algorítmico se emplea un diseño cuasiexperimental de series temporales, dado que se comparan modelos SARIMA y LSTM sobre una misma serie histórica mensual de precios FOB de palta Hass. Para el componente de evaluación con productores se propone un diseño preexperimental con pretest y postest en un solo grupo.
-
-El diseño preexperimental se expresa mediante el siguiente esquema:
+El estudio integra dos diseños complementarios. Para el componente predictivo se utiliza un diseño longitudinal de series temporales con evaluación fuera de muestra. Los registros se ordenarán cronológicamente y se dividirán en entrenamiento, validación y prueba sin aleatorizar el tiempo. Todos los algoritmos utilizarán los mismos periodos y horizontes.
 
 \[
-G \;\longrightarrow\; O_1 \;\longrightarrow\; X \;\longrightarrow\; O_2
+\text{Datos válidos}\rightarrow\text{entrenamiento}\rightarrow
+\text{validación temporal}\rightarrow\text{prueba futura}\rightarrow
+\text{comparación}
 \]
 
 \begin{table}[H]
-\caption{Interpretación del esquema preexperimental}
+\caption{Diseño del componente predictivo}
 \centering
-\begin{tabularx}{0.92\textwidth}{p{2cm}X}
+\small
+\begin{tabularx}{0.95\textwidth}{p{3.5cm}X}
 \toprule
-\textbf{Símbolo} & \textbf{Significado en la investigación} \\
+\textbf{Etapa} & \textbf{Aplicación en el estudio} \\
 \midrule
-$G$ & Grupo de productores agrícolas de palta Hass de La Libertad seleccionados para el estudio. \\
-$O_1$ & Medición inicial: percepción de utilidad, forma actual de decisión de siembra y estimación de rentabilidad sin apoyo del modelo. \\
-$X$ & Aplicación del sistema propuesto: módulo de rentabilidad, simulador de escenarios, modelo predictivo, análisis histórico y reportes de ciclos. \\
-$O_2$ & Medición final: percepción de utilidad, mejora en estimación de rentabilidad y apoyo percibido en la decisión de siembra después del uso del sistema. \\
+Preparación & Cálculo del precio FOB unitario, agregación temporal, depuración de duplicados, tratamiento de nulos y construcción de rezagos. \\
+Entrenamiento & Ajuste de Random Forest, HistGradientBoosting, ElasticNet y Prophet con el bloque histórico inicial. \\
+Validación & Selección de hiperparámetros mediante ventanas temporales expansivas o deslizantes. \\
+Prueba & Pronóstico de observaciones posteriores no utilizadas en el ajuste. \\
+Comparación & Evaluación mediante MAE, RMSE, MAPE y $R^2$ sobre el mismo conjunto de prueba. \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-Para la comparación de modelos predictivos se utiliza un diseño de series temporales, debido a que los datos no pueden mezclarse aleatoriamente sin generar fuga de información. En este caso, el orden cronológico de la serie constituye una condición metodológica esencial.
+Para evaluar el apoyo a la decisión se aplicará un diseño preexperimental de un solo grupo:
 
 \[
-\text{Datos 2018--2026} \rightarrow \text{División 80/20} \rightarrow
-\text{Entrenamiento} \rightarrow \text{Prueba} \rightarrow
-\text{Comparación}
+G\rightarrow O_1\rightarrow X\rightarrow O_2
 \]
 
-\begin{table}[H]
-\caption{Etapas del diseño de series temporales}
-\centering
-\begin{tabularx}{0.92\textwidth}{p{3.2cm}X}
-\toprule
-\textbf{Etapa} & \textbf{Descripción} \\
-\midrule
-Datos históricos & Serie mensual de precios FOB de palta Hass correspondiente al periodo 2018--2026, con 96 registros referenciales. \\
-División temporal & Separación secuencial de 80\% de registros para entrenamiento y 20\% para prueba. \\
-Entrenamiento & Ajuste de modelos SARIMA y LSTM utilizando el bloque histórico inicial. \\
-Prueba & Evaluación con datos posteriores no utilizados durante el entrenamiento. \\
-Comparación & Selección del modelo con mejor desempeño según RMSE y MAPE. \\
-\bottomrule
-\end{tabularx}
-\end{table}
-
-Este diseño resulta pertinente porque permite evaluar dos dimensiones complementarias: la precisión técnica del pronóstico y la utilidad práctica del sistema para productores agrícolas que requieren información anticipatoria antes de decidir una siembra o ampliación del cultivo.
+donde $G$ representa a los participantes de la prueba piloto; $O_1$, la medición inicial de comprensión, incertidumbre y forma de estimar rentabilidad; $X$, el uso guiado del prototipo; y $O_2$, la medición posterior. Este diseño permitirá estimar cambios iniciales de utilidad percibida, pero no autoriza atribuir causalidad definitiva por la ausencia de un grupo de control.
