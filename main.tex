@@ -1,13 +1,13 @@
 \input{config/preamble}
 
 \begin{document}
+\justifying
 
 % ============================================================
 % PRELIMINARES
 % ============================================================
 \input{content/preliminaries/title_page}
-\clearpage
-
+\input{content/preliminaries/jurado}
 \input{content/preliminaries/indexes}
 \clearpage
 
@@ -20,6 +20,9 @@
 \input{content/chapters/chapter-02/chapter}
 \clearpage
 
+\input{content/chapters/chapter-03/chapter}
+\clearpage
+
 % ============================================================
 % REFERENCIAS
 % ============================================================
@@ -28,5 +31,10 @@
 \begin{singlespacing}
 \bibliography{content/references/referencias}
 \end{singlespacing}
+
+% ============================================================
+% ANEXOS
+% ============================================================
+\input{content/annexes/annexes}
 
 \end{document}

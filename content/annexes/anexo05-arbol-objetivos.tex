@@ -1,0 +1,37 @@
+\chapter{\'Arbol de objetivos}
+
+La Figura~\ref{fig:arbol_objetivos} presenta el \'arbol de objetivos, vinculando el objetivo central con los medios y fines esperados del proyecto.
+
+\begin{figure}[H]
+\centering
+\caption{\'Arbol de objetivos: modelo predictivo para apoyo a la decisi\'on de siembra}
+\label{fig:arbol_objetivos}
+\begin{tikzpicture}[
+  font=\small,
+  box/.style={rectangle, draw, rounded corners=3pt, minimum width=2.8cm, minimum height=0.7cm, align=center},
+  arrow/.style={-Stealth, thick}
+]
+  % Fines (arriba)
+  \node[box, fill=green!15] (f1) at (-3,2.5) {Mejor planificaci\'on\\de campa\~nas};
+  \node[box, fill=green!15] (f2) at (0,2.5) {Reducci\'on del\\riesgo econ\'omico};
+  \node[box, fill=green!15] (f3) at (3,2.5) {Mayor competitividad\\del productor};
+
+  % Objetivo central
+  \node[box, fill=green!25, minimum width=4.8cm] (oc) at (0,0.8) {Objetivo central:\\Desarrollar modelo predictivo FOB\\y aplicaci\'on de apoyo a la decisi\'on};
+
+  % Medios (abajo)
+  \node[box, fill=teal!10] (m1) at (-3.5,-1.5) {Recolectar datos\\Aduanet/INEI};
+  \node[box, fill=teal!10] (m2) at (-1.2,-1.5) {Modelar SARIMA,\\LSTM y SVR};
+  \node[box, fill=teal!10] (m3) at (1.2,-1.5) {Desarrollar API\\y app m\'ovil};
+  \node[box, fill=teal!10] (m4) at (3.5,-1.5) {Evaluar con\\productores};
+
+  \draw[arrow] (m1.north) -- (oc.south west);
+  \draw[arrow] (m2.north) -- (oc.south);
+  \draw[arrow] (m3.north) -- (oc.south);
+  \draw[arrow] (m4.north) -- (oc.south east);
+  \draw[arrow] (oc.north west) -- (f1.south);
+  \draw[arrow] (oc.north) -- (f2.south);
+  \draw[arrow] (oc.north east) -- (f3.south);
+\end{tikzpicture}
+\parbox{0.94\textwidth}{\small \textit{Nota.} Elaboraci\'on propia.}
+\end{figure}

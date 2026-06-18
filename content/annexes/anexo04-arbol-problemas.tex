@@ -1,0 +1,37 @@
+\chapter{\'Arbol de problemas}
+
+La Figura~\ref{fig:arbol_problemas} representa el \'arbol de problemas del estudio, articulando el problema central, sus causas y efectos.
+
+\begin{figure}[H]
+\centering
+\caption{\'Arbol de problemas: decisi\'on de siembra de palta Hass en La Libertad}
+\label{fig:arbol_problemas}
+\begin{tikzpicture}[
+  font=\small,
+  box/.style={rectangle, draw, rounded corners=3pt, minimum width=2.8cm, minimum height=0.7cm, align=center},
+  arrow/.style={-Stealth, thick}
+]
+  % Efectos (arriba)
+  \node[box, fill=red!12] (e1) at (-3,2.5) {P\'erdidas\\econ\'omicas};
+  \node[box, fill=red!12] (e2) at (0,2.5) {Sobreinversi\'on\\en siembra};
+  \node[box, fill=red!12] (e3) at (3,2.5) {Endeudamiento\\productor};
+
+  % Problema central
+  \node[box, fill=orange!20, minimum width=4.5cm] (pc) at (0,0.8) {Problema central:\\Decisi\'on de siembra sin\\informaci\'on anticipada de precios FOB};
+
+  % Causas (abajo)
+  \node[box, fill=blue!10] (c1) at (-3.5,-1.5) {Volatilidad\\de precios};
+  \node[box, fill=blue!10] (c2) at (-1.2,-1.5) {Falta de datos\\hist\'oricos};
+  \node[box, fill=blue!10] (c3) at (1.2,-1.5) {Brecha digital\\agr\'icola};
+  \node[box, fill=blue!10] (c4) at (3.5,-1.5) {Asimetr\'ia en\\cadena de valor};
+
+  \draw[arrow] (c1.north) -- (pc.south west);
+  \draw[arrow] (c2.north) -- (pc.south);
+  \draw[arrow] (c3.north) -- (pc.south);
+  \draw[arrow] (c4.north) -- (pc.south east);
+  \draw[arrow] (pc.north west) -- (e1.south);
+  \draw[arrow] (pc.north) -- (e2.south);
+  \draw[arrow] (pc.north east) -- (e3.south);
+\end{tikzpicture}
+\parbox{0.94\textwidth}{\small \textit{Nota.} Elaboraci\'on propia.}
+\end{figure}

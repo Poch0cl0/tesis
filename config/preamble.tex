@@ -1,44 +1,51 @@
 ﻿% ═══════════════════════════════════════════════════════════════════════════════
-%  Informe: "Modelo predictivo de precios de exportación de palta
-%  para apoyar la toma de decisiones de siembra en productores
-%  agrícolas de La Libertad, Perú"
-%  Autores: Peña Serrano Jefferson Miguel
-%           Robles Perez Martin Aryan
-%  Universidad Nacional de Trujillo – Facultad de Ingeniería
-%  Escuela de Ingeniería de Sistemas – 2025
+%  Proyecto de tesis UNT-2026
+%  "Modelo predictivo de precios de exportación de palta Hass..."
 % ═══════════════════════════════════════════════════════════════════════════════
 
 \documentclass[12pt, a4paper]{report}
 
-% ─── Codificación y fuente ────────────────────────────────────────────────────
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{newtxtext, newtxmath}   % Times New Roman + math compatible
-\usepackage{microtype}              % mejora óptica del texto
+% ─── Fuente y codificación (XeLaTeX + fontspec) ─────────────────────────────
+\usepackage{fontspec}
+\IfFontExistsTF{Arial Narrow}{%
+  \setmainfont{Arial Narrow}%
+}{%
+  \IfFontExistsTF{Carlito}{%
+    \setmainfont{Carlito}%
+  }{%
+    \setmainfont{Helvetica}[Scale=0.95]%
+  }%
+}
+\IfFontExistsTF{Cambria Math}{%
+  \usepackage{unicode-math}%
+  \setmathfont{Cambria Math}%
+}{%
+  \usepackage{amssymb}%
+}
 
 % ─── Idioma ────────────────────────────────────────────────────────────────────
 \usepackage[spanish, es-noindentfirst, es-tabla]{babel}
 \usepackage{csquotes}
 
-% ─── Márgenes (APA / norma UNT) ────────────────────────────────────────────────
+% ─── Márgenes UNT-2026 ───────────────────────────────────────────────────────
 \usepackage[
-  top    = 2.54cm,
-  bottom = 2.54cm,
-  left   = 3.00cm,
-  right  = 2.54cm
+  top    = 2.5cm,
+  bottom = 2.5cm,
+  left   = 3.0cm,
+  right  = 2.5cm
 ]{geometry}
 
-% ─── Matemáticas ───────────────────────────────────────────────────────────────
+% ─── Matemáticas y gráficos ──────────────────────────────────────────────────
 \usepackage{amsmath}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta, positioning, shapes.geometric, fit, backgrounds}
-\usepackage{tikz-cd}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric, fit, backgrounds, trees}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 
-% ─── Interlineado y párrafos ───────────────────────────────────────────────────
+% ─── Interlineado y párrafos ─────────────────────────────────────────────────
 \usepackage{setspace}
-\onehalfspacing                     % 1.5 líneas
+\usepackage{ragged2e}
+\doublespacing
 \setlength{\parindent}{1.25cm}
 \setlength{\parskip}{0pt}
 \raggedbottom
@@ -54,7 +61,7 @@
 \usepackage{longtable}
 \usepackage{tabularx}
 
-% ─── Captions ──────────────────────────────────────────────────────────────────
+% ─── Captions ─────────────────────────────────────────────────────────────────
 \usepackage{caption}
 \captionsetup{
   font        = {normalsize},
@@ -65,19 +72,19 @@
 }
 \captionsetup[figure]{position=top}
 
-% ─── Columnas ──────────────────────────────────────────────────────────────────
+% ─── Columnas ─────────────────────────────────────────────────────────────────
 \usepackage{multicol}
 
-% ─── Encabezado ────────────────────────────────────────────────────────────────
+% ─── Pie de página (numeración inferior derecha) ─────────────────────────────
 \usepackage{fancyhdr}
 \setlength{\headheight}{15pt}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[R]{\thepage}
+\fancyfoot[R]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% ─── Títulos de sección ────────────────────────────────────────────────────────
+% ─── Títulos de sección ──────────────────────────────────────────────────────
 \usepackage{titlesec}
 \titleformat{\chapter}[block]
   {\normalfont\bfseries\fontsize{12}{14}\selectfont\centering}
@@ -99,12 +106,12 @@
   {\thesubsubsection}{1em}{}
 \titlespacing*{\subsubsection}{0pt}{8pt}{4pt}
 
-% ─── Listas ────────────────────────────────────────────────────────────────────
+% ─── Listas ───────────────────────────────────────────────────────────────────
 \usepackage{enumitem}
 \setlist[itemize]{noitemsep, topsep=2pt, leftmargin=2cm}
 \setlist[enumerate]{noitemsep, topsep=2pt, leftmargin=2cm}
 
-% ─── Bibliografía (natbib + apalike, estilo APA aproximado) ───────────────────
+% ─── Bibliografía ────────────────────────────────────────────────────────────
 \usepackage{natbib}
 \bibliographystyle{apalike}
 
@@ -113,23 +120,23 @@
 \usepackage[hidelinks]{hyperref}
 \Urlmuskip=0mu plus 2mu
 \hypersetup{
-  pdftitle  = {Modelo predictivo de precios de exportación de palta Hass para apoyar la toma de decisiones de siembra en productores agrícolas de La Libertad Perú},
+  pdftitle  = {Modelo predictivo de precios de exportación de palta Hass},
   pdfauthor = {Peña Serrano Jefferson Miguel; Robles Perez Martin Aryan},
   pdflang   = {es-PE}
 }
 
-% ─── Numeración de tablas y figuras por capítulo ───────────────────────────────
+% ─── Numeración de tablas y figuras por capítulo ─────────────────────────────
 \usepackage{chngcntr}
 \counterwithin{table}{chapter}
 \counterwithin{figure}{chapter}
 
-% ─── Índice ────────────────────────────────────────────────────────────────────
+% ─── Índice ───────────────────────────────────────────────────────────────────
 \usepackage{tocloft}
 \renewcommand{\cftchapfont}{\bfseries}
 \renewcommand{\cftsecfont}{}
 \renewcommand{\cftsubsecfont}{}
 
-% ─── Inclusión de figuras externas con fallback ───────────────────────────────
+% ─── Inclusión de figuras externas con fallback ─────────────────────────────
 \newcommand{\incluirfigura}[4]{%
   \begin{figure}[H]
     \caption{#3}

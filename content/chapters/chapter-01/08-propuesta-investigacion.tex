@@ -26,9 +26,7 @@ Las predicciones alimentar\'an el simulador de escenarios y el m\'odulo de renta
 
 El backend se desarrollar\'a en FastAPI (Python), exponiendo endpoints REST para entrenamiento/inferencia de modelos, consulta de series hist\'oricas, simulaci\'on de escenarios y generaci\'on de reportes. FastAPI ofrece tipado, documentaci\'on autom\'atica (OpenAPI) y desempe\~no adecuado para servicios anal\'iticos que consumir\'a la aplicaci\'on m\'ovil.
 
-La arquitectura separa capa de datos (ETL Aduanet/INEI), capa de modelos (SARIMA, LSTM, SVR) y capa de negocio (rentabilidad, recomendaciones). La Figura~\ref{fig:arquitectura_app} esquematiza esta arquitectura.
-
-\incluirfigura{figuras/figura8\_2.jpg}{0.92\linewidth}{Arquitectura de la aplicaci\'on (diagrama)}{fig:arquitectura_app}
+La arquitectura separa capa de datos (ETL Aduanet/INEI), capa de modelos (SARIMA, LSTM, SVR) y capa de negocio (rentabilidad, recomendaciones), integradas mediante una API REST consumida por la aplicaci\'on m\'ovil.
 
 \subsection{Aplicaci\'on m\'ovil en React}
 

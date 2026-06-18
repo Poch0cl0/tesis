@@ -3,26 +3,39 @@
 \contentsline {table}{\numberline {1.1}{\ignorespaces Top 20 principales pa\'ises productores de palta --- Volumen (miles de toneladas m\'etricas)}}{2}{table.caption.1}%
 \contentsline {table}{\numberline {1.2}{\ignorespaces Evoluci\'on de las importaciones de palta por pa\'is (volumen en miles TM)}}{4}{table.caption.4}%
 \contentsline {table}{\numberline {1.3}{\ignorespaces Evoluci\'on de las exportaciones de palta por pa\'is --- Valor (millones US\$)}}{5}{table.caption.6}%
-\contentsline {table}{\numberline {1.4}{\ignorespaces Estacionalidad de las exportaciones mundiales de palta Hass}}{7}{table.caption.8}%
-\contentsline {table}{\numberline {1.5}{\ignorespaces Periodos productivos de palta variedad Hass en Chile y Per\'u}}{7}{table.caption.9}%
-\contentsline {table}{\numberline {1.6}{\ignorespaces Per\'u: Superficie cosechada, producci\'on y rendimiento de palta (2015--2019)}}{10}{table.caption.14}%
-\contentsline {table}{\numberline {1.7}{\ignorespaces Per\'u: Exportaci\'on de palta, principales pa\'ises de destino (2015--2019)}}{10}{table.caption.15}%
-\contentsline {table}{\numberline {1.8}{\ignorespaces Per\'u: Exportaciones de palta por continente (2015--2019)}}{11}{table.caption.16}%
-\contentsline {table}{\numberline {1.9}{\ignorespaces Per\'u: Producci\'on de palta por regi\'on (2015--2019)}}{12}{table.caption.18}%
-\contentsline {table}{\numberline {1.10}{\ignorespaces Per\'u: Valor Bruto de la Producci\'on Agropecuaria por regi\'on (2023--2024)}}{12}{table.caption.19}%
-\contentsline {table}{\numberline {1.11}{\ignorespaces Comparaci\'on SARIMA y LSTM para exportaciones agr\'icolas (RMSE)}}{16}{table.caption.22}%
-\contentsline {table}{\numberline {1.12}{\ignorespaces Tabla unificada de rendimiento de modelos de predicci\'on de precios agr\'icolas}}{21}{table.caption.33}%
-\contentsline {table}{\numberline {1.13}{\ignorespaces Fuentes de datos: Aduanet e INEI}}{25}{table.caption.35}%
-\contentsline {table}{\numberline {1.14}{\ignorespaces Variables del modelo predictivo}}{25}{table.caption.36}%
-\contentsline {table}{\numberline {1.15}{\ignorespaces Product Backlog: funciones principales del software}}{27}{table.caption.38}%
-\contentsline {table}{\numberline {1.16}{\ignorespaces Objetivos de la soluci\'on: Soluci\'on T\'ecnica y Tipo Anal\'itica}}{27}{table.caption.39}%
-\contentsline {table}{\numberline {1.17}{\ignorespaces Correspondencia entre soluciones, hip\'otesis y objetivos espec\'ificos}}{29}{table.caption.40}%
+\contentsline {table}{\numberline {1.4}{\ignorespaces Estacionalidad de las exportaciones mundiales de palta Hass}}{8}{table.caption.8}%
+\contentsline {table}{\numberline {1.5}{\ignorespaces Periodos productivos de palta variedad Hass en Chile y Per\'u}}{8}{table.caption.9}%
+\contentsline {table}{\numberline {1.6}{\ignorespaces Per\'u: Superficie cosechada, producci\'on y rendimiento de palta (2015--2019)}}{12}{table.caption.14}%
+\contentsline {table}{\numberline {1.7}{\ignorespaces Per\'u: Exportaci\'on de palta, principales pa\'ises de destino (2015--2019)}}{12}{table.caption.15}%
+\contentsline {table}{\numberline {1.8}{\ignorespaces Per\'u: Exportaciones de palta por continente (2015--2019)}}{12}{table.caption.16}%
+\contentsline {table}{\numberline {1.9}{\ignorespaces Per\'u: Producci\'on de palta por regi\'on (2015--2019)}}{14}{table.caption.18}%
+\contentsline {table}{\numberline {1.10}{\ignorespaces Per\'u: Valor Bruto de la Producci\'on Agropecuaria por regi\'on (2023--2024)}}{14}{table.caption.19}%
+\contentsline {table}{\numberline {1.11}{\ignorespaces Comparaci\'on SARIMA y LSTM para exportaciones agr\'icolas (RMSE)}}{18}{table.caption.22}%
+\contentsline {table}{\numberline {1.12}{\ignorespaces Tabla unificada de rendimiento de modelos de predicci\'on de precios agr\'icolas}}{25}{table.caption.33}%
+\contentsline {table}{\numberline {1.13}{\ignorespaces Fuentes de datos: Aduanet e INEI}}{30}{table.caption.35}%
+\contentsline {table}{\numberline {1.14}{\ignorespaces Variables del modelo predictivo}}{30}{table.caption.36}%
+\contentsline {table}{\numberline {1.15}{\ignorespaces Product Backlog: funciones principales del software}}{32}{table.caption.37}%
+\contentsline {table}{\numberline {1.16}{\ignorespaces Objetivos de la soluci\'on: Soluci\'on T\'ecnica y Tipo Anal\'itica}}{32}{table.caption.38}%
+\contentsline {table}{\numberline {1.17}{\ignorespaces Correspondencia entre soluciones, hip\'otesis y objetivos espec\'ificos}}{35}{table.caption.39}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Interpretación del esquema preexperimental}}{31}{table.caption.41}%
-\contentsline {table}{\numberline {2.2}{\ignorespaces Etapas del diseño de series temporales}}{31}{table.caption.42}%
-\contentsline {table}{\numberline {2.3}{\ignorespaces Parámetros para el cálculo de muestra finita}}{32}{table.caption.43}%
-\contentsline {table}{\numberline {2.4}{\ignorespaces Población, muestra y muestreo por indicador principal}}{33}{table.caption.44}%
-\contentsline {table}{\numberline {2.5}{\ignorespaces Variables y factores considerados}}{34}{table.caption.45}%
-\contentsline {table}{\numberline {2.6}{\ignorespaces Técnicas e instrumentos de recolección y análisis}}{35}{table.caption.46}%
-\contentsline {table}{\numberline {2.7}{\ignorespaces Pruebas estadísticas para la contrastación de hipótesis específicas}}{38}{table.2.7}%
-\contentsline {table}{\numberline {2.8}{\ignorespaces Soluciones y algoritmos propuestos}}{40}{table.caption.49}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Interpretación del esquema preexperimental}}{37}{table.caption.40}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Etapas del diseño de series temporales}}{38}{table.caption.41}%
+\contentsline {table}{\numberline {2.3}{\ignorespaces Parámetros para el cálculo de muestra finita}}{39}{table.caption.42}%
+\contentsline {table}{\numberline {2.4}{\ignorespaces Población, muestra y muestreo por indicador principal}}{40}{table.caption.43}%
+\contentsline {table}{\numberline {2.5}{\ignorespaces Variables y factores considerados}}{41}{table.caption.44}%
+\contentsline {table}{\numberline {2.6}{\ignorespaces Técnicas e instrumentos de recolección y análisis}}{42}{table.caption.45}%
+\contentsline {table}{\numberline {2.7}{\ignorespaces Pruebas estadísticas para la contrastación de hipótesis específicas}}{45}{table.2.7}%
+\contentsline {table}{\numberline {2.8}{\ignorespaces Soluciones y algoritmos propuestos}}{47}{table.caption.48}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Presupuesto consolidado del proyecto de tesis}}{50}{table.caption.54}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Distribuci\'on del financiamiento del proyecto}}{51}{table.caption.55}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Cronograma de ejecuci\'on del proyecto (diagrama de Gantt)}}{52}{table.caption.56}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {A.1}{\ignorespaces Matriz de operacionalizaci\'on de variables del estudio}}{55}{table.caption.58}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {B.1}{\ignorespaces Matriz de consistencia: problema, objetivos, hip\'otesis, variables y m\'etodo}}{56}{table.caption.59}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

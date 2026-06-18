@@ -1,0 +1,50 @@
+\chapter{Diagrama de Ishikawa}
+
+La Figura~\ref{fig:ishikawa} presenta el diagrama de causa y efecto (Ishikawa) que relaciona las causas identificadas con la decisi\'on de siembra de palta Hass en productores de La Libertad.
+
+\begin{figure}[H]
+\centering
+\caption{Diagrama de Ishikawa: causas de la decisi\'on de siembra sin informaci\'on anticipada}
+\label{fig:ishikawa}
+\begin{tikzpicture}[
+  font=\small,
+  cause/.style={rectangle, draw, rounded corners=2pt, minimum width=1.6cm, minimum height=0.55cm, align=center},
+  spine/.style={-Stealth, very thick},
+  branch/.style={-Stealth, thick}
+]
+  % Espina central
+  \draw[spine] (0,0) -- (9,0);
+  \node[cause, fill=gray!15, minimum width=3.2cm] at (9.8,0) {Decisi\'on de siembra\\sin informaci\'on anticipada};
+
+  % Rama precio
+  \draw[branch] (1.5,0) -- (2.8,1.8);
+  \node[cause, fill=blue!8] at (2.8,2.2) {Volatilidad\\precio FOB};
+  \node[cause, fill=blue!5, font=\footnotesize] at (1.2,2.8) {Mercados globales};
+  \node[cause, fill=blue!5, font=\footnotesize] at (2.8,3.2) {Tipo de cambio};
+
+  % Rama clima
+  \draw[branch] (3.5,0) -- (4.5,1.8);
+  \node[cause, fill=green!10] at (4.5,2.2) {Factores\\clim\'aticos};
+  \node[cause, fill=green!5, font=\footnotesize] at (3.8,3.0) {Riego limitado};
+  \node[cause, fill=green!5, font=\footnotesize] at (5.2,3.0) {Eventos extremos};
+
+  % Rama oferta
+  \draw[branch] (5.0,0) -- (5.8,-1.8);
+  \node[cause, fill=orange!12] at (5.8,-2.2) {Sobreoferta\\regional};
+  \node[cause, fill=orange!5, font=\footnotesize] at (4.8,-3.0) {Expansi\'on hect\'areas};
+  \node[cause, fill=orange!5, font=\footnotesize] at (6.8,-3.0) {Competencia exportadora};
+
+  % Rama informaci\'on
+  \draw[branch] (6.5,0) -- (7.2,1.8);
+  \node[cause, fill=yellow!15] at (7.2,2.2) {Asimetr\'ia de\\informaci\'on};
+  \node[cause, fill=yellow!8, font=\footnotesize] at (6.5,3.0) {Dependencia de intermediarios};
+  \node[cause, fill=yellow!8, font=\footnotesize] at (8.0,3.0) {Sin datos hist\'oricos};
+
+  % Rama tecnolog\'ia
+  \draw[branch] (7.5,0) -- (8.0,-1.8);
+  \node[cause, fill=purple!10] at (8.0,-2.2) {Brecha\\tecnol\'ogica};
+  \node[cause, fill=purple!5, font=\footnotesize] at (7.2,-3.0) {Sin herramientas m\'oviles};
+  \node[cause, fill=purple!5, font=\footnotesize] at (8.8,-3.0) {Baja alfabetizaci\'on digital};
+\end{tikzpicture}
+\parbox{0.94\textwidth}{\small \textit{Nota.} Elaboraci\'on propia.}
+\end{figure}

@@ -3,11 +3,14 @@
 Usage:
     python build_pdf.py
     python build_pdf.py --engine xelatex
+    python build_pdf.py --engine xelatex --clean
     python build_pdf.py --output dist/informe-palta.pdf
 
 The script compiles main.tex and writes the final PDF to dist/informe.pdf by
-default. It uses an installed LaTeX engine: latexmk, tectonic, xelatex or
-pdflatex.
+default. The project uses XeLaTeX with Arial Narrow (UNT-2026 format); install
+that font on Windows or rely on the Carlito/Helvetica fallback in preamble.tex.
+
+Engines tried in auto mode: latexmk (-xelatex), xelatex, tectonic, pdflatex.
 """
 
 from __future__ import annotations
@@ -25,7 +28,7 @@ BUILD_DIR = ROOT / "build"
 DEFAULT_OUTPUT = ROOT / "dist" / "informe.pdf"
 
 
-ENGINES = ("latexmk", "tectonic", "xelatex", "pdflatex")
+ENGINES = ("latexmk", "xelatex", "tectonic", "pdflatex")
 
 
 def find_engine(preferred: str) -> str | None:
@@ -50,7 +53,7 @@ def compile_with_latexmk() -> Path:
     run_command(
         [
             "latexmk",
-            "-pdf",
+            "-xelatex",
             "-interaction=nonstopmode",
             "-halt-on-error",
             f"-outdir={BUILD_DIR}",
@@ -151,7 +154,7 @@ def parse_args() -> argparse.Namespace:
         "--engine",
         choices=("auto", *ENGINES),
         default="auto",
-        help="Motor LaTeX a usar. Por defecto detecta automáticamente.",
+        help="Motor LaTeX a usar. Por defecto detecta automáticamente (prioriza XeLaTeX).",
     )
     parser.add_argument(
         "--output",

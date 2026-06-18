@@ -32,6 +32,3 @@ Coloca en esta carpeta los archivos **JPG** indicados (también acepta `.jpeg`).
 - `figura5_8.jpg` — Visualización LSTM vs datos reales (Kurnadipare, 2025)
 - `figura5_9.jpg` — Frecuencia técnicas en predicción (Theofilou, 2025)
 - `figura5_10.jpg` — Procedimiento GBM (Paul et al., 2022)
-
-## Sección 8 — Propuesta
-- `figura8_2.jpg` — Arquitectura de la aplicación (elaboración propia)
