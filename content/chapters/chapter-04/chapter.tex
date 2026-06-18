@@ -64,6 +64,10 @@ El mejor resultado global corresponde al ensamble de los cuatro modelos. Frente 
 \includegraphics[width=\textwidth]{entrenamiento/outputs/figures/comparacion_completa_modelos_fob.png}
 \end{figure}
 
+En la parte superior de la Figura~\ref{fig:comparacion_completa_fob}, Random Forest, HistGradientBoosting y ElasticNet siguen de forma semejante la dirección del precio observado durante la mayor parte del bloque de prueba. Las diferencias se amplían en los cambios abruptos de finales de 2024 y finales de 2025. Prophet produce una trayectoria más suave y tiende a situarse por debajo del precio real en varios periodos de incremento, lo que explica su mayor MAE. El ensamble permanece generalmente dentro del grupo de predicciones y evita depender de la desviación puntual de un solo algoritmo.
+
+La parte inferior de la figura confirma visualmente la jerarquía del MAE: el ensamble presenta la barra más corta, seguido por HistGradientBoosting y Random Forest. Sin embargo, las diferencias entre estos tres resultados son pequeñas. Por ello, la ventaja del ensamble debe interpretarse como una mejora incremental de estabilidad y no como una eliminación de la incertidumbre del precio.
+
 \begin{figure}[H]
 \caption{Resultados del ensamble para precio FOB}
 \label{fig:resultado_fob_ensemble}
@@ -71,7 +75,9 @@ El mejor resultado global corresponde al ensamble de los cuatro modelos. Frente 
 \includegraphics[width=\textwidth]{entrenamiento/outputs/figures/13_fob_ensemble_resultados.png}
 \end{figure}
 
-La comparación temporal permite observar el comportamiento de los cinco resultados. Random Forest e HistGradientBoosting capturan relaciones no lineales y reaccionan mejor a cambios locales; ElasticNet aporta una referencia regularizada menos sensible al ruido; Prophet representa tendencia, estacionalidad y regresores externos; y el ensamble reduce el efecto de errores particulares. La dispersión del ensamble muestra que el sistema reproduce la tendencia general, aunque todavía comprime parte de los valores extremos. En términos prácticos, un MAE de 0,314 USD/kg sigue siendo relevante para la estimación de rentabilidad; por ello, la aplicación deberá mostrar el pronóstico como un rango de apoyo y no como un precio exacto garantizado.
+En el panel de valores reales frente a predichos de la Figura~\ref{fig:resultado_fob_ensemble}, la mayor concentración se ubica alrededor de la línea ideal, pero las predicciones presentan un rango más estrecho que los valores observados. Cuando el precio real es alto, varios puntos quedan debajo de la diagonal, lo que evidencia subestimación de picos; en algunos precios bajos ocurre el comportamiento contrario. Este patrón de regresión hacia el promedio explica que el sistema represente adecuadamente la tendencia general, pero no reproduzca completamente los extremos.
+
+El histograma de residuos se concentra cerca de cero, aunque mantiene colas a ambos lados y una ligera acumulación de errores positivos. Puesto que el residuo se calculó como valor real menos valor predicho, los errores positivos representan subestimación. En términos prácticos, un MAE de 0,314 USD/kg continúa siendo relevante para la estimación de rentabilidad; por ello, la aplicación deberá presentar un rango de apoyo y advertir especialmente la posibilidad de subestimar semanas de precio elevado.
 
 \section{Estimación del margen exportador}
 
@@ -103,6 +109,10 @@ El módulo de rentabilidad conservará las cuatro estimaciones. Random Forest pr
 \includegraphics[width=\textwidth]{entrenamiento/outputs/figures/comparacion_completa_modelos_margen.png}
 \end{figure}
 
+La Figura~\ref{fig:comparacion_completa_margen} muestra que los cuatro modelos conservan una relación positiva clara entre margen real y margen estimado. Random Forest presenta la nube más próxima a la diagonal y una dispersión relativamente uniforme, en concordancia con su menor MAE y mayor $R^2$. HistGradientBoosting y ElasticNet ofrecen patrones muy parecidos: ambos representan bien la zona central, pero muestran mayor separación en márgenes bajos y en algunos valores superiores a S/ 7 por kilogramo.
+
+Prophet también reproduce la dirección del margen y concentra numerosas observaciones cerca de la diagonal; sin embargo, aparecen desviaciones más pronunciadas en casos aislados de margen bajo y alto. Estos puntos influyen en su RMSE de 0,657. La coincidencia general entre los cuatro paneles respalda el uso conjunto como análisis de sensibilidad, mientras que la separación en los extremos justifica no comunicar una única cifra como si fuera exacta.
+
 \section{Clasificación del riesgo de margen bajo}
 
 \begin{table}[H]
@@ -132,6 +142,10 @@ El simulador no elimina las salidas de los modelos con menor puntuación global.
 \centering
 \includegraphics[width=\textwidth]{entrenamiento/outputs/figures/comparacion_completa_modelos_riesgo.png}
 \end{figure}
+
+Las curvas ROC de la Figura~\ref{fig:comparacion_completa_riesgo} se mantienen claramente por encima de la diagonal aleatoria, lo cual indica que los cuatro modelos poseen capacidad para ordenar observaciones normales y de riesgo. Las curvas de regresión logística, Random Forest e HistGradientBoosting son próximas entre sí y alcanzan rápidamente tasas altas de verdaderos positivos. Prophet conserva capacidad discriminante, pero su curva se separa de las tres primeras y su AUC de 0,926 confirma un desempeño comparativamente menor.
+
+El panel de métricas evidencia que no existe un único ganador para todos los criterios. HistGradientBoosting alcanza la mayor precisión, por lo que emite menos alertas falsas, pero su menor recall implica que omite más casos reales de riesgo. La regresión logística presenta el mayor recall y ROC AUC, sacrificando parte de la precisión. Random Forest mantiene un equilibrio intermedio, mientras que Prophet combina precisión alta con el recall más bajo. Para la solución S-2, esta evidencia favorece utilizar la regresión logística como alerta preventiva y la coincidencia entre modelos como indicador adicional de confianza.
 
 \section{Síntesis y limitaciones de los resultados}
 
