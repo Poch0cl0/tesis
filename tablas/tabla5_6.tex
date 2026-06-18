@@ -1,0 +1,18 @@
+\begin{table}[H]
+\centering
+\caption{Tabla unificada de rendimiento de modelos de predicci\'on de precios agr\'icolas}
+\label{tab:rendimiento_modelos}
+\small
+\begin{tabular}{llrrr}
+\toprule
+\textbf{Cultivo/Producto} & \textbf{Modelo} & \textbf{RMSE} & \textbf{MAPE (\%)} & \textbf{$R^2$} \\
+\midrule
+Palta / aguacate  & SARIMA       & 0.18 & 9.2  & 0.82 \\
+Palta / aguacate  & LSTM         & 0.12 & 6.1  & 0.89 \\
+Tomate            & Random Forest & 0.22 & 11.5 & 0.78 \\
+Ma\'iz             & XGBoost      & 0.15 & 7.8  & 0.85 \\
+Brinjal           & SVR          & 0.19 & 8.9  & 0.81 \\
+\bottomrule
+\end{tabular}
+\parbox{0.94\textwidth}{\small \textit{Nota.} Elaboraci\'on propia con base en \citep{Theofilou2025}, Tabla 7. S\'intesis de estudios revisados sistem\'aticamente.}
+\end{table}

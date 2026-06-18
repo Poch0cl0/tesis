@@ -45,6 +45,7 @@
 
 % ─── Figuras y tablas ──────────────────────────────────────────────────────────
 \usepackage{graphicx}
+\usepackage{grffile}
 \usepackage{float}
 \usepackage{placeins}
 \usepackage{array}
@@ -62,6 +63,7 @@
   justification = raggedright,
   singlelinecheck = false
 }
+\captionsetup[figure]{position=top}
 
 % ─── Columnas ──────────────────────────────────────────────────────────────────
 \usepackage{multicol}
@@ -102,6 +104,10 @@
 \setlist[itemize]{noitemsep, topsep=2pt, leftmargin=2cm}
 \setlist[enumerate]{noitemsep, topsep=2pt, leftmargin=2cm}
 
+% ─── Bibliografía (natbib + apalike, estilo APA aproximado) ───────────────────
+\usepackage{natbib}
+\bibliographystyle{apalike}
+
 % ─── Hipervínculos ─────────────────────────────────────────────────────────────
 \usepackage{xurl}
 \usepackage[hidelinks]{hyperref}
@@ -122,6 +128,20 @@
 \renewcommand{\cftchapfont}{\bfseries}
 \renewcommand{\cftsecfont}{}
 \renewcommand{\cftsubsecfont}{}
+
+% ─── Inclusión de figuras externas con fallback ───────────────────────────────
+\newcommand{\incluirfigura}[4]{%
+  \begin{figure}[H]
+    \caption{#3}
+    \label{#4}
+    \centering
+    \IfFileExists{#1}{%
+      \includegraphics[width=#2]{#1}%
+    }{%
+      \fbox{\parbox[c][2.2in][c]{#2}{\centering\small Coloque la imagen en la carpeta \texttt{figuras/}\\#1}}%
+    }
+  \end{figure}%
+}
 
 % ─── Comando de figura APA 7 ──────────────────────────────────────────────────
 \newcommand{\apafigure}[6]{%

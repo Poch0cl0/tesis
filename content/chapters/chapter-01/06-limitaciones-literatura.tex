@@ -1,0 +1,33 @@
+\section{Limitaciones de las investigaciones existentes}
+
+\subsection{Predicciones orientadas a mercados asi\'aticos o chinos}
+
+Una proporci\'on significativa de estudios recientes sobre precio de aguacate/palta se orienta a mercados asi\'aticos o chinos, donde din\'amicas de demanda, log\'istica y regulaci\'on difieren sustancialmente del contexto peruano \citep{Zhang2025, Theofilou2025}. \citet{Zhang2025} desarrollan modelos h\'ibridos deep learning con datos y patrones de consumo asi\'atico, cuya transferencia directa a exportadores peruanos requiere recalibraci\'on y validaci\'on local.
+
+Los mercados asi\'aticos presentan estacionalidad de importaci\'on distinta, preferencias de calibre, esquemas de distribuci\'on y sensibilidad a eventos sanitarios que no necesariamente se correlacionan con precios FOB en Rotterdam o Los \'Angeles. Aplicar conclusiones de RMSE o MAPE obtenidas en China a productores de La Libertad sin adaptaci\'on metodol\'ogica puede inducir sobreconfianza o selecci\'on inadecuada de modelos.
+
+Adem\'as, muchos datasets p\'ublicos ---como series agregadas de Kaggle--- provienen de mercados estadounidenses de retail, no de exportaci\'on FOB peruana \citep{KaggleAvocado}. La brecha entre precio minorista extranjero y FOB recibido en origen limita la utilidad pr\'actica de modelos entrenados exclusivamente en esas fuentes.
+
+\subsection{Pocos estudios para Latinoam\'erica}
+
+\citet{Theofilou2025} evidencian en su revisi\'on sistem\'atica una concentraci\'on geogr\'afica de estudios en Asia y, en menor medida, India y Europa, con escasez relativa de investigaciones emp\'iricas en Latinoam\'erica. \citet{Trincado2022} aporta evidencia chilena sobre precios hed\'onicos, y \citet{Torres2022} aborda cadena de suministro peruana, pero pocos trabajos integran predicci\'on FOB, rentabilidad y herramientas de apoyo a productores en un mismo marco.
+
+Per\'u y La Libertad presentan particularidades ---liderazgo productivo nacional, ventana exportadora marzo--agosto, concentraci\'on en Pa\'ises Bajos y EE.UU.--- que no est\'an capturadas en modelos calibrados para M\'exico o California. \citet{VitteryFlores2023} caracterizan el contexto peruano, pero no implementan comparaci\'on sistem\'atica SARIMA/LSTM/SVR ni despliegan soluci\'on software orientada al productor.
+
+Esta vac\'io metodol\'ogico justifica una investigaci\'on aplicada que combine datos nacionales (Aduanet, INEI) con modelos comparados y validaci\'on orientada a usuarios agr\'icolas de La Libertad.
+
+\subsection{Escasez de sistemas de apoyo para peque\~nos productores}
+
+La literatura t\'ecnica en prediccion de precios agr\'icolas enfatiza m\'etricas de error y arquitecturas de modelos, pero dedica menos atenci\'on a sistemas completos de apoyo a la decisi\'on accesibles para peque\~nos productores \citep{VargasCordova2025}. \citet{VargasCordova2025} documenta asimetr\'ias en cadenas de valor peruanas donde el productor primario captura una fracci\'on minoritaria del valor final, agravada por falta de informaci\'on de mercado oportuna.
+
+\citet{Capunay2025} analizan rentabilidad exportadora en crisis, pero desde perspectiva agregada macro, no mediante simuladores personalizables por fundo. \citet{Velasquez2025} proponen cuantificaci\'on de riesgo para exportadores, sin traducir outputs a recomendaciones de siembra comprensibles en campo.
+
+Existe, por tanto, una brecha entre avances algor\'itmicos y herramientas desplegadas que integren pron\'ostico, simulaci\'on de escenarios y c\'alculo de rentabilidad en interfaces de baja fricci\'on t\'ecnica.
+
+\subsection{Ausencia de herramientas m\'oviles orientadas a decisiones de siembra}
+
+Las decisiones de siembra y manejo de campa\~na ocurren en campo, frecuentemente sin acceso a estaciones de trabajo o dashboards corporativos. Pese al alto penetraci\'on de smartphones incluso en zonas rurales productivas, escasean aplicaciones m\'oviles que combinen predicciones FOB, simulador de rentabilidad y recomendaciones expl\'icitas de siembra basadas en escenarios optimista, esperado y pesimista.
+
+La presente investigaci\'on propone una arquitectura FastAPI + React desplegable como aplicaci\'on m\'ovil, pero la literatura acad\'emica revisada por \citet{Theofilou2025} rara vez reporta evaluaciones de usabilidad con productores reales. La ausencia de estudios de adopci\'on m\'ovil en palta Hass peruana representa una oportunidad y una limitaci\'on simult\'anea: hay espacio para innovar, pero pocos antecedentes que gu\'ien dise\~no de interfaz y m\'etricas de impacto percibido.
+
+La presente investigaci\'on busca cerrar esta brecha mediante un sistema integral ---backend anal\'itico y frontend m\'ovil--- orientado expl\'icitamente a productores agr\'icolas de La Libertad.

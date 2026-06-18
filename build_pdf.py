@@ -75,6 +75,16 @@ def compile_with_tectonic() -> Path:
     return BUILD_DIR / "main.pdf"
 
 
+def prepare_bib_for_build() -> None:
+    """Copy .bib into build/ so BibTeX can resolve paths from the aux file."""
+    bib_src = ROOT / "content" / "references" / "referencias.bib"
+    if not bib_src.exists():
+        return
+    bib_dest = BUILD_DIR / "content" / "references"
+    bib_dest.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(bib_src, bib_dest / "referencias.bib")
+
+
 def compile_with_classic_engine(engine: str, passes: int) -> Path:
     BUILD_DIR.mkdir(exist_ok=True)
     command = [
@@ -84,6 +94,10 @@ def compile_with_classic_engine(engine: str, passes: int) -> Path:
         f"-output-directory={BUILD_DIR}",
         str(MAIN_TEX.name),
     ]
+
+    run_command(command)
+    prepare_bib_for_build()
+    run_command(["bibtex", str(BUILD_DIR / "main")])
 
     for _ in range(passes):
         run_command(command)

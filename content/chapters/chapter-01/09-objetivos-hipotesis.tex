@@ -1,0 +1,43 @@
+\section{Objetivo de la investigaci\'on}
+
+El objetivo general de la investigaci\'on consiste en desarrollar un modelo predictivo de precios de exportaci\'on FOB de palta Hass que permita apoyar la toma de decisiones de siembra en productores agr\'icolas de la regi\'on La Libertad, Per\'u. Este objetivo responde a la necesidad de transformar datos hist\'oricos y variables relevantes del mercado en informaci\'on anticipatoria \'util para decisiones de inversi\'on agr\'icola de mediano plazo.
+
+Para alcanzarlo, resulta necesario, en primer lugar, caracterizar la evoluci\'on hist\'orica del precio FOB de la palta Hass peruana y su relaci\'on con la din\'amica productiva y exportadora de La Libertad \citep{VitteryFlores2023, SierraSelva2020}. En segundo lugar, se requiere identificar y procesar variables explicativas asociadas con oferta, estacionalidad, destinos de exportaci\'on y factores externos que puedan mejorar el desempe\~no predictivo frente a modelos univariados \citep{ReisFilho2022}.
+
+En tercer lugar, corresponde implementar y comparar modelos SARIMA, LSTM y SVR, evaluando su desempe\~no mediante RMSE, MAPE y $R^{2}$ en horizontes de 4, 6 y 8 semanas \citep{Kurnadipare2025, Xia2024}. En cuarto lugar, se debe seleccionar el modelo con mejor balance entre precisi\'on, estabilidad e interpretabilidad para el contexto de decisi\'on de siembra. Finalmente, se busca desplegar una aplicaci\'on m\'ovil con simulador de rentabilidad y recomendaciones de siembra, de modo que sus resultados se traduzcan en escenarios comprensibles de riesgo, oportunidad y planificaci\'on productiva.
+
+\section{Hip\'otesis de investigaci\'on}
+
+La investigaci\'on plantea una hip\'otesis general y cinco hip\'otesis espec\'ificas asociadas con las soluciones funcionales del modelo predictivo. Esta formulaci\'on permite vincular el desarrollo tecnol\'ogico con indicadores verificables de precisi\'on, utilidad percibida, interpretaci\'on de informaci\'on y apoyo econ\'omico a la decisi\'on de siembra.
+
+\begin{itemize}
+  \item \textbf{Hg:} El desarrollo de un modelo predictivo de precios de exportaci\'on de palta Hass impacta positivamente en el apoyo a la toma de decisiones de siembra en productores agr\'icolas de La Libertad, Per\'u, al mejorar la precisi\'on del pron\'ostico, la evaluaci\'on de rentabilidad, la simulaci\'on de escenarios, el an\'alisis hist\'orico y la generaci\'on de reportes para la planificaci\'on agr\'icola.
+  \item \textbf{He1:} El m\'odulo de rentabilidad mejora la estimaci\'on econ\'omica de la decisi\'on de siembra en productores agr\'icolas de palta Hass de La Libertad, al permitir calcular ingresos esperados, costos proyectados y margen de ganancia probable.
+  \item \textbf{He2:} El simulador de escenarios reduce la incertidumbre en la toma de decisiones de siembra, al permitir evaluar escenarios optimistas, esperados y pesimistas frente a variaciones del precio FOB, volumen exportado y costos de producci\'on.
+  \item \textbf{He3:} El modelo predictivo de precios FOB mejora la precisi\'on del pron\'ostico de precios de exportaci\'on de palta Hass, al comparar modelos SARIMA, LSTM y SVR mediante m\'etricas de error como RMSE y MAPE.
+  \item \textbf{He4:} El an\'alisis hist\'orico interactivo permite identificar patrones relevantes de comportamiento del precio FOB de la palta Hass, tales como tendencias, estacionalidad, variaciones interanuales y periodos de mayor volatilidad.
+  \item \textbf{He5:} Los reportes de ciclos mejoran la interpretaci\'on de la informaci\'on hist\'orica y predictiva, al facilitar la identificaci\'on de periodos favorables o desfavorables para la siembra y planificaci\'on productiva.
+\end{itemize}
+
+\section{Correspondencia entre objetivos, soluciones e hip\'otesis}
+
+Con el fin de mantener coherencia metodol\'ogica entre problema, objetivos, soluciones e hip\'otesis, los objetivos espec\'ificos se organizan de acuerdo con las cinco soluciones planteadas para el sistema de apoyo a la decisi\'on. Esta correspondencia permite que cada componente propuesto tenga una finalidad evaluable.
+
+\begin{table}[H]
+\caption{Correspondencia entre soluciones, hip\'otesis y objetivos espec\'ificos}
+\label{tab:correspondencia_objetivos}
+\centering
+\small
+\begin{tabularx}{\textwidth}{p{2.5cm}p{2cm}X}
+\toprule
+\textbf{Soluci\'on} & \textbf{Hip\'otesis} & \textbf{Objetivo espec\'ifico reformulado} \\
+\midrule
+S-1: M\'odulo de rentabilidad & He1 & Dise\~nar e implementar un m\'odulo de rentabilidad que permita estimar ingresos, costos y margen esperado de la siembra de palta Hass en productores agr\'icolas de La Libertad. \\
+S-2: Simulador de escenarios & He2 & Desarrollar un simulador de escenarios que permita evaluar condiciones optimistas, esperadas y pesimistas del precio FOB, costos y volumen exportado para apoyar la decisi\'on de siembra. \\
+S-3: Modelo predictivo de precios FOB & He3 & Implementar y comparar modelos SARIMA, LSTM y SVR para pronosticar precios FOB de exportaci\'on de palta Hass a 4, 6 y 8 semanas, evaluando su desempe\~no mediante RMSE y MAPE. \\
+S-4: An\'alisis hist\'orico interactivo & He4 & Construir un m\'odulo de an\'alisis hist\'orico interactivo que permita visualizar tendencias, estacionalidad y comportamiento del precio FOB de la palta Hass. \\
+S-5: Reportes de ciclos & He5 & Generar reportes de ciclos productivos y comerciales que faciliten la interpretaci\'on de periodos favorables o desfavorables para la planificaci\'on de siembra. \\
+\bottomrule
+\end{tabularx}
+\parbox{0.94\textwidth}{\small \textit{Nota.} La relaci\'on entre objetivos e hip\'otesis facilita la posterior contrastaci\'on estad\'istica y funcional de cada soluci\'on propuesta.}
+\end{table}

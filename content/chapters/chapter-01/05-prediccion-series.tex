@@ -1,0 +1,63 @@
+\section{Predicci\'on de precios agr\'icolas mediante series temporales}
+
+\subsection{Modelos estad\'isticos tradicionales (ARIMA, SARIMA)}
+
+Los modelos autorregresivos integrados de media m\'ovil (ARIMA) y su extensi\'on estacional (SARIMA) constituyen la base cl\'asica del pron\'ostico de series temporales agr\'icolas \citep{Xia2024, Kurnadipare2025}. ARIMA modela dependencias lineales mediante componentes autorregresivos (AR), integraci\'on (I) y media m\'ovil (MA), siendo especialmente \'util cuando la serie es estacionaria o puede hacerse estacionaria mediante diferenciaci\'on.
+
+SARIMA incorpora estacionalidad expl\'icita, relevante para palta Hass dada la marcada periodicidad de cosechas y exportaciones documentada por \citet{SierraSelva2020}. \citet{Kurnadipare2025} comparan SARIMA con LSTM en exportaciones agr\'icolas, reportando RMSE competitivos para SARIMA en series con estructura estacional estable. La Tabla~\ref{tab:sarima_lstm_rmse} resume m\'etricas comparativas de referencia.
+
+\input{tablas/tabla5_1}
+
+La Figura~\ref{fig:sarima_visual} ilustra el ajuste de un modelo SARIMA frente a datos reales. Las ventajas de SARIMA incluyen interpretabilidad, bajo costo computacional y madurez metodol\'ogica; sus limitaciones aparecen ante quiebres estructurales, no linealidades y volatilidad heterog\'enea post-pandemia \citep{Velasquez2025}.
+
+\incluirfigura{figuras/figura5\_2.jpg}{0.90\linewidth}{Visualizaci\'on del modelo SARIMA y comparaci\'on con datos reales}{fig:sarima_visual}
+
+\subsection{Modelos de Machine Learning (SVR, Random Forest, XGBoost)}
+
+El aprendizaje autom\'atico aporta flexibilidad para capturar relaciones no lineales entre precios y variables explicativas: rezagos, vol\'umenes, indicadores macroecon\'micos y estacionalidad codificada \citep{Paul2022, Theofilou2025}. Support Vector Regression (SVR) proyecta datos a espacios de alta dimensi\'on y encuentra hiperplanos \'optimos para regresi\'on, siendo robusto en conjuntos de tama\~no moderado (Figura~\ref{fig:svr}).
+
+\incluirfigura{figuras/figura5\_3.jpg}{0.85\linewidth}{Algoritmo de SVR (Support Vector Regression)}{fig:svr}
+
+Random Forest y XGBoost ---ensambles de \'arboles de decisi\'on y gradient boosting--- manejan interacciones entre variables y missing values con menor preprocesamiento que modelos lineales \citep{Paul2022}. La Figura~\ref{fig:random_forest} esquematiza Random Forest; la Figura~\ref{fig:gbm} muestra el procedimiento secuencial de Gradient Boosting Machine (GBM), base conceptual de XGBoost.
+
+\incluirfigura{figuras/figura5\_4.jpg}{0.85\linewidth}{Representaci\'on esquem\'atica de Random Forest}{fig:random_forest}
+
+\incluirfigura{figuras/figura5\_10.jpg}{0.85\linewidth}{Procedimiento secuencial en Gradient Boosting Machine (GBM)}{fig:gbm}
+
+\citet{Paul2022} aplican m\'ultiples algoritmos ML al precio de berenjena (brinjal), encontrando que ensembles superan modelos lineales en MAPE. La Figura~\ref{fig:rendimiento_ml} compara rendimiento relativo mediante gr\'aficos circular y radar. Estos hallazgos son extrapolables con cautela a palta Hass, donde la estacionalidad exportadora y el horizonte FOB requieren validaci\'on emp\'irica local.
+
+\incluirfigura{figuras/figura5\_5.jpg}{0.88\linewidth}{Gr\'afico circular y radar de rendimiento de modelos ML}{fig:rendimiento_ml}
+
+\subsection{Modelos Deep Learning (RNN, LSTM, BiLSTM)}
+
+Las redes neuronales profundas, especialmente LSTM y BiLSTM, modelan dependencias de largo plazo en series temporales agr\'icolas \citep{Murugesan2022, Chen2023, Zhang2025}. A diferencia de ARIMA, LSTM captura no linealidades y patrones complejos mediante celdas de memoria que retienen informaci\'on relevante a lo largo de secuencias. La Figura~\ref{fig:lstm_arquitectura} presenta la arquitectura LSTM; la Figura~\ref{fig:lstm_visual} muestra su desempe\~no frente a datos reales.
+
+\incluirfigura{figuras/figura5\_7.jpg}{0.88\linewidth}{Arquitectura LSTM (Long Short-Term Memory)}{fig:lstm_arquitectura}
+
+\incluirfigura{figuras/figura5\_8.jpg}{0.90\linewidth}{Visualizaci\'on del modelo LSTM y comparaci\'on con datos reales}{fig:lstm_visual}
+
+\citet{Murugesan2022} eval\'uan variantes CNN-LSTM y ConvLSTM, \'utiles cuando convoluciones extraen patrones locales antes de modelar temporalidad. \citet{Zhang2025} proponen h\'ibridos deep learning para precio de aguacate, combinando extracci\'on de caracter\'isticas con capas recurrentes. \citet{Kurnadipare2025} reportan RMSE inferior de LSTM frente a SARIMA en series de exportaci\'on, aunque con mayor costo de entrenamiento y necesidad de tuning de hiperpar\'ametros.
+
+BiLSTM procesa secuencias en ambas direcciones temporales, potencialmente \'util cuando variables rezagadas y adelantadas aportan se\~nal. No obstante, en pron\'ostico causal de precios FOB debe evitarse fuga de informaci\'on futura al conjunto de entrenamiento.
+
+\subsection{Modelos h\'ibridos recientes (ARIMA-LSTM, CNN-LSTM, TCN-MLP-Attention)}
+
+Los modelos h\'ibridos combinan fortalezas de enfoques estad\'isticos y de aprendizaje profundo: ARIMA-LSTM separa componentes lineales y residuales no lineales; CNN-LSTM extrae patrones locales y dependencias temporales; arquitecturas TCN-MLP-Attention incorporan convoluciones temporales y mecanismos de atenci\'on \citep{Chen2023, Zhang2025, Murugesan2022}.
+
+\citet{Chen2023} optimizan h\'ibridos VMD-LSTM con algoritmos gen\'eticos, reduciendo error en commodities agr\'icolas. \citet{Theofilou2025} documentan en revisiones sistem\'aticas la proliferaci\'on de enfoques h\'ibridos desde 2018, reflejada en las Figuras~\ref{fig:taxonomia} y~\ref{fig:evolucion_tecnicas}.
+
+\incluirfigura{figuras/figura4\_1.jpg}{0.92\linewidth}{Taxonom\'ia de t\'ecnicas de predicci\'on de precios agr\'icolas}{fig:taxonomia}
+
+\incluirfigura{figuras/figura4\_2.jpg}{0.92\linewidth}{Evoluci\'on de las t\'ecnicas de predicci\'on de precios agr\'icolas}{fig:evolucion_tecnicas}
+
+La Figura~\ref{fig:frecuencia_tecnicas} muestra la frecuencia de t\'ecnicas en la literatura reciente; la Tabla~\ref{tab:rendimiento_modelos} unifica m\'etricas de desempe\~no reportadas. Para palta Hass peruana, la selecci\'on del modelo debe balancear precisi\'on, estabilidad out-of-sample e interpretabilidad para usuarios finales.
+
+\incluirfigura{figuras/figura5\_9.jpg}{0.90\linewidth}{Frecuencia de t\'ecnicas y modelos en predicci\'on de precios agr\'icolas}{fig:frecuencia_tecnicas}
+
+\input{tablas/tabla5_6}
+
+\subsubsection{Antecedentes internacionales}
+
+\citet{Torres2022} propone mejoras en cadena de suministro de palta peruana mediante series de tiempo, vinculando pron\'ostico con log\'istica. \citet{Zhang2025} desarrollan modelos h\'ibridos deep learning para precio de aguacate en contextos de mercado asi\'atico. \citet{Kurnadipare2025} y \citet{Paul2022} aportan evidencia comparativa SARIMA/ML/DL en cultivos diversos, aunque con datos y horizontes distintos al FOB peruano.
+
+\citet{Xia2024} y \citet{Theofilou2025} concluyen que no existe un modelo universalmente superior: el desempe\~no depende de longitud de serie, estacionalidad, frecuencia de muestreo y calidad de variables explicativas. Esta evidencia justifica la comparaci\'on emp\'irica de SARIMA, LSTM y SVR sobre datos Aduanet e INEI propuesta en la presente investigaci\'on, con horizontes de 4, 6 y 8 semanas alineados a decisiones operativas de campa\~na.

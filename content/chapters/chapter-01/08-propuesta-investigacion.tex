@@ -1,0 +1,47 @@
+\section{Propuesta de investigaci\'on}
+
+\subsection{Uso de datos de Aduanet e INEI}
+
+La investigaci\'on utilizar\'a datos de exportaci\'on aduanera (Aduanet) e indicadores agropecuarios del INEI para construir series temporales de precio FOB, volumen exportado, destinos y variables de contexto productivo. La Tabla~\ref{tab:fuentes_datos} resume las fuentes y variables principales. Aduanet aporta granularidad comercial alineada con la realidad exportadora; INEI complementa con producci\'on regional y valor bruto de producci\'on.
+
+\input{tablas/tabla8_5}
+
+El procesamiento incluir\'a limpieza de registros, tratamiento de valores faltantes, construcci\'on de rezagos, variables estacionales y agregaciones semanales compatibles con horizontes de predicci\'on de 4, 6 y 8 semanas \citep{ReisFilho2022, Torres2022}. La calidad del pipeline de datos condiciona directamente la validez comparativa entre SARIMA, LSTM y SVR.
+
+\subsection{Comparaci\'on entre SARIMA, LSTM y SVR}
+
+Se implementar\'an y comparar\'an tres familias de modelos: SARIMA (l\'inea base estad\'istica), LSTM (aprendizaje profundo) y SVR (aprendizaje autom\'atico con kernels) \citep{Kurnadipare2025, Paul2022, Xia2024}. La evaluaci\'on usar\'a m\'etricas RMSE, MAPE y $R^{2}$ sobre particiones temporales out-of-sample, evitando fuga de informaci\'on futura. La Tabla~\ref{tab:variables_modelo} define variables del modelo predictivo.
+
+\input{tablas/tabla8_4}
+
+La comparaci\'on no busca \'unicamente minimizar error, sino identificar el modelo con mejor equilibrio entre precisi\'on, estabilidad e interpretabilidad para usuarios no t\'ecnicos \citep{Theofilou2025}. Referencias como \citet{Kurnadipare2025} y \citet{Xia2024} sugieren ventajas de LSTM en no linealidades, mientras SARIMA permanece competitivo en series estacionales estables y SVR en conjuntos de tama\~no moderado con variables explicativas.
+
+\subsection{Predicci\'on de precios FOB de 4, 6 y 8 semanas}
+
+Los horizontes de 4, 6 y 8 semanas se alinean con decisiones operativas de campa\~na: programaci\'on de cosecha, negociaci\'on preliminar, ajuste de insumos y evaluaci\'on de viabilidad econ\'omica inmediata. Horizontes m\'as largos aumentan incertidumbre; m\'as cortos limitan utilidad para planificaci\'on de siembra de mediano plazo. La combinaci\'on propuesta cubre necesidades t\'acticas del productor liberte\~no.
+
+Las predicciones alimentar\'an el simulador de escenarios y el m\'odulo de rentabilidad, traduciendo puntos de pron\'ostico en rangos optimista/esperado/pesimista seg\'un bandas de error hist\'orico del modelo seleccionado \citep{Velasquez2025}.
+
+\subsection{Backend en FastAPI}
+
+El backend se desarrollar\'a en FastAPI (Python), exponiendo endpoints REST para entrenamiento/inferencia de modelos, consulta de series hist\'oricas, simulaci\'on de escenarios y generaci\'on de reportes. FastAPI ofrece tipado, documentaci\'on autom\'atica (OpenAPI) y desempe\~no adecuado para servicios anal\'iticos que consumir\'a la aplicaci\'on m\'ovil.
+
+La arquitectura separa capa de datos (ETL Aduanet/INEI), capa de modelos (SARIMA, LSTM, SVR) y capa de negocio (rentabilidad, recomendaciones). La Figura~\ref{fig:arquitectura_app} esquematiza esta arquitectura.
+
+\incluirfigura{figuras/figura8\_2.jpg}{0.92\linewidth}{Arquitectura de la aplicaci\'on (diagrama)}{fig:arquitectura_app}
+
+\subsection{Aplicaci\'on m\'ovil en React}
+
+El frontend m\'ovil se implementar\'a en React (React Native o React con empaquetado m\'ovil), consumiendo la API FastAPI para mostrar pron\'osticos, hist\'oricos interactivos, simulaciones y recomendaciones de siembra. La interfaz priorizar\'a legibilidad en condiciones de campo: tipograf\'ia clara, gr\'aficos simples, lenguaje no t\'ecnico y flujos cortos para consultar escenarios.
+
+La Tabla~\ref{tab:product_backlog} resume funciones principales del software seg\'un el Product Backlog del proyecto. La evaluaci\'on con productores de La Libertad (Cap\'itulo II) medir\'a utilidad percibida y mejora en comprensi\'on de rentabilidad.
+
+\input{tablas/tabla8_3}
+
+\subsection{Simulador de rentabilidad y recomendaciones de siembra}
+
+El simulador integra predicciones FOB, costos editables por el productor, rendimiento esperado y par\'ammetros log\'isticos para calcular ingresos, costos totales y margen proyectado \citep{Capunay2025}. Las recomendaciones de siembra derivan de umbrales configurables: por ejemplo, si el margen esperado en escenario pesimista es negativo, sugerir postergar expansi\'on de hect\'areas.
+
+La Tabla~\ref{tab:objetivos_solucion} relaciona soluciones t\'ecnicas con tipos anal\'iticos (descriptiva, predictiva, prescriptiva). Las soluciones S-1 a S-5 articulan un sistema integral que va m\'as all\'a del pron\'ostico aislado, respondiendo a limitaciones identificadas en la literatura y en la realidad productiva de La Libertad \citep{VargasCordova2025, Theofilou2025}.
+
+\input{tablas/tabla8_1}

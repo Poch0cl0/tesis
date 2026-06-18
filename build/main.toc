@@ -1,30 +1,64 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{\numberline {1}INTRODUCCI\'ON}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Realidad problem\'atica}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Evoluci\'on del precio de exportaci\'on}{3}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Contexto productivo y exportador de La Libertad}{3}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Antecedentes y enfoques predictivos}{5}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Mercados de destino y concentraci\'on comercial}{14}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Alcance del apoyo a la decisi\'on de siembra}{15}{section.1.6}%
-\contentsline {section}{\numberline {1.7}Justificaci\'on del modelo predictivo}{16}{section.1.7}%
-\contentsline {section}{\numberline {1.8}Objetivo de la investigaci\'on}{20}{section.1.8}%
-\contentsline {section}{\numberline {1.9}Hip\'otesis de investigaci\'on}{21}{section.1.9}%
-\contentsline {section}{\numberline {1.10}Correspondencia entre objetivos, soluciones e hip\'otesis}{21}{section.1.10}%
-\contentsline {chapter}{\numberline {2}MÉTODO}{23}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Tipo de investigación}{23}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}De acuerdo a la orientación o finalidad}{23}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}De acuerdo a la técnica de contrastación}{23}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}Nivel de investigación}{23}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Diseño de investigación}{23}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Población, muestra y muestreo}{25}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Población}{25}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Cálculo de muestra para productores}{25}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Muestra y muestreo por indicador}{26}{subsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.4.4}Fuentes de datos}{26}{subsection.2.4.4}%
-\contentsline {section}{\numberline {2.5}Variables}{26}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Técnicas e instrumentos, validación y confiabilidad}{27}{section.2.6}%
-\contentsline {section}{Método de análisis de datos}{28}{table.caption.17}%
-\contentsline {subsection}{Flujograma para seleccionar la prueba estadística}{29}{section*.18}%
-\contentsline {subsection}{Contrastación de hipótesis}{31}{figure.caption.19}%
-\contentsline {subsection}{Síntesis de la metodología estadística}{32}{table.2.7}%
-\contentsline {section}{\numberline {2.7}Procedimiento}{32}{section.2.7}%
+\contentsline {section}{\numberline {1.1}Contexto mundial de la producci\'on y exportaci\'on de palta Hass}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Importancia econ\'omica de la palta Hass}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Crecimiento del consumo mundial}{2}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Principales pa\'ises productores y exportadores}{4}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Posicionamiento del Per\'u en el mercado internacional}{5}{subsection.1.1.4}%
+\contentsline {section}{\numberline {1.2}Problem\'atica de la volatilidad de precios agr\'icolas}{5}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Comportamiento variable de los precios agr\'icolas}{5}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Influencia de oferta y demanda, clima y estacionalidad}{6}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Impacto econ\'omico en productores y exportadores}{7}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Riesgo asociado a la toma de decisiones}{9}{subsection.1.2.4}%
+\contentsline {section}{\numberline {1.3}Situaci\'on del sector paltero en Per\'u y La Libertad}{10}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Producci\'on y exportaci\'on peruana}{10}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Participaci\'on de La Libertad}{11}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Problemas de planificaci\'on de campa\~nas}{13}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Dependencia de precios hist\'oricos y experiencia emp\'irica}{14}{subsection.1.3.4}%
+\contentsline {section}{\numberline {1.4}Transformaci\'on digital y agricultura inteligente}{14}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Agricultura 4.0}{14}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Uso de Big Data e Inteligencia Artificial}{15}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Beneficios de la anal\'itica predictiva para la agricultura}{15}{subsection.1.4.3}%
+\contentsline {section}{\numberline {1.5}Predicci\'on de precios agr\'icolas mediante series temporales}{16}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}Modelos estad\'isticos tradicionales (ARIMA, SARIMA)}{16}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}Modelos de Machine Learning (SVR, Random Forest, XGBoost)}{17}{subsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.5.3}Modelos Deep Learning (RNN, LSTM, BiLSTM)}{18}{subsection.1.5.3}%
+\contentsline {subsection}{\numberline {1.5.4}Modelos h\'ibridos recientes (ARIMA-LSTM, CNN-LSTM, TCN-MLP-Attention)}{19}{subsection.1.5.4}%
+\contentsline {subsubsection}{Antecedentes internacionales}{21}{subsubsection*.34}%
+\contentsline {section}{\numberline {1.6}Limitaciones de las investigaciones existentes}{22}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Predicciones orientadas a mercados asi\'aticos o chinos}{22}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Pocos estudios para Latinoam\'erica}{22}{subsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.6.3}Escasez de sistemas de apoyo para peque\~nos productores}{22}{subsection.1.6.3}%
+\contentsline {subsection}{\numberline {1.6.4}Ausencia de herramientas m\'oviles orientadas a decisiones de siembra}{23}{subsection.1.6.4}%
+\contentsline {section}{\numberline {1.7}Necesidad de una soluci\'on tecnol\'ogica para productores de La Libertad}{23}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Necesidad de anticipar precios FOB}{23}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}Necesidad de evaluar escenarios de rentabilidad}{24}{subsection.1.7.2}%
+\contentsline {subsection}{\numberline {1.7.3}Importancia de disponer de recomendaciones de siembra}{24}{subsection.1.7.3}%
+\contentsline {section}{\numberline {1.8}Propuesta de investigaci\'on}{24}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}Uso de datos de Aduanet e INEI}{24}{subsection.1.8.1}%
+\contentsline {subsection}{\numberline {1.8.2}Comparaci\'on entre SARIMA, LSTM y SVR}{25}{subsection.1.8.2}%
+\contentsline {subsection}{\numberline {1.8.3}Predicci\'on de precios FOB de 4, 6 y 8 semanas}{26}{subsection.1.8.3}%
+\contentsline {subsection}{\numberline {1.8.4}Backend en FastAPI}{26}{subsection.1.8.4}%
+\contentsline {subsection}{\numberline {1.8.5}Aplicaci\'on m\'ovil en React}{26}{subsection.1.8.5}%
+\contentsline {subsection}{\numberline {1.8.6}Simulador de rentabilidad y recomendaciones de siembra}{27}{subsection.1.8.6}%
+\contentsline {section}{\numberline {1.9}Objetivo de la investigaci\'on}{27}{section.1.9}%
+\contentsline {section}{\numberline {1.10}Hip\'otesis de investigaci\'on}{28}{section.1.10}%
+\contentsline {section}{\numberline {1.11}Correspondencia entre objetivos, soluciones e hip\'otesis}{29}{section.1.11}%
+\contentsline {chapter}{\numberline {2}MÉTODO}{30}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Tipo de investigación}{30}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}De acuerdo a la orientación o finalidad}{30}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}De acuerdo a la técnica de contrastación}{30}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Nivel de investigación}{30}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Diseño de investigación}{30}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Población, muestra y muestreo}{32}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Población}{32}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Cálculo de muestra para productores}{32}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Muestra y muestreo por indicador}{33}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Fuentes de datos}{33}{subsection.2.4.4}%
+\contentsline {section}{\numberline {2.5}Variables}{33}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Técnicas e instrumentos, validación y confiabilidad}{34}{section.2.6}%
+\contentsline {section}{Método de análisis de datos}{35}{table.caption.46}%
+\contentsline {subsection}{Flujograma para seleccionar la prueba estadística}{36}{section*.47}%
+\contentsline {subsection}{Contrastación de hipótesis}{38}{figure.caption.48}%
+\contentsline {subsection}{Síntesis de la metodología estadística}{39}{table.2.7}%
+\contentsline {section}{\numberline {2.7}Procedimiento}{39}{section.2.7}%

@@ -1,0 +1,17 @@
+\begin{table}[H]
+\centering
+\caption{Comparaci\'on SARIMA y LSTM para exportaciones agr\'icolas (RMSE)}
+\label{tab:sarima_lstm_rmse}
+\small
+\begin{tabular}{llrr}
+\toprule
+\textbf{Serie} & \textbf{Modelo} & \textbf{RMSE} & \textbf{MAPE (\%)} \\
+\midrule
+Exportaciones agr\'icolas & SARIMA & 0.142 & 8.35 \\
+Exportaciones agr\'icolas & LSTM   & 0.098 & 5.72 \\
+Precios FOB referencia   & SARIMA & 0.185 & 11.20 \\
+Precios FOB referencia   & LSTM   & 0.124 & 7.45 \\
+\bottomrule
+\end{tabular}
+\parbox{0.94\textwidth}{\small \textit{Nota.} Elaboraci\'on propia con base en \citep{Kurnadipare2025}, Tablas 1 y 3.}
+\end{table}
